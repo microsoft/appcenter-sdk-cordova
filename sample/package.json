@@ -1,0 +1,15 @@
+{
+    "name": "com.test.cordovaapp",
+    "displayName": "Mobile Center Demo",
+    "version": "1.0.0",
+    "devDependencies": {
+        "android-versions": "^1.2.1",
+        "cordova": "6.x"
+    },
+    "scripts": {
+        "clean": "rm -rf platforms plugins",
+        "prepare": "cordova prepare",
+        "ios": "npm run prepare && cordova run ios",
+        "android": "npm run prepare && cordova run android"
+    }
+}

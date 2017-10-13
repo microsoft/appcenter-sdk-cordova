@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.test.cordovaapp" version="1.0.0"
+        xmlns="http://www.w3.org/ns/widgets"
+        xmlns:cdv="http://cordova.apache.org/ns/1.0">
+
+    <name>Mobile Center Demo</name>
+    <description>
+        A sample Apache Cordova application to demostrate Mobile Center plugin capabilities
+    </description>
+
+    <content src="cdvtests/index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+
+    <!-- Setting to true to be able to test functionality because default is false -->
+    <preference name="MOBILE_CENTER_ANALYTICS_ENABLE_IN_JS" value="true" />
+    <preference name="MOBILE_CENTER_CRASHES_ALWAYS_SEND" value="false" />
+
+    <platform name="android">
+        <preference name="MOBILE_CENTER_APP_SECRET" value="your_android_application_id" />
+        <!-- <resource-file src="google-services.json" target="google-services.json" /> -->
+        <allow-intent href="market:*" />
+    </platform>
+
+    <platform name="ios">
+        <preference name="MOBILE_CENTER_APP_SECRET" value="your_ios_application_id" />
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+
+    <engine name="android" spec="~6.3.0" />
+    <engine name="ios" spec="~4.5.1" />
+    <plugin name="cordova-plugin-whitelist" spec="^1.3.2" />
+    <plugin name="cordova-plugin-mobile-center-analytics"
+            spec="../cordova-plugin-mobile-center-analytics" />
+    <plugin name="cordova-plugin-mobile-center-analytics-tests"
+            spec="../cordova-plugin-mobile-center-analytics/tests" />
+    <plugin name="cordova-plugin-mobile-center-crashes"
+            spec="../cordova-plugin-mobile-center-crashes" />
+    <plugin name="cordova-plugin-mobile-center-crashes-tests"
+            spec="../cordova-plugin-mobile-center-crashes/tests" />
+    <plugin name="cordova-plugin-mobile-center-push"
+            spec="../cordova-plugin-mobile-center-push" />
+    <plugin name="cordova-plugin-mobile-center-push-tests"
+            spec="../cordova-plugin-mobile-center-push/tests" />
+</widget>

@@ -1,0 +1,23 @@
+{
+  "name": "cordova-plugin-mobile-center-shared",
+  "version": "0.0.1",
+  "description": "Provides Microsoft Azure Mobile Center shared functionality for Cordova",
+  "cordova": {
+    "id": "cordova-plugin-mobile-center-shared",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "keywords": [
+    "microsoft",
+    "azure",
+    "mobile center",
+    "crashes",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "author": "",
+  "license": "Apache 2.0"
+}

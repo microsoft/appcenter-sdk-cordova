@@ -1,0 +1,23 @@
+{
+  "name": "cordova-plugin-mobile-center-push",
+  "version": "0.0.1",
+  "description": "Provides Microsoft Azure Mobile Center Push client for Cordova",
+  "cordova": {
+    "id": "mobile-center-crashes",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "keywords": [
+    "microsoft",
+    "azure",
+    "mobile center",
+    "push",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "author": "",
+  "license": "Apache 2.0"
+}
