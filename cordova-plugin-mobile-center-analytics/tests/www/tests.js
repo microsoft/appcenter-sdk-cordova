@@ -1,6 +1,3 @@
-
-// Copyright (c) Microsoft Open Technologies, Inc.  All rights reserved.  Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information.
-
 /*jshint jasmine: true */
 
 module.exports.defineAutoTests = function () {
@@ -9,7 +6,6 @@ module.exports.defineAutoTests = function () {
 
 module.exports.defineManualTests = function (contentEl, createActionButton) {
 
-    var context;
     var analyticsState = null;
 
     var fail = function (err) {

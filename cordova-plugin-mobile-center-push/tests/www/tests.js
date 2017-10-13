@@ -1,6 +1,3 @@
-
-// Copyright (c) Microsoft Open Technologies, Inc.  All rights reserved.  Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information.
-
 /*jshint jasmine: true */
 
 module.exports.defineAutoTests = function () {
@@ -9,8 +6,7 @@ module.exports.defineAutoTests = function () {
 
 module.exports.defineManualTests = function (contentEl, createActionButton) {
 
-    var context;
-    var analyticsState = null;
+    var pushState = null;
 
     var fail = function (err) {
         contentEl.innerHTML = err ? err.message : "";
@@ -19,18 +15,18 @@ module.exports.defineManualTests = function (contentEl, createActionButton) {
     createActionButton("Check if enabled", function () {
         MobileCenter.Push.isEnabled(function (enabled) {
             contentEl.innerHTML = enabled ? "Enabled" : "Disabled";
-            analyticsState = enabled;
+            pushState = enabled;
         }, fail);
     });
 
     function getLocalState(callback) {
-        if (analyticsState !== null) {
-            callback(analyticsState);
+        if (pushState !== null) {
+            callback(pushState);
             return;
         }
 
         MobileCenter.Push.isEnabled(function (enabled) {
-            analyticsState = enabled;
+            pushState = enabled;
             callback(enabled);
         }, fail);
     }
@@ -40,7 +36,7 @@ module.exports.defineManualTests = function (contentEl, createActionButton) {
             MobileCenter.Push.setEnabled(!state, function () {
                 MobileCenter.Push.isEnabled(function (enabled) {
                     contentEl.innerHTML = enabled ? "Enabled" : "Disabled";
-                    analyticsState = enabled;
+                    pushState = enabled;
                 }, fail);
             }, fail);
         });
