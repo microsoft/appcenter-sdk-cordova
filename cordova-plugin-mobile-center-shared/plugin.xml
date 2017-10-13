@@ -8,11 +8,10 @@
     <description>
         Provides Microsoft Azure Mobile Center shared functionality for Cordova
     </description>
-    <license>Apache 2.0</license> <!-- TODO: refine license -->
-    <keywords>microsoft, azure, mobile center, crashes</keywords>
-    <!-- TODO: refine fields below -->
-    <!-- <repo>https://github.com/Microsoft/mobile-center-sdk-cordova</repo> -->
-    <!-- <issue>https://github.com/Microsoft/mobile-center-sdk-cordova/issues</issue> -->
+    <license>MIT</license>
+    <keywords>microsoft, azure, mobile center, shared</keywords>
+    <repo>https://github.com/Microsoft/mobile-center-sdk-cordova</repo>
+    <issue>https://github.com/Microsoft/mobile-center-sdk-cordova/issues</issue>
 
     <!-- Required gradle functionality support -->
     <engine name="cordova-android" version=">=4.1.0" />
