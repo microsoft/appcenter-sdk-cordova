@@ -7,47 +7,40 @@ module.exports.defineAutoTests = function () {
 module.exports.defineManualTests = function (contentEl, createActionButton) {
 
     var analyticsState = null;
+    var Analytics = MobileCenter.Analytics;
 
     var fail = function (err) {
         contentEl.innerHTML = err ? err.message : "";
-    }
+    };
 
     createActionButton("Track custom event", function () {
-        MobileCenter.Analytics.trackEvent("MyEvent", {
-            foo: "bar"
-        }, function () {
-            contentEl.innerHTML = "Success";
-        }, fail);
+        Analytics.trackEvent("MyEvent", { foo: "bar" })
+            .then(() => contentEl.innerHTML = "Success")
+            .catch(fail);
     });
 
     createActionButton("Check if enabled", function () {
-        MobileCenter.Analytics.isEnabled(function (enabled) {
-            contentEl.innerHTML = enabled ? "Enabled" : "Disabled";
-            analyticsState = enabled;
-        }, fail);
+        Analytics.isEnabled()
+            .then(enabled => {
+                contentEl.innerHTML = enabled ? "Enabled" : "Disabled";
+                analyticsState = enabled;
+            })
+            .catch(fail);
     });
 
-    function getLocalState(callback) {
-        if (analyticsState !== null) {
-            callback(analyticsState);
-            return;
-        }
-
-        MobileCenter.Analytics.isEnabled(function (enabled) {
-            analyticsState = enabled;
-            callback(enabled);
-        }, fail);
+    function getLocalState() {
+        return (analyticsState !== null) ?
+            Promise.resolve(analyticsState) : Analytics.isEnabled();
     }
 
     createActionButton("Toggle enabled/disabled", function () {
-        getLocalState(function (state) {
-            MobileCenter.Analytics.setEnabled(!state, function () {
-                MobileCenter.Analytics.isEnabled(function (enabled) {
-                    contentEl.innerHTML = enabled ? "Enabled" : "Disabled";
-                    analyticsState = enabled;
-                }, fail);
-            }, fail);
-        })
-
+        getLocalState()
+            .then(state => Analytics.setEnabled(!state))
+            .then(Analytics.isEnabled)
+            .then(enabled => {
+                contentEl.innerHTML = enabled ? "Enabled" : "Disabled";
+                analyticsState = enabled;
+            })
+            .catch(fail);
     });
 };
