@@ -58,16 +58,18 @@ To get it working in your app you will need to add some configuration values to 
   <preference name="MOBILE_CENTER_CRASHES_ALWAYS_SEND" value="false" />
   ```
 
+### Push configuration
+
 Mobile Center Push plugin doesn't have it's own configuration preferences. Instead you will need to add Google FCM configuration for Android platform in your app. To do that simply follow the steps below:
 
 1. Download `google-services.json` from Firebase portal to your app directory
 2. Add the following snippet to Android platform section in your app's `config.xml`
 
-  ```xml
-  <resource-file src="google-services.json" target="google-services.json" />
-  ```
+    ```xml
+    <resource-file src="google-services.json" target="google-services.json" />
+    ```
 
-  This will instruct Cordova to copy this file to platform directory at build time for further processing by Google Services plugin for Gradle
+    This will instruct Cordova to copy this file to platform directory at build time for further processing by Google Services plugin for Gradle
 
 That's all - you've done configuring Mobile Center Push in your app. For iOS there is no additional configuration is required.
 
