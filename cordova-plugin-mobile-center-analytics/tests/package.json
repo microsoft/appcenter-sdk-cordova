@@ -1,16 +1,12 @@
 {
+  "private": true,
   "name": "cordova-plugin-mobile-center-analytics-tests",
   "version": "0.0.1",
-  "description": "",
   "cordova": {
     "id": "cordova-plugin-mobile-center-analytics-tests",
     "platforms": [
-      "android"
+      "android",
+      "ios"
     ]
-  },
-  "keywords": [
-    "ecosystem:cordova"
-  ],
-  "author": "",
-  "license": "Apache 2.0"
+  }
 }

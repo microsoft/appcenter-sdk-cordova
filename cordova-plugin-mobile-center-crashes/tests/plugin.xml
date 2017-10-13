@@ -1,8 +1,4 @@
 <?xml version='1.0' encoding='utf-8'?>
-<!--
- Copyright (c) Microsoft Open Technologies, Inc.  All Rights Reserved.
- Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information.
--->
 <plugin id="cordova-plugin-mobile-center-crashes-tests"
         version="0.0.1"
         xmlns="http://apache.org/cordova/ns/plugins/1.0"
