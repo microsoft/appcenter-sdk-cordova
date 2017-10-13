@@ -2,15 +2,15 @@ var exec = require('cordova/exec');
 
 module.exports = {
     trackEvent: (eventName, properties) =>
-        Promise((resolve, reject) =>
+        new Promise((resolve, reject) =>
             exec(resolve, reject,
                 "MobileCenterAnalytics", "trackEvent",
                 [eventName, sanitizeProperties(properties)])),
 
-    isEnabled: () => Promise((resolve, reject) =>
+    isEnabled: () => new Promise((resolve, reject) =>
         exec(resolve, reject, "MobileCenterAnalytics", "isEnabled")),
 
-    setEnabled: (enabled) => Promise((resolve, reject) =>
+    setEnabled: (enabled) => new Promise((resolve, reject) =>
         exec(resolve, reject, "MobileCenterAnalytics", "setEnabled", [enabled])),
 };
 
