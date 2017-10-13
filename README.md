@@ -10,6 +10,10 @@ The Mobile Center SDK consists of a several plugins so you can use any or all of
 
 3. Mobile Center Push: Mobile Center Push enables you to send push notifications to users of your app from the Mobile Center portal. We use APNs for iOS apps and FCM for Android. You can also segment your user base based on a set of properties and send them targeted notifications.
 
+## Sample application
+
+You can get familiar with SDK quickly by cloning this repository and running sample app in `sample` directory. For further instructions please refer to [sample's README](sample/README.md)
+
 ## 1. Installation
 
 To add SDK to your app add the plugins for Mobile Center functionalities you want to use using Cordova CLI:
