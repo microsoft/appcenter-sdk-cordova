@@ -1,26 +1,17 @@
 var exec = require('cordova/exec');
 
 module.exports = {
-    trackEvent: function(eventName, properties, success, error) {
-        exec(success, error, "MobileCenterAnalytics", "trackEvent",
-            [eventName, sanitizeProperties(properties)]);
-    },
+    trackEvent: (eventName, properties) =>
+        Promise((resolve, reject) =>
+            exec(resolve, reject,
+                "MobileCenterAnalytics", "trackEvent",
+                [eventName, sanitizeProperties(properties)])),
 
-    isEnabled: function(success, error) {
-        exec(success, error, "MobileCenterAnalytics", "isEnabled");
-    },
+    isEnabled: () => Promise((resolve, reject) =>
+        exec(resolve, reject, "MobileCenterAnalytics", "isEnabled")),
 
-    setEnabled: function(enabled, success, error) {
-        exec(success, error, "MobileCenterAnalytics", "setEnabled", [enabled]);
-    },
-
-    /*
-    // TODO: Uncomment this once the underlying SDK supports the functionality
-    trackPage: function(pageName, properties, success, error) {
-        exec(success, error, "MobileCenterAnalytics", "trackPage",
-            [pageName, sanitizeProperties(properties)]);
-    }
-    */
+    setEnabled: (enabled) => Promise((resolve, reject) =>
+        exec(resolve, reject, "MobileCenterAnalytics", "setEnabled", [enabled])),
 };
 
 function sanitizeProperties(props) {
