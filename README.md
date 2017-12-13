@@ -30,32 +30,32 @@ This will install all three plugins.
 
 To get it working in your app you will need to add some configuration values to your app configuration in `config.xml` file. See list of available parameters below
 
-- `APP_CENTER_APP_SECRET` - _(required)_ App secret which enables App Center to map this app to the right user account
+- `APP_SECRET` - _(required)_ App secret which enables App Center to map this app to the right user account
 
   Example:
 
   ```xml
   <platform name="android">
-      <preference name="APP_CENTER_APP_SECRET" value="7a72dae0-f811-451b-8ae8-ecf7973e8359" />
+      <preference name="APP_SECRET" value="7a72dae0-f811-451b-8ae8-ecf7973e8359" />
   </platform>
   ```
 
   Notice that it's likely that Android and iOS platforms will be associated with different applications on App Center portal so you would need to add this preference twice - one for Android (as in example above) and another for iOS.
 
-- `APP_CENTER_ANALYTICS_ENABLE_IN_JS` - _(optional, default is "false")_ This preference specifies whether Analytics will be enabled automatically (default option) or will require call to `Analytics.setEnabled()` in JS code before sending any usage data to App Center portal. This might be useful e.g. in case when an application may want to ask users whether they want to share analytics information.
+- `APPCENTER_ANALYTICS_ENABLE_IN_JS` - _(optional, default is "false")_ This preference specifies whether Analytics will be enabled automatically (default option) or will require call to `Analytics.setEnabled()` in JS code before sending any usage data to App Center portal. This might be useful e.g. in case when an application may want to ask users whether they want to share analytics information.
 
   Example:
 
   ```xml
-  <preference name="APP_CENTER_ANALYTICS_ENABLE_IN_JS" value="true" />
+  <preference name="APPCENTER_ANALYTICS_ENABLE_IN_JS" value="true" />
   ```
 
-- `APP_CENTER_CRASHES_ALWAYS_SEND` - _(optional, default is "true")_ Specifies whether crash reports will always be sent automatically or would be available for processing in JavaScript  code. Opting to process crashes first means more work for the developer, but greater control over user privacy and allows you to attach a message with a crash report.
+- `APPCENTER_CRASHES_ALWAYS_SEND` - _(optional, default is "true")_ Specifies whether crash reports will always be sent automatically or would be available for processing in JavaScript  code. Opting to process crashes first means more work for the developer, but greater control over user privacy and allows you to attach a message with a crash report.
 
   Example:
 
   ```xml
-  <preference name="APP_CENTER_CRASHES_ALWAYS_SEND" value="false" />
+  <preference name="APPCENTER_CRASHES_ALWAYS_SEND" value="false" />
   ```
 
 ### Push configuration

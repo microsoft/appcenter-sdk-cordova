@@ -18,17 +18,17 @@
     <allow-intent href="geo:*" />
 
     <!-- Setting to true to be able to test functionality because default is false -->
-    <preference name="APP_CENTER_ANALYTICS_ENABLE_IN_JS" value="true" />
-    <preference name="APP_CENTER_CRASHES_ALWAYS_SEND" value="false" />
+    <preference name="APPCENTER_ANALYTICS_ENABLE_IN_JS" value="true" />
+    <preference name="APPCENTER_CRASHES_ALWAYS_SEND" value="false" />
 
     <platform name="android">
-        <preference name="APP_CENTER_APP_SECRET" value="your_android_application_id" />
+        <preference name="APP_SECRET" value="your_android_application_id" />
         <!-- <resource-file src="google-services.json" target="google-services.json" /> -->
         <allow-intent href="market:*" />
     </platform>
 
     <platform name="ios">
-        <preference name="APP_CENTER_APP_SECRET" value="your_ios_application_id" />
+        <preference name="APP_SECRET" value="your_ios_application_id" />
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>

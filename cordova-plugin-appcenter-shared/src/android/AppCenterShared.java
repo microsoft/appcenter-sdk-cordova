@@ -12,7 +12,7 @@ class AppCenterShared {
     // TODO: Refine constants
     private final static String VERSION_NAME = "0.0.1";
     private final static String SDK_NAME = "appcenter.cordova";
-    private static final String APP_CENTER_APP_SECRET = "APP_CENTER_APP_SECRET";
+    private static final String APP_SECRET = "APP_SECRET";
     private static String appSecret;
     private static final WrapperSdk wrapperSdk = new WrapperSdk();
 
@@ -30,7 +30,7 @@ class AppCenterShared {
 
     private static String getAppSecret(CordovaPreferences preferences) {
         if (AppCenterShared.appSecret == null) {
-            AppCenterShared.appSecret = preferences.getString(APP_CENTER_APP_SECRET, null);
+            AppCenterShared.appSecret = preferences.getString(APP_SECRET, null);
         }
 
         return AppCenterShared.appSecret;

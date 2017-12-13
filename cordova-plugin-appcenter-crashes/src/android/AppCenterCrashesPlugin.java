@@ -18,7 +18,7 @@ import com.microsoft.azure.mobile.utils.async.AppCenterConsumer;
 import java.util.List;
 
 public class AppCenterCrashesPlugin extends CordovaPlugin {
-    private static final String ALWAYS_SEND = "APP_CENTER_CRASHES_ALWAYS_SEND";
+    private static final String ALWAYS_SEND = "APPCENTER_CRASHES_ALWAYS_SEND";
     private CordovaCrashListenerBase crashListener;
 
     @Override

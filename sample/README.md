@@ -6,11 +6,11 @@ To run application and test those capabilities please follow the instructions be
 
 1.  Configure Application Secrets for bot iOS and Android
 
-    In `config.xml` find `APP_CENTER_APP_SECRET` preference for both iOS and Android platforms and set it's value to application secret as displayed in App Center portal
+    In `config.xml` find `APP_SECRET` preference for both iOS and Android platforms and set it's value to application secret as displayed in App Center portal
 
 2.  Change other plugins preferences if required
 
-    Change `APP_CENTER_ANALYTICS_ENABLE_IN_JS` and `APP_CENTER_CRASHES_ALWAYS_SEND` values if you want. By default application is configured to not send analytics automatically to demonstrate/test scenario with programmatic switching App Center Analytics functionality on and off; Crashes plugin is also configured to process crashes in JS rather than send them automatically to demonstrate crashes processing and reports events handling.
+    Change `APPCENTER_ANALYTICS_ENABLE_IN_JS` and `APPCENTER_CRASHES_ALWAYS_SEND` values if you want. By default application is configured to not send analytics automatically to demonstrate/test scenario with programmatic switching App Center Analytics functionality on and off; Crashes plugin is also configured to process crashes in JS rather than send them automatically to demonstrate crashes processing and reports events handling.
 
 3.  Configure Google FCM
 

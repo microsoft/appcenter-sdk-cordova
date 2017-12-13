@@ -14,7 +14,7 @@
     [MSAppCenter startService:[MSAnalytics class]];
 
     BOOL enableInJs = [self.commandDelegate.settings
-                       cordovaBoolSettingForKey:@"APP_CENTER_ANALYTICS_ENABLE_IN_JS"
+                       cordovaBoolSettingForKey:@"APPCENTER_ANALYTICS_ENABLE_IN_JS"
                        defaultValue:NO];
 
     if (enableInJs) {

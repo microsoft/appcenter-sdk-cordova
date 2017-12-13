@@ -14,7 +14,7 @@ static MSWrapperSdk * wrapperSdk;
 + (NSString *) getAppSecretWithSettings: (NSDictionary*) settings
 {
     if (appSecret == nil) {
-        appSecret = [settings cordovaSettingForKey:@"APP_CENTER_APP_SECRET"];
+        appSecret = [settings cordovaSettingForKey:@"APP_SECRET"];
         // If the AppSecret is not set, we will pass nil to MSAppCenter which will error out, as expected
     }
 

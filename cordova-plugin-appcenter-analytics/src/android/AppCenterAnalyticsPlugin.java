@@ -14,7 +14,7 @@ import com.microsoft.azure.mobile.AppCenter;
 import com.microsoft.azure.mobile.analytics.Analytics;
 
 public class AppCenterAnalyticsPlugin extends CordovaPlugin {
-    private static final String ENABLE_IN_JS = "APP_CENTER_ANALYTICS_ENABLE_IN_JS";
+    private static final String ENABLE_IN_JS = "APPCENTER_ANALYTICS_ENABLE_IN_JS";
 
     @Override
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
