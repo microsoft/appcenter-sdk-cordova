@@ -1,7 +1,7 @@
 {
-  "name": "cordova-plugin-appcenter-push",
+  "name": "cordova-plugin-appcenter-shared",
   "version": "0.0.1",
-  "description": "Provides Microsoft Azure Mobile Center Push client for Cordova",
+  "description": "Provides Microsoft Azure App Center shared functionality for Cordova",
   "license": "MIT",
   "author": "Microsoft Corporation",
   "repository": {
@@ -13,7 +13,7 @@
   },
   "homepage": "https://github.com/Microsoft/appcenter-sdk-cordova/blob/master/README.md",
   "cordova": {
-    "id": "appcenter-crashes",
+    "id": "cordova-plugin-appcenter-shared",
     "platforms": [
       "android",
       "ios"
@@ -22,8 +22,8 @@
   "keywords": [
     "microsoft",
     "azure",
-    "mobile center",
-    "push",
+    "app center",
+    "crashes",
     "ecosystem:cordova",
     "cordova-android",
     "cordova-ios"
