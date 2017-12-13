@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 #import <Cordova/CDVPlugin.h>
 
-// Implements Apache Cordova plugin for Mobile Center Crashes
+// Implements Apache Cordova plugin for App Center Crashes
 @interface MobileCenterCrashesPlugin : CDVPlugin
 
 - (void)pluginInitialize;

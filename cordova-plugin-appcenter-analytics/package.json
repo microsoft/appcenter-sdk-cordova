@@ -1,7 +1,7 @@
 {
-  "name": "cordova-plugin-appcenter-shared",
+  "name": "cordova-plugin-appcenter-analytics",
   "version": "0.0.1",
-  "description": "Provides Microsoft Azure Mobile Center shared functionality for Cordova",
+  "description": "Provides Microsoft Azure App Center Analytics client for Cordova",
   "license": "MIT",
   "author": "Microsoft Corporation",
   "repository": {
@@ -13,7 +13,7 @@
   },
   "homepage": "https://github.com/Microsoft/appcenter-sdk-cordova/blob/master/README.md",
   "cordova": {
-    "id": "cordova-plugin-appcenter-shared",
+    "id": "appcenter-analytics",
     "platforms": [
       "android",
       "ios"
@@ -22,8 +22,8 @@
   "keywords": [
     "microsoft",
     "azure",
-    "mobile center",
-    "crashes",
+    "app center",
+    "analytics",
     "ecosystem:cordova",
     "cordova-android",
     "cordova-ios"

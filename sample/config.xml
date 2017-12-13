@@ -3,9 +3,9 @@
         xmlns="http://www.w3.org/ns/widgets"
         xmlns:cdv="http://cordova.apache.org/ns/1.0">
 
-    <name>Mobile Center Demo</name>
+    <name>App Center Demo</name>
     <description>
-        A sample Apache Cordova application to demostrate Mobile Center plugin capabilities
+        A sample Apache Cordova application to demostrate App Center plugin capabilities
     </description>
 
     <content src="cdvtests/index.html" />

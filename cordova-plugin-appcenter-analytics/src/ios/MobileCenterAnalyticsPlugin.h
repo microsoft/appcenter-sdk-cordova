@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 #import <Cordova/CDVPlugin.h>
 
-// Implements Apache Cordova plugin for Mobile Center Analytics
+// Implements Apache Cordova plugin for App Center Analytics
 @interface MobileCenterAnalyticsPlugin : CDVPlugin
 
 - (void)pluginInitialize;

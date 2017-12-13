@@ -1,7 +1,7 @@
 {
   "name": "cordova-plugin-appcenter-crashes",
   "version": "0.0.1",
-  "description": "Provides Microsoft Azure Mobile Center Crashes client for Cordova",
+  "description": "Provides Microsoft Azure App Center Crashes client for Cordova",
   "license": "MIT",
   "author": "Microsoft Corporation",
   "repository": {
@@ -22,7 +22,7 @@
   "keywords": [
     "microsoft",
     "azure",
-    "mobile center",
+    "app center",
     "crashes",
     "ecosystem:cordova",
     "cordova-android",

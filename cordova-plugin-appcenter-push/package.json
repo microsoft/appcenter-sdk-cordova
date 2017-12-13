@@ -1,7 +1,7 @@
 {
-  "name": "cordova-plugin-appcenter-analytics",
+  "name": "cordova-plugin-appcenter-push",
   "version": "0.0.1",
-  "description": "Provides Microsoft Azure Mobile Center Analytics client for Cordova",
+  "description": "Provides Microsoft Azure App Center Push client for Cordova",
   "license": "MIT",
   "author": "Microsoft Corporation",
   "repository": {
@@ -13,7 +13,7 @@
   },
   "homepage": "https://github.com/Microsoft/appcenter-sdk-cordova/blob/master/README.md",
   "cordova": {
-    "id": "appcenter-analytics",
+    "id": "appcenter-crashes",
     "platforms": [
       "android",
       "ios"
@@ -22,8 +22,8 @@
   "keywords": [
     "microsoft",
     "azure",
-    "mobile center",
-    "analytics",
+    "app center",
+    "push",
     "ecosystem:cordova",
     "cordova-android",
     "cordova-ios"

@@ -1,17 +1,18 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="cordova-plugin-appcenter-analytics"
+<plugin id="cordova-plugin-appcenter-crashes"
         version="0.0.1"
         xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <name>Mobile Center Analytics for Cordova</name>
+    <name>App Center Crashes for Cordova</name>
     <description>
-        Provides Microsoft Azure Mobile Center Analytics client for Cordova
+        Provides Microsoft Azure App Center Crashes client for Cordova
     </description>
     <license>MIT</license>
-    <keywords>microsoft, azure, mobile center, analytics</keywords>
+    <keywords>microsoft, azure, app center, crashes</keywords>
     <repo>https://github.com/Microsoft/appcenter-sdk-cordova</repo>
     <issue>https://github.com/Microsoft/appcenter-sdk-cordova/issues</issue>
+
 
     <!-- Required gradle functionality support -->
     <engine name="cordova-android" version=">=4.1.0" />
@@ -23,16 +24,16 @@
                 subdir="cordova-plugin-appcenter-shared"
                 url="." />
 
-    <js-module name="Analytics" src="www/Analytics.js">
-        <clobbers target="MobileCenter.Analytics" />
+    <js-module name="Crashes" src="www/Crashes.js">
+        <clobbers target="MobileCenter.Crashes" />
     </js-module>
 
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="MobileCenterAnalytics">
+            <feature name="MobileCenterCrashes">
                 <param name="onload" value="true" />
                 <param name="android-package"
-                       value="com.microsoft.azure.mobile.cordova.MobileCenterAnalyticsPlugin"/>
+                       value="com.microsoft.azure.mobile.cordova.MobileCenterCrashesPlugin"/>
             </feature>
         </config-file>
 
@@ -41,26 +42,34 @@
             <uses-permission android:name="android.permission.INTERNET" />
         </config-file>
 
-        <framework src="com.microsoft.azure.mobile:appcenter-analytics:0.12.0" />
+        <framework src="com.microsoft.azure.mobile:appcenter-crashes:0.12.0" />
 
-        <source-file src="src/android/MobileCenterAnalyticsPlugin.java"
+        <source-file src="src/android/MobileCenterCrashesPlugin.java"
                      target-dir="src/com/microsoft/azure/mobile/cordova" />
 
-        <source-file src="src/android/AnalyticsUtils.java"
+        <source-file src="src/android/CordovaCrashListener.java"
                      target-dir="src/com/microsoft/azure/mobile/cordova" />
 
+        <source-file src="src/android/CrashesUtils.java"
+                     target-dir="src/com/microsoft/azure/mobile/cordova" />
     </platform>
 
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
-            <feature name="MobileCenterAnalytics">
-                <param name="ios-package" value="MobileCenterAnalyticsPlugin" />
+            <feature name="MobileCenterCrashes">
+                <param name="ios-package" value="MobileCenterCrashesPlugin" />
                 <param name="onload" value="true" />
             </feature>
         </config-file>
 
-        <header-file src="src/ios/MobileCenterAnalyticsPlugin.h" />
-        <source-file src="src/ios/MobileCenterAnalyticsPlugin.m" />
+        <header-file src="src/ios/MobileCenterCrashesPlugin.h" />
+        <source-file src="src/ios/MobileCenterCrashesPlugin.m" />
+
+        <header-file src="src/ios/CordovaCrashesDelegate.h" />
+        <source-file src="src/ios/CordovaCrashesDelegate.m" />
+
+        <header-file src="src/ios/CrashesUtils.h" />
+        <source-file src="src/ios/CrashesUtils.m" />
 
         <framework src="MobileCenter" type="podspec" spec="" />
     </platform>

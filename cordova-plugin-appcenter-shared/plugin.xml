@@ -4,12 +4,12 @@
         xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <name>Mobile Center shared code for Cordova</name>
+    <name>App Center shared code for Cordova</name>
     <description>
-        Provides Microsoft Azure Mobile Center shared functionality for Cordova
+        Provides Microsoft Azure App Center shared functionality for Cordova
     </description>
     <license>MIT</license>
-    <keywords>microsoft, azure, mobile center, shared</keywords>
+    <keywords>microsoft, azure, app center, shared</keywords>
     <repo>https://github.com/Microsoft/appcenter-sdk-cordova</repo>
     <issue>https://github.com/Microsoft/appcenter-sdk-cordova/issues</issue>
 
