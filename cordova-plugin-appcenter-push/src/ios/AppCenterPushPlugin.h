@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 #import <Cordova/CDVPlugin.h>
 
-// Implements Apache Cordova plugin for Mobile Center Push notifications
+// Implements Apache Cordova plugin for App Center Push notifications
 @interface AppCenterPushPlugin : CDVPlugin
 
 - (void)pluginInitialize;

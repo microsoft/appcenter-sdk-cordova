@@ -1,17 +1,17 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="cordova-plugin-mobile-center-shared"
+<plugin id="cordova-plugin-appcenter-shared"
         version="0.0.1"
         xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <name>Mobile Center shared code for Cordova</name>
+    <name>App Center shared code for Cordova</name>
     <description>
-        Provides Microsoft Azure Mobile Center shared functionality for Cordova
+        Provides Microsoft Azure App Center shared functionality for Cordova
     </description>
     <license>MIT</license>
-    <keywords>microsoft, azure, mobile center, shared</keywords>
-    <repo>https://github.com/Microsoft/mobile-center-sdk-cordova</repo>
-    <issue>https://github.com/Microsoft/mobile-center-sdk-cordova/issues</issue>
+    <keywords>microsoft, azure, app center, shared</keywords>
+    <repo>https://github.com/Microsoft/appcenter-sdk-cordova</repo>
+    <issue>https://github.com/Microsoft/appcenter-sdk-cordova/issues</issue>
 
     <!-- Required gradle functionality support -->
     <engine name="cordova-android" version=">=4.1.0" />

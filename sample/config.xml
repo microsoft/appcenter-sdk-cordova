@@ -3,9 +3,9 @@
         xmlns="http://www.w3.org/ns/widgets"
         xmlns:cdv="http://cordova.apache.org/ns/1.0">
 
-    <name>Mobile Center Demo</name>
+    <name>App Center Demo</name>
     <description>
-        A sample Apache Cordova application to demostrate Mobile Center plugin capabilities
+        A sample Apache Cordova application to demostrate App Center plugin capabilities
     </description>
 
     <content src="cdvtests/index.html" />
@@ -18,17 +18,17 @@
     <allow-intent href="geo:*" />
 
     <!-- Setting to true to be able to test functionality because default is false -->
-    <preference name="MOBILE_CENTER_ANALYTICS_ENABLE_IN_JS" value="true" />
-    <preference name="MOBILE_CENTER_CRASHES_ALWAYS_SEND" value="false" />
+    <preference name="APP_CENTER_ANALYTICS_ENABLE_IN_JS" value="true" />
+    <preference name="APP_CENTER_CRASHES_ALWAYS_SEND" value="false" />
 
     <platform name="android">
-        <preference name="MOBILE_CENTER_APP_SECRET" value="your_android_application_id" />
+        <preference name="APP_CENTER_APP_SECRET" value="your_android_application_id" />
         <!-- <resource-file src="google-services.json" target="google-services.json" /> -->
         <allow-intent href="market:*" />
     </platform>
 
     <platform name="ios">
-        <preference name="MOBILE_CENTER_APP_SECRET" value="your_ios_application_id" />
+        <preference name="APP_CENTER_APP_SECRET" value="your_ios_application_id" />
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
