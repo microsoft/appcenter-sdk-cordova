@@ -16,7 +16,7 @@ You can get familiar with SDK quickly by cloning this repository and running sam
 
 ## 1. Installation
 
-To add SDK to your app add the plugins for App Center functionalities you want to use using Cordova CLI:
+Add the App Center plugins that fit your needs directly from the Cordova CLI:
 
 ```bash
 cordova plugin add cordova-plugin-appcenter-analytics
@@ -24,9 +24,9 @@ cordova plugin add cordova-plugin-appcenter-crashes
 cordova plugin add cordova-plugin-appcenter-push
 ```
 
-This will install all three plugins.
+This will install all three of the plugins available today.
 
-## 2. Configuration
+## 2. Link the SDK
 
 To get it working in your app you will need to add some configuration values to your app configuration in `config.xml` file. See list of available parameters below
 
@@ -42,7 +42,8 @@ To get it working in your app you will need to add some configuration values to 
 
   Notice that it's likely that Android and iOS platforms will be associated with different applications on App Center portal so you would need to add this preference twice - one for Android (as in example above) and another for iOS.
 
-- `APPCENTER_ANALYTICS_ENABLE_IN_JS` - _(optional, default is "false")_ This preference specifies whether Analytics will be enabled automatically (default option) or will require call to `Analytics.setEnabled()` in JS code before sending any usage data to App Center portal. This might be useful e.g. in case when an application may want to ask users whether they want to share analytics information.
+## 3. Configure Preferences
+- `APPCENTER_ANALYTICS_ENABLE_IN_JS` - _(optional, default is "false")_ This preference controls whether Analytics will be enabled automatically (default option) or will require call to `Analytics.setEnabled()` in JS code before sending any usage data to App Center portal. This might be useful e.g. in case when an application may want to ask users whether they want to share analytics information.
 
   Example:
 
