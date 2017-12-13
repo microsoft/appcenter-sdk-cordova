@@ -1,9 +1,9 @@
 {
   "private": true,
-  "name": "cordova-plugin-mobile-center-crashes-tests",
+  "name": "cordova-plugin-appcenter-crashes-tests",
   "version": "0.0.1",
   "cordova": {
-    "id": "cordova-plugin-mobile-center-crashes-tests",
+    "id": "cordova-plugin-appcenter-crashes-tests",
     "platforms": [
       "android",
       "ios"

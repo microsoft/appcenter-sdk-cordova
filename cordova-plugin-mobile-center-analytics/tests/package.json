@@ -1,9 +1,9 @@
 {
   "private": true,
-  "name": "cordova-plugin-mobile-center-analytics-tests",
+  "name": "cordova-plugin-appcenter-analytics-tests",
   "version": "0.0.1",
   "cordova": {
-    "id": "cordova-plugin-mobile-center-analytics-tests",
+    "id": "cordova-plugin-appcenter-analytics-tests",
     "platforms": [
       "android",
       "ios"
