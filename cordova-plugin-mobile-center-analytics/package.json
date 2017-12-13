@@ -1,19 +1,19 @@
 {
-  "name": "cordova-plugin-mobile-center-analytics",
+  "name": "cordova-plugin-appcenter-analytics",
   "version": "0.0.1",
   "description": "Provides Microsoft Azure Mobile Center Analytics client for Cordova",
   "license": "MIT",
   "author": "Microsoft Corporation",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Microsoft/mobile-center-sdk-cordova.git"
+    "url": "git+https://github.com/Microsoft/appcenter-sdk-cordova.git"
   },
   "bugs": {
-    "url": "https://github.com/Microsoft/mobile-center-sdk-cordova/issues"
+    "url": "https://github.com/Microsoft/appcenter-sdk-cordova/issues"
   },
-  "homepage": "https://github.com/Microsoft/mobile-center-sdk-cordova/blob/master/README.md",
+  "homepage": "https://github.com/Microsoft/appcenter-sdk-cordova/blob/master/README.md",
   "cordova": {
-    "id": "mobile-center-analytics",
+    "id": "appcenter-analytics",
     "platforms": [
       "android",
       "ios"

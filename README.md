@@ -19,9 +19,9 @@ You can get familiar with SDK quickly by cloning this repository and running sam
 To add SDK to your app add the plugins for Mobile Center functionalities you want to use using Cordova CLI:
 
 ```bash
-cordova plugin add cordova-plugin-mobile-center-analytics
-cordova plugin add cordova-plugin-mobile-center-crashes
-cordova plugin add cordova-plugin-mobile-center-push
+cordova plugin add cordova-plugin-appcenter-analytics
+cordova plugin add cordova-plugin-appcenter-crashes
+cordova plugin add cordova-plugin-appcenter-push
 ```
 
 This will install all three plugins.

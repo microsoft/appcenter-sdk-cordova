@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="cordova-plugin-mobile-center-analytics"
+<plugin id="cordova-plugin-appcenter-analytics"
         version="0.0.1"
         xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android">
@@ -10,8 +10,8 @@
     </description>
     <license>MIT</license>
     <keywords>microsoft, azure, mobile center, analytics</keywords>
-    <repo>https://github.com/Microsoft/mobile-center-sdk-cordova</repo>
-    <issue>https://github.com/Microsoft/mobile-center-sdk-cordova/issues</issue>
+    <repo>https://github.com/Microsoft/appcenter-sdk-cordova</repo>
+    <issue>https://github.com/Microsoft/appcenter-sdk-cordova/issues</issue>
 
     <!-- Required gradle functionality support -->
     <engine name="cordova-android" version=">=4.1.0" />
@@ -19,8 +19,8 @@
     <engine name="cordova" version=">=6.4.0" />
     <engine name="cordova-ios" version=">=4.3.0" />
 
-    <dependency id="cordova-plugin-mobile-center-shared"
-                subdir="cordova-plugin-mobile-center-shared"
+    <dependency id="cordova-plugin-appcenter-shared"
+                subdir="cordova-plugin-appcenter-shared"
                 url="." />
 
     <js-module name="Analytics" src="www/Analytics.js">
@@ -41,7 +41,7 @@
             <uses-permission android:name="android.permission.INTERNET" />
         </config-file>
 
-        <framework src="com.microsoft.azure.mobile:mobile-center-analytics:0.12.0" />
+        <framework src="com.microsoft.azure.mobile:appcenter-analytics:0.12.0" />
 
         <source-file src="src/android/MobileCenterAnalyticsPlugin.java"
                      target-dir="src/com/microsoft/azure/mobile/cordova" />
