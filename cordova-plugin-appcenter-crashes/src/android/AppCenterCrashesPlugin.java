@@ -10,10 +10,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.microsoft.azure.mobile.AppCenter;
-import com.microsoft.azure.mobile.crashes.Crashes;
-import com.microsoft.azure.mobile.crashes.model.ErrorReport;
-import com.microsoft.azure.mobile.utils.async.AppCenterConsumer;
+import com.microsoft.appcenter.AppCenter;
+import com.microsoft.appcenter.crashes.Crashes;
+import com.microsoft.appcenter.crashes.model.ErrorReport;
+import com.microsoft.appcenter.utils.async.AppCenterConsumer;
 
 import java.util.List;
 

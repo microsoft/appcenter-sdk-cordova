@@ -8,8 +8,8 @@ import org.apache.cordova.CordovaWebView;
 import org.json.JSONArray;
 import org.json.JSONException;
 
-import com.microsoft.azure.mobile.AppCenter;
-import com.microsoft.azure.mobile.push.Push;
+import com.microsoft.appcenter.AppCenter;
+import com.microsoft.appcenter.push.Push;
 
 public class AppCenterPushPlugin extends CordovaPlugin {
     private CordovaPushListener listener;

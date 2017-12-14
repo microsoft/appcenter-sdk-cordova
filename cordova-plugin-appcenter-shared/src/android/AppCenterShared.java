@@ -4,8 +4,8 @@ import android.app.Application;
 
 import org.apache.cordova.CordovaPreferences;
 
-import com.microsoft.azure.mobile.AppCenter;
-import com.microsoft.azure.mobile.ingestion.models.WrapperSdk;
+import com.microsoft.appcenter.AppCenter;
+import com.microsoft.appcenter.ingestion.models.WrapperSdk;
 
 class AppCenterShared {
 
