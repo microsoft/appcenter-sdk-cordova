@@ -10,8 +10,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.microsoft.azure.mobile.AppCenter;
-import com.microsoft.azure.mobile.analytics.Analytics;
+import com.microsoft.appcenter.AppCenter;
+import com.microsoft.appcenter.analytics.Analytics;
 
 public class AppCenterAnalyticsPlugin extends CordovaPlugin {
     private static final String ENABLE_IN_JS = "APPCENTER_ANALYTICS_ENABLE_IN_JS";

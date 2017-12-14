@@ -1,6 +1,6 @@
 package com.microsoft.azure.mobile.cordova;
 
-import com.microsoft.azure.mobile.push.PushNotification;
+import com.microsoft.appcenter.push.PushNotification;
 
 import java.util.Iterator;
 import java.util.Map;

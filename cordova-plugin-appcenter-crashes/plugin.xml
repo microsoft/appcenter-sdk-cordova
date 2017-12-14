@@ -42,7 +42,7 @@
             <uses-permission android:name="android.permission.INTERNET" />
         </config-file>
 
-        <framework src="com.microsoft.azure.mobile:appcenter-crashes:0.12.0" />
+        <framework src="com.microsoft.appcenter:appcenter-crashes:1.1.0" />
 
         <source-file src="src/android/AppCenterCrashesPlugin.java"
                      target-dir="src/com/microsoft/azure/mobile/cordova" />

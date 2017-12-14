@@ -3,8 +3,8 @@ package com.microsoft.azure.mobile.cordova;
 import android.app.Activity;
 import android.util.Log;
 
-import com.microsoft.azure.mobile.push.PushListener;
-import com.microsoft.azure.mobile.push.PushNotification;
+import com.microsoft.appcenter.push.PushListener;
+import com.microsoft.appcenter.push.PushNotification;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.LOG;

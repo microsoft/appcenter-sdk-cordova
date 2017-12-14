@@ -1,7 +1,7 @@
 package com.microsoft.azure.mobile.cordova;
 
-import com.microsoft.azure.mobile.utils.async.AppCenterConsumer;
-import com.microsoft.azure.mobile.utils.async.AppCenterFuture;
+import com.microsoft.appcenter.utils.async.AppCenterConsumer;
+import com.microsoft.appcenter.utils.async.AppCenterFuture;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.PluginResult;

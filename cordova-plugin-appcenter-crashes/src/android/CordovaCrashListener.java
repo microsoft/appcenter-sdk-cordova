@@ -1,11 +1,10 @@
 package com.microsoft.azure.mobile.cordova;
 
-import com.microsoft.azure.mobile.crashes.AbstractCrashesListener;
-
 import android.util.Base64;
 
-import com.microsoft.azure.mobile.crashes.ingestion.models.ErrorAttachmentLog;
-import com.microsoft.azure.mobile.crashes.model.ErrorReport;
+import com.microsoft.appcenter.crashes.AbstractCrashesListener;
+import com.microsoft.appcenter.crashes.ingestion.models.ErrorAttachmentLog;
+import com.microsoft.appcenter.crashes.model.ErrorReport;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.LOG;
