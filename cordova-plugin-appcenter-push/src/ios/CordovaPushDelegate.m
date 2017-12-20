@@ -24,7 +24,7 @@ static NSString *ON_PUSH_NOTIFICATION_RECEIVED_EVENT = @"notificationReceived";
         return;
     }
 
-    [self sendCordovaEventWithBody:self.initialNotification];
+    [self sendCordovaEventWithBody:convertNotificationToJS(pushNotification)];
 }
 
 - (void) sendCordovaEventWithBody: (NSDictionary*) body
@@ -34,7 +34,7 @@ static NSString *ON_PUSH_NOTIFICATION_RECEIVED_EVENT = @"notificationReceived";
                                             messageAsDictionary:event];
 
     [result setKeepCallbackAsBool:YES];
-    [self.crashesPlugin.commandDelegate sendPluginResult:result callbackId:self.eventsCallbackId];
+    [self.pushPlugin.commandDelegate sendPluginResult:result callbackId:self.eventsCallbackId];
 }
 
 - (void) sendAndClearInitialNotification
@@ -49,7 +49,7 @@ static NSString *ON_PUSH_NOTIFICATION_RECEIVED_EVENT = @"notificationReceived";
 - (void) setEventsCallbackChannelForPlugin: (AppCenterPushPlugin*) plugin
                                 callbackId: (NSString*) id
 {
-    self.crashesPlugin = plugin;
+    self.pushPlugin = plugin;
     self.eventsCallbackId = id;
 }
 

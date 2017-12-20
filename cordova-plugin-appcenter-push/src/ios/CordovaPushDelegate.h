@@ -17,5 +17,5 @@
 @property BOOL saveInitialNotification;
 @property NSDictionary* initialNotification;
 @property NSString* eventsCallbackId;
-@property AppCenterPushPlugin* crashesPlugin;
+@property AppCenterPushPlugin* pushPlugin;
 @end
