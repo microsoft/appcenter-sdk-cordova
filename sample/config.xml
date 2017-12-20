@@ -23,7 +23,7 @@
 
     <platform name="android">
         <preference name="APP_SECRET" value="your_android_application_id" />
-        <!-- <resource-file src="google-services.json" target="google-services.json" /> -->
+        <preference name="FIREBASE_SENDER_ID" value="your_firebase_sender_id" />
         <allow-intent href="market:*" />
     </platform>
 
@@ -32,9 +32,9 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
-
-    <engine name="android" spec="~6.3.0" />
-    <engine name="ios" spec="~4.5.1" />
+    <engine name="ios" spec="^4.5.4" />
+    <engine name="android" spec="^7.0.0" />
+    <plugin name="cordova-plugin-whitelist" spec="^1.3.3" />
     <plugin name="cordova-plugin-whitelist" spec="^1.3.2" />
     <plugin name="cordova-plugin-appcenter-analytics"
             spec="../cordova-plugin-appcenter-analytics" />

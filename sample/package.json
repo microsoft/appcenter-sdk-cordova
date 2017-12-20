@@ -14,7 +14,7 @@
     "homepage": "https://github.com/Microsoft/appcenter-sdk-cordova/blob/master/sample/README.md",
     "devDependencies": {
         "android-versions": "^1.2.1",
-        "cordova": "6.x"
+        "cordova": "8.0.0"
     },
     "scripts": {
         "clean": "rm -rf platforms plugins",
