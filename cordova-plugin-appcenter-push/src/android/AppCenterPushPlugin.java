@@ -12,6 +12,7 @@ import com.microsoft.appcenter.AppCenter;
 import com.microsoft.appcenter.push.Push;
 
 public class AppCenterPushPlugin extends CordovaPlugin {
+    private static final String SENDER_ID = "FIREBASE_SENDER_ID";
     private CordovaPushListener listener;
 
     @Override
@@ -22,8 +23,12 @@ public class AppCenterPushPlugin extends CordovaPlugin {
                 cordova.getActivity().getApplication(),
                 webView.getPreferences());
 
+        String senderId = webView.getPreferences().getString(SENDER_ID, null);
+        Push.setSenderId(senderId);
+
         listener = new CordovaPushListener();
         Push.setListener(listener);
+        
         AppCenter.start(Push.class);
     }
 
