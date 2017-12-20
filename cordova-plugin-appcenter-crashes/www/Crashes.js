@@ -33,6 +33,7 @@ var Crashes = {
         function failIfNotEnabled(error) {
             // TODO: Make sure that native getCrashReports waits for Crashes to be enabled first
             // TODO: Check for error name/class - this might be e.g. JSONException
+            // TODO: error should be passed to errorCallback
             error('App Center crashes is not enabled.');
         }
 
