@@ -49,7 +49,7 @@
 
 - (void)trackEvent:(CDVInvokedUrlCommand *)command
 {
-    NSString* eventName = [[command argumentAtIndex:0] stringValue];
+    NSString* eventName = [command argumentAtIndex:0 withDefault:nil andClass:[NSString class]];
     NSDictionary* properties = [command argumentAtIndex:1];
 
     [MSAnalytics trackEvent:eventName withProperties:properties];
