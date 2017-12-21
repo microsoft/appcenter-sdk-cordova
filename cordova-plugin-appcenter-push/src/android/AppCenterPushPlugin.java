@@ -23,7 +23,7 @@ public class AppCenterPushPlugin extends CordovaPlugin {
                 cordova.getActivity().getApplication(),
                 webView.getPreferences());
 
-        String senderId = webView.getPreferences().getString(SENDER_ID, null);
+        String senderId = webView.getPreferences().getString(SENDER_ID, null).replace("'", "");
         Push.setSenderId(senderId);
 
         listener = new CordovaPushListener();
