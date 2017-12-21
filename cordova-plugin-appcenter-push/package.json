@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-appcenter-push",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Provides Microsoft Azure App Center Push client for Cordova",
   "license": "MIT",
   "author": "Microsoft Corporation",
