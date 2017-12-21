@@ -20,7 +20,7 @@
     <engine name="cordova-ios" version=">=4.3.0" />
 
     <dependency id="cordova-plugin-appcenter-shared"
-                subdir="cordova-plugin-appcenter-shared"
+                subdir="../cordova-plugin-appcenter-shared"
                 url="." />
 
     <js-module name="Analytics" src="www/Analytics.js">
