@@ -66,7 +66,7 @@
 
         <div data-role="main" class="ui-content">
             <button id="btn_toggle_crashes">Enable</button>
-            <button id="btn_crash_js">Crash Javascript</button>
+            <button id="btn_crash_js" class="ui-disabled">Crash Javascript (coming soon)</button>
             <button id="btn_crash_native">Crash native code</button>
             <a href="#popupBasic" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-transition="pop">Set text attachment</a>
             <p class="comment" id="text_attachment_value">Current value: not set</p>
@@ -109,19 +109,14 @@
         </div>
 
         <div data-role="main" class="ui-content">
-            <h2>This Appcenter features aren't yet enabled for cordova. Coming soon!</h2>
-
-            <div class="overlay">
-                <button id="btn_toggle_appcenter">Enable Appcenter</button>
-                <button id="btn_set_custom_props">Set custom properties</button>
-                <h3>Install ID: unknown</h3>
-                <p class="comment"></p>
-                <h3>
-                    <span id="lbl_log_level">Log level: 2</span>
-                    <i style="padding-left:10px;" class="fas fa-plus"></i>
-                </h3>            
-            </div>
-
+        <h2>These Appcenter features aren't yet enabled for cordova. Coming soon!</h2>
+            <button class="ui-disabled" id="btn_toggle_appcenter">Enable Appcenter</button>
+            <button class="ui-disabled" id="btn_set_custom_props">Set custom properties</button>
+            <h3 class="ui-disabled" >Install ID: unknown</h3>
+            <h3>
+                <span class="ui-disabled" id="lbl_log_level">Log level: 2</span>
+                <i class="fas fa-plus ui-disabled"></i>
+            </h3>            
         </div>
 
         <div data-role="footer">

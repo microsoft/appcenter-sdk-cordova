@@ -59,12 +59,6 @@ p.comment {
     color: #059;
 }
 
-.overlay { 
-    background-color:#fff;
-    opacity:0.2;
-    z-index:1001;
-}
-
 a.ui-btn {
     box-sizing: border-box;
 }
@@ -80,4 +74,8 @@ a.ui-btn {
     padding-right: 10%;
     padding-top: 10%;
     padding-bottom: 15%;
+}
+
+#lbl_log_level + i {
+    padding-left:10px;
 }

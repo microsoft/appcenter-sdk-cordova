@@ -34,7 +34,7 @@ $(document).bind('pageinit', function () {
             message += '\nCustom properties:\n' + JSON.stringify(pushNotification.customProperties);
         }
 
-        alert("title = " + title + ";message = " + message)
+        alert("title = " + title + "; message = " + message)
     }
 
     $("#push_link").off('click').on('click', function (event, ui) {
