@@ -46,10 +46,38 @@ div[data-role="main"] a {
    text-align: center;
 }
 
+/*Custom styles*/
 h1 {
     margin: 0 2% !important;
 }
 
 h1 i {
     float:left;
+}
+
+p.comment {
+    color: #059;
+}
+
+.overlay { 
+    background-color:#fff;
+    opacity:0.2;
+    z-index:1001;
+}
+
+a.ui-btn {
+    box-sizing: border-box;
+}
+
+#crash_report {
+    padding-bottom:30px; 
+    text-align:justify; 
+    overflow-wrap: break-word;
+}
+
+#popupBasic {      
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 10%;
+    padding-bottom: 15%;
 }

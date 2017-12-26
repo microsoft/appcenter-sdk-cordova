@@ -32,6 +32,8 @@
     <plugin name="cordova-plugin-appcenter-analytics" spec="^0.1.3" />
     <plugin name="cordova-plugin-appcenter-crashes" spec="^0.1.3" />
     <plugin name="cordova-plugin-appcenter-push" spec="^0.1.3" />
+    <plugin name="com.ourcodeworld.plugins.Filebrowser" spec="https://github.com/ourcodeworld/cordova-ourcodeworld-filebrowser.git" />
+    <plugin name="cordova-plugin-file" spec="^4.0.0" />
     <engine name="ios" spec="^4.5.4" />
     <engine name="android" spec="^7.0.0" />
 </widget>

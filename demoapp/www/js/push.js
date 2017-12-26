@@ -2,11 +2,16 @@ $(document).bind('pageinit', function () {
 
     var pushEnabled = false;
 
-    var DISABLED_LBL = "Enable";
-    var ENABLED_LBL = "Disable";
+    var DISABLED_LBL = "Enable Push";
+    var ENABLED_LBL = "Disable Push";
 
-    var updateToggleButton = function() {
+    var updatePush = function() {
         $("#btn_toggle_push").html(pushEnabled ? ENABLED_LBL : DISABLED_LBL);
+        if(pushEnabled) {
+            AppCenter.Push.addEventListener('notificationReceived', onNotificationReceived); 
+        } else {
+            AppCenter.Push.removeEventListener('notificationReceived', onNotificationReceived); 
+        }
     }
 
     var errorHandler = function(err) {
@@ -29,26 +34,18 @@ $(document).bind('pageinit', function () {
             message += '\nCustom properties:\n' + JSON.stringify(pushNotification.customProperties);
         }
 
-        alert(title, message)
+        alert("title = " + title + ";message = " + message)
     }
 
     $("#push_link").off('click').on('click', function (event, ui) {
         AppCenter.Push.isEnabled(function (isEnabled) {
             pushEnabled = isEnabled;
-            updateToggleButton();
+            updatePush();
         });
     });
 
     $("#btn_toggle_push").off('click').on('click', function (event, ui) {
         pushEnabled = !pushEnabled;
-        var success = function() {
-            updateToggleButton();
-            if(pushEnabled) {
-                AppCenter.Push.addEventListener('notificationReceived', onNotificationReceived); 
-            } else {
-                AppCenter.Push.removeEventListener('notificationReceived', onNotificationReceived); 
-            }
-        }
-        AppCenter.Push.setEnabled(pushEnabled, success, errorHandler);
+        AppCenter.Push.setEnabled(pushEnabled, updatePush, errorHandler);
     }); 
 });  

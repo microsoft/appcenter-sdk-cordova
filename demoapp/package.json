@@ -11,16 +11,20 @@
       "cordova-plugin-whitelist": {},
       "cordova-plugin-appcenter-analytics": {},
       "cordova-plugin-appcenter-crashes": {},
-      "cordova-plugin-appcenter-push": {}
+      "cordova-plugin-appcenter-push": {},
+      "com.ourcodeworld.plugins.Filebrowser": {},
+      "cordova-plugin-file": {}
     }
   },
   "dependencies": {
     "cordova-android": "^7.0.0",
     "cordova-ios": "^4.5.4",
+    "cordova-ourcodeworld-filebrowser": "git+https://github.com/ourcodeworld/cordova-ourcodeworld-filebrowser.git",
     "cordova-plugin-appcenter-analytics": "^0.1.3",
     "cordova-plugin-appcenter-crashes": "^0.1.3",
     "cordova-plugin-appcenter-push": "^0.1.3",
     "cordova-plugin-appcenter-shared": "^0.1.3",
+    "cordova-plugin-file": "^5.0.0",
     "cordova-plugin-whitelist": "^1.3.3"
   }
 }

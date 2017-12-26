@@ -1,8 +1,8 @@
 $(document).bind('pageinit', function () {
 
     var analyticsEnabled = false;
-    var DISABLED_LBL = "Enable";
-    var ENABLED_LBL = "Disable";
+    var DISABLED_LBL = "Enable Analytics";
+    var ENABLED_LBL = "Disable Analytics";
 
     var updateToggleButton = function() {
         $("#btn_toggle_analytics").html(analyticsEnabled ? ENABLED_LBL : DISABLED_LBL);
