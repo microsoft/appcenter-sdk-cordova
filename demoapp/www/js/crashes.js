@@ -9,12 +9,8 @@ $(document).bind('pageinit', function () {
     var text = "";
     var attachment = "";
 
-    var getFileContentAsBase64 = function (path, callback) {
+    var getFileContentAsBase64 = function (path, callback, fail) {
         window.resolveLocalFileSystemURL(path, gotFile, fail);
-
-        function fail(e) {
-            alert(e);
-        }
 
         function gotFile(fileEntry) {
             fileEntry.file(function (file) {
@@ -23,6 +19,9 @@ $(document).bind('pageinit', function () {
                     var content = this.result;
                     callback(content);
                 };
+                reader.onerror = function (e) {
+                    fail();
+                }
                 // The most important point, use the readAsDatURL Method from the file plugin
                 reader.readAsDataURL(file);
             });
@@ -57,15 +56,21 @@ $(document).bind('pageinit', function () {
 
             var processFunction = function (attachments, sendCallback) {
                 //TO DO Is this working?
-                /*attachments.addTextAttachment(text, 'hello.txt');
-                getFileContentAsBase64(attachment, function (base64Image) {
-                    alert(attachment);
-                    alert(base64Image);
-                    attachments.addBinaryAttachment(base64Image, attachment, 'image/png');
-                    sendCallback(true);
-                });*/
 
-                sendCallback(true);
+                if (text.length() > 0) {
+                    attachments.addTextAttachment(text, 'hello.txt');
+                }
+                if (attachment.length() > 0) {
+                    getFileContentAsBase64(attachment, function (base64Image) {
+                        attachments.addBinaryAttachment(base64Image, attachment, 'image/png');
+                        sendCallback(true);
+                    }, function () {
+                        sendCallback(true);
+                        alert("Something went wrong and attachments not set.");
+                    });
+                } else {
+                    sendCallback(true);
+                }
             };
 
             AppCenter.Crashes.process(processFunction, errorCallback);
@@ -81,8 +86,7 @@ $(document).bind('pageinit', function () {
                 );
             }
         });
-    });
-
+    })
 
     $("#btn_toggle_crashes").off('click').on('click', function (event, ui) {
         crashesEnabled = !crashesEnabled;
@@ -97,10 +101,6 @@ $(document).bind('pageinit', function () {
     $("#text_attachment").off('input').on('input', function (event, ui) {
         text = $("#text_attachment").val();
         updateAttachment();
-    });
-
-    $("#btn_crash_js").off('click').on('click', function (event, ui) {
-        //for(var i = 0; i === i; i++) {}
     });
 
     $("#btn_crash_native").off('click').on('click', function (event, ui) {

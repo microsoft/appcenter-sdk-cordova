@@ -33,11 +33,11 @@ $(document).bind('pageinit', function () {
     });
 
     $("#btn_track_event_1").off('click').on('click',  function (event, ui) {
-        AppCenter.Analytics.trackEvent('Button press', { propertyValueTooLong: '12345678901234567890123456789012345678901234567890123456789012345' }, defaultSuccessHandler, errorHandler);
+        AppCenter.Analytics.trackEvent('test_truncated', { propertyValueTooLong: '12345678901234567890123456789012345678901234567890123456789012345' }, defaultSuccessHandler, errorHandler);
     });
 
     $("#btn_track_event_2").off('click').on('click', function (event, ui) {
         var data = {};
-        AppCenter.Analytics.trackEvent('Button press', data, defaultSuccessHandler, errorHandler);
+        AppCenter.Analytics.trackEvent('bad_test', data, defaultSuccessHandler, errorHandler);
     });
 });  

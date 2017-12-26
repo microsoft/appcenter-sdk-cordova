@@ -7,7 +7,7 @@ $(document).bind('pageinit', function () {
 
     var updatePush = function() {
         $("#btn_toggle_push").html(pushEnabled ? ENABLED_LBL : DISABLED_LBL);
-        if(pushEnabled) {
+        if (pushEnabled) {
             AppCenter.Push.addEventListener('notificationReceived', onNotificationReceived); 
         } else {
             AppCenter.Push.removeEventListener('notificationReceived', onNotificationReceived); 
