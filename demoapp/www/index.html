@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>AppCenter Cordova SDK Demo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://use.fontawesome.com/releases/v5.0.2/css/all.css" rel="stylesheet">
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+    <script src="js/analytics.js"></script>
+    <script src="js/push.js"></script>
+    <script src="js/crashes.js"></script>
+    <script src="js/apis.js"></script>
+
+    <!--HOME-->
+    <div data-role="page" id="pageone">
+        <div data-role="header">
+            <h1>AppCenter Cordova SDK Demo</h1>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <p>Welcome! Feel free to click on the links below to test the Appcenter API.</p>
+            <a id="analytics_link" href="#analytics">Test Analytics</a>
+            <a id="push_link" href="#crashes">Test Crashes</a>
+            <a href="#push">Test Push</a>
+            <a href="#apis">Test other Appcenter APIs</a>
+        </div>
+
+        <div data-role="footer">
+            <h1>Cordova SDK version 1</h1>
+        </div>
+    </div>
+
+    <!--ANALYTICS-->
+    <div data-role="page" id="analytics">
+        <div data-role="header">
+            <h1>
+                <i onclick="history.back();" class="fas fa-chevron-left"></i>Analytics</h1>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <button id="btn_toggle_analytics">Enable</button>
+            <button id="btn_track_event">Track event</button>
+            <p style="color: blue">Track event with tag test_event</p>
+            <button id="btn_track_event_1">Track Event w\ property truncated</button>
+            <p style="color: blue">Event property value truncated after 64 characters</p>
+            <button id="btn_track_event_2">Track Event bad way</button>
+            <p style="color: blue">Do not do this, only strings are supported</p>
+        </div>
+
+        <div data-role="footer">
+            <h1>Cordova SDK version 1</h1>
+        </div>
+    </div>
+
+    <!--CRASHES-->
+    <div data-role="page" id="crashes">
+        <div data-role="header">
+            <h1><i onclick="history.back();" class="fas fa-chevron-left"></i>Crashes</h1>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <p>Content</p>
+        </div>
+
+        <div data-role="footer">
+            <h1>Cordova SDK version 1</h1>
+        </div>
+    </div>
+
+    <!--PUSH-->
+    <div data-role="page" id="push">
+        <div data-role="header">
+            <h1><i onclick="history.back();" class="fas fa-chevron-left"></i>Push</h1>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <button id="btn_toggle_push">Enable</button>
+        </div>
+
+        <div data-role="footer">
+            <h1>Cordova SDK version 1</h1>
+        </div>
+    </div>
+
+    <div data-role="page" id="apis">
+        <div data-role="header">
+            <h1><i onclick="history.back();" class="fas fa-chevron-left"></i>APIs</h1>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <p>Content</p>
+        </div>
+
+        <div data-role="footer">
+            <h1>Cordova SDK version 1</h1>
+        </div>
+    </div>
+
+</html>
