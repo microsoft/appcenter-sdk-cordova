@@ -15,9 +15,10 @@
     <script src="js/push.js"></script>
     <script src="js/crashes.js"></script>
     <script src="js/apis.js"></script>
+    <script src="js/attachments.js"></script>
 </head>
-
 <body>
+
     <!--HOME-->
     <div data-role="page" id="pageone">
         <div data-role="header">
@@ -65,12 +66,14 @@
         </div>
 
         <div data-role="main" class="ui-content">
+            <p class="comment comment_red" style="display:none;" id="sending_status">Sending info about previous crash...</p>
             <button id="btn_toggle_crashes">Enable</button>
             <button id="btn_crash_js" class="ui-disabled">Crash Javascript (coming soon)</button>
             <button id="btn_crash_native">Crash native code</button>
+            <p class="comment">The app will crash and when you reopen it again and go to this screen, crash info will be sent.</p>
             <a href="#text_attachment_popup" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-transition="pop">Set text attachment</a>
             <p class="comment" id="text_attachment_value">Current value: not set</p>
-            <button id="btn_attachment_img">Set file as binary error attachment</button>
+            <button id="btn_attachment_img">Set image as binary error attachment</button>
             <p class="comment" id="file_attachment_value">Current value: not set</p>
             <h3>Last session</h3>
             <p id="crash_report" class="comment">Crashed: never</p>
@@ -79,6 +82,7 @@
                 <h3>Input any text:</h3>
                 <input type="text" id="text_attachment" />
             </div>
+
         </div>
 
         <div data-role="footer">

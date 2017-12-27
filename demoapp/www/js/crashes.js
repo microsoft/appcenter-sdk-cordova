@@ -9,24 +9,7 @@ $(document).bind('pageinit', function () {
     var text = "";
     var attachment = "";
 
-    var getFileContentAsBase64 = function (path, callback, fail) {
-        window.resolveLocalFileSystemURL(path, gotFile, fail);
 
-        function gotFile(fileEntry) {
-            fileEntry.file(function (file) {
-                var reader = new FileReader();
-                reader.onloadend = function (e) {
-                    var content = this.result;
-                    callback(content);
-                };
-                reader.onerror = function (e) {
-                    fail();
-                }
-                // The most important point, use the readAsDatURL Method from the file plugin
-                reader.readAsDataURL(file);
-            });
-        }
-    };
 
     var updateToggleButton = function () {
         $("#btn_toggle_crashes").html(crashesEnabled ? ENABLED_LBL : DISABLED_LBL);
@@ -49,35 +32,12 @@ $(document).bind('pageinit', function () {
             crashesEnabled = isEnabled;
             updateToggleButton();
         });
-        if (!listenerSet) {
-            var errorCallback = function (error) {
-                alert(error);
-            };
-
-            var processFunction = function (attachments, sendCallback) {
-                //TO DO Is this working?
-
-                if (text.length() > 0) {
-                    attachments.addTextAttachment(text, 'hello.txt');
-                }
-                if (attachment.length() > 0) {
-                    getFileContentAsBase64(attachment, function (base64Image) {
-                        attachments.addBinaryAttachment(base64Image, attachment, 'image/png');
-                        sendCallback(true);
-                    }, function () {
-                        sendCallback(true);
-                        alert("Something went wrong and attachments not set.");
-                    });
-                } else {
-                    sendCallback(true);
-                }
-            };
-
-            AppCenter.Crashes.process(processFunction, errorCallback);
-        }
-
+        text = attachmentsProvider.getString("text");
+        attachment = attachmentsProvider.getString("binary");
+        updateAttachment();
         AppCenter.Crashes.hasCrashedInLastSession(function (crashed) {
             if (crashed) {
+                $.mobile.changePage("#myDialog", { role: "dialog" });
                 AppCenter.Crashes.lastSessionCrashReport(
                     function (data) {
                         crashReport = data;
@@ -86,6 +46,48 @@ $(document).bind('pageinit', function () {
                 );
             }
         });
+        if (!listenerSet) {
+            var errorCallback = function (error) {
+                alert(error);
+            };
+    
+            var processFunction = function (attachments, sendCallback) {
+                var hideStatus = function() {
+                    setTimeout(() => {                
+                        $("#sending_status").hide();
+                    }, 1000);
+                }
+                if (attachments.length > 0) {
+                    $("#sending_status").show();
+                }
+                var textSavedValue = attachmentsProvider.getString("text");
+                if (textSavedValue != null && textSavedValue.length > 0) {
+                    for (var i = 0; i < attachments.length; i++) {
+                        attachments[i].addTextAttachment(textSavedValue, "hello.txt");
+                    }
+                }
+    
+                var attachmentSavedValue = attachmentsProvider.getString("binary");
+                if (attachmentSavedValue != null && attachmentSavedValue.length > 0) {
+                    attachmentsProvider.getFileContentAsBase64(attachmentSavedValue, function (base64Content) {
+                        for (var i = 0; i < attachments.length; i++) {
+                            attachments[i].addBinaryAttachment(base64Content, attachmentSavedValue, 'image/png');
+                        }
+                        sendCallback(true);
+                        hideStatus();
+                    }, function () {
+                        sendCallback(true);
+                        hideStatus();
+                        alert("Something went wrong and attachments not set.");
+                    });
+                } else {
+                    sendCallback(true);
+                    hideStatus();
+                }
+            };
+    
+            AppCenter.Crashes.process(processFunction, errorCallback);
+        }
     })
 
     $("#btn_toggle_crashes").off('click').on('click', function (event, ui) {
@@ -100,6 +102,7 @@ $(document).bind('pageinit', function () {
 
     $("#text_attachment").off('input').on('input', function (event, ui) {
         text = $("#text_attachment").val();
+        attachmentsProvider.putString("text", $("#text_attachment").val());
         updateAttachment();
     });
 
@@ -108,19 +111,36 @@ $(document).bind('pageinit', function () {
     });
 
     $("#btn_attachment_img").off('click').on('click', function (event, ui) {
-        window.OurCodeWorld.Filebrowser.filePicker.single({
-            success: function (data) {
-                if (!data.length) {
-                    return;
-                }
-
-                attachment = data[0];
-                updateAttachment();
-            },
-
-            error: function (err) {
-                alert(err);
+        var setOptions = function(srcType) {
+            var options = {
+                // Some common settings are 20, 50, and 100
+                quality: 50,
+                destinationType: Camera.DestinationType.FILE_URI,
+                // In this app, dynamically set the picture source, Camera or photo gallery
+                sourceType: srcType,
+                encodingType: Camera.EncodingType.PNG,
+                mediaType: Camera.MediaType.PICTURE,
+                allowEdit: true,
+                correctOrientation: true  //Corrects Android orientation quirks
             }
-        });
+            return options;
+        }
+        var srcType = Camera.PictureSourceType.SAVEDPHOTOALBUM;
+        var options = setOptions(srcType);
+    
+        navigator.camera.getPicture(function cameraSuccess(imageUri) {
+    
+            if (!imageUri.length) {
+                return;
+            }
+
+            attachment = imageUri;
+            attachmentsProvider.putString("binary", attachment);
+            updateAttachment();
+    
+        }, function cameraError(error) {
+           alert("Unable to obtain picture: " + error);
+    
+        }, options);
     });
 });  

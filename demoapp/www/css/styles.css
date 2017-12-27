@@ -57,6 +57,12 @@ h1 i {
 
 p.comment {
     color: #059;
+    text-align:justify; 
+    overflow-wrap: break-word;
+}
+
+p.comment_red {
+    color: red;
 }
 
 a.ui-btn {
