@@ -1,5 +1,8 @@
 var attachmentsProvider = {
 
+    BINARY_KEY: "binary",
+    TEXT_KEY: "text",
+
     putString: function (prefKey, value) {
         localStorage.setItem(prefKey, value);
     },
@@ -13,15 +16,16 @@ var attachmentsProvider = {
         function gotFile(fileEntry) {
             fileEntry.file(function (file) {
                 var reader = new FileReader();
-                reader.onloadend = function (e) {
-                    var content = this.result;
-                    callback(content);
+
+                reader.onload = function(readerEvt) {
+                    var binaryString = readerEvt.target.result;
+                    callback(btoa(binaryString));
                 };
                 reader.onerror = function (e) {
-                    fail();
+                    fail(e);
                 }
-                // The most important point, use the readAsDatURL Method from the file plugin
-                reader.readAsDataURL(file);
+        
+                reader.readAsBinaryString(file);
             });
         }
     }

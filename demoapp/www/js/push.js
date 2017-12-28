@@ -7,6 +7,7 @@ $(document).bind('pageinit', function () {
 
     var updatePush = function() {
         $("#btn_toggle_push").html(pushEnabled ? ENABLED_LBL : DISABLED_LBL);
+        //This is how you can add listener for notifications.
         if (pushEnabled) {
             AppCenter.Push.addEventListener('notificationReceived', onNotificationReceived); 
         } else {
@@ -23,13 +24,10 @@ $(document).bind('pageinit', function () {
         var title = pushNotification.title;
 
         if (message === null || message === undefined) {
-            // Android messages received in the background don't include a message. On Android, that fact can be used to
-            // check if the message was received in the background or foreground. For iOS the message is always present.
             title = 'Android background';
             message = '<empty>';
         }
-
-        // Custom name/value pairs set in the App Center web portal are in customProperties
+        
         if (pushNotification.customProperties && Object.keys(pushNotification.customProperties).length > 0) {
             message += '\nCustom properties:\n' + JSON.stringify(pushNotification.customProperties);
         }
@@ -37,6 +35,7 @@ $(document).bind('pageinit', function () {
         alert("title = " + title + "; message = " + message)
     }
 
+    //This is how you can check whether push is enabled.
     $("#push_link").off('click').on('click', function (event, ui) {
         AppCenter.Push.isEnabled(function (isEnabled) {
             pushEnabled = isEnabled;
@@ -44,6 +43,7 @@ $(document).bind('pageinit', function () {
         });
     });
 
+    //This is how you can enable/disable push.
     $("#btn_toggle_push").off('click').on('click', function (event, ui) {
         pushEnabled = !pushEnabled;
         AppCenter.Push.setEnabled(pushEnabled, updatePush, errorHandler);

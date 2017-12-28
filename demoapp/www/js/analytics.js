@@ -16,6 +16,7 @@ $(document).bind('pageinit', function () {
         alert("Event tracked!");
     }
 
+    //This is how you can check whether analytics is enabled.
     $("#analytics_link").off('click').on('click', function (event, ui) {
         AppCenter.Analytics.isEnabled(function (isEnabled) {
             analyticsEnabled = isEnabled;
@@ -23,11 +24,13 @@ $(document).bind('pageinit', function () {
         });
     });
 
+    //This is how you can enable/disable analytics.
     $("#btn_toggle_analytics").off('click').on('click', function (event, ui) {
         analyticsEnabled = !analyticsEnabled;
         AppCenter.Analytics.setEnabled(analyticsEnabled, updateToggleButton, errorHandler);
     });
 
+    //This is how you can track an event.
     $("#btn_track_event").off('click').on('click', function (event, ui) {
         AppCenter.Analytics.trackEvent('test_event', { page: 'Analytics page' }, defaultSuccessHandler, errorHandler);
     });
