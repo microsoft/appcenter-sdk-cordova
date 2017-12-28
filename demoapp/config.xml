@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.cordova.hellocordova" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.test.cordovaapp" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>HelloCordova</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
@@ -24,16 +24,16 @@
         <allow-intent href="market:*" />
     </platform>
     <platform name="ios">
-        <preference name="APP_SECRET" value="5fb19e9b-8f2a-4cde-9966-de64568efe29" />
+        <preference name="APP_SECRET" value="d819d3fc-46ad-4d81-94b2-b230af9b8d0b" />
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
     <plugin name="cordova-plugin-whitelist" spec="^1.3.3" />
-    <plugin name="cordova-plugin-appcenter-analytics" spec="^0.1.3" />
-    <plugin name="cordova-plugin-appcenter-crashes" spec="^0.1.3" />
     <plugin name="cordova-plugin-appcenter-push" spec="^0.1.3" />
     <plugin name="cordova-plugin-file" spec="^4.0.0" />
     <plugin name="cordova-plugin-camera" spec="^3.0.0" />
+    <plugin name="cordova-plugin-appcenter-analytics" spec="^0.1.3" />
+    <plugin name="cordova-plugin-appcenter-crashes" spec="^0.1.3" />
     <engine name="ios" spec="^4.5.4" />
     <engine name="android" spec="^7.0.0" />
 </widget>

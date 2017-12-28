@@ -4,8 +4,8 @@
   "displayName": "HelloCordova",
   "cordova": {
     "platforms": [
-      "ios",
-      "android"
+      "android",
+      "ios"
     ],
     "plugins": {
       "cordova-plugin-whitelist": {},
