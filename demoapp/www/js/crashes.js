@@ -1,4 +1,4 @@
-$(document).bind('pageinit', function () {
+﻿$(document).bind('pageinit', function () {
 
     var listenerSet = false;
     var crashesEnabled = false;
@@ -22,7 +22,7 @@ $(document).bind('pageinit', function () {
     }
 
     var updateCrashReport = function () {
-        $("#crash_report").html("Crashed: " + JSON.stringify(crashReport, null, 4));
+        $("#crash_report").html("Crashed: " +  "<small><pre>" + JSON.stringify(crashReport, null, 2) + "</pre></small>");
     }
     
     var hideStatus = function () {
