@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
+﻿<?xml version='1.0' encoding='utf-8'?>
 <widget id="com.test.cordovaapp" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>HelloCordova</name>
     <description>
@@ -19,12 +19,12 @@
     <preference name="APPCENTER_ANALYTICS_ENABLE_IN_JS" value="true" />
     <preference name="APPCENTER_CRASHES_ALWAYS_SEND" value="false" />
     <platform name="android">
-        <preference name="APP_SECRET" value="0cb54e7c-a5a9-4231-8f89-61bc93cc6c5c" />
-        <preference name="FIREBASE_SENDER_ID" value="'1028991796646'" />
+        <preference name="APP_SECRET" value="paste_android_app_secret_here" />
+        <preference name="FIREBASE_SENDER_ID" value="'paste_firebase_sender_id_here'" />
         <allow-intent href="market:*" />
     </platform>
     <platform name="ios">
-        <preference name="APP_SECRET" value="d819d3fc-46ad-4d81-94b2-b230af9b8d0b" />
+        <preference name="APP_SECRET" value="paste_ios_app_secret_here" />
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
