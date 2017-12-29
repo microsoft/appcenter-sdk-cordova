@@ -1,0 +1,30 @@
+{
+  "name": "com.test.cordovaapp",
+  "version": "0.0.1",
+  "displayName": "HelloCordova",
+  "cordova": {
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "plugins": {
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-appcenter-analytics": {},
+      "cordova-plugin-appcenter-crashes": {},
+      "cordova-plugin-appcenter-push": {},
+      "cordova-plugin-file": {},
+      "cordova-plugin-camera": {}
+    }
+  },
+  "dependencies": {
+    "cordova-android": "^7.0.0",
+    "cordova-ios": "^4.5.4",
+    "cordova-plugin-appcenter-analytics": "^0.1.3",
+    "cordova-plugin-appcenter-crashes": "^0.1.3",
+    "cordova-plugin-appcenter-push": "^0.1.3",
+    "cordova-plugin-appcenter-shared": "^0.1.3",
+    "cordova-plugin-camera": "^3.0.0",
+    "cordova-plugin-file": "^5.0.0",
+    "cordova-plugin-whitelist": "^1.3.3"
+  }
+}
