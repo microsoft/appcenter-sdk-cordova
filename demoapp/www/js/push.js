@@ -1,5 +1,4 @@
 $(document).bind('pageinit', function () {
-
     var pushEnabled = false;
 
     var DISABLED_LBL = "Enable Push";
@@ -27,7 +26,7 @@ $(document).bind('pageinit', function () {
             title = 'Android background';
             message = '<empty>';
         }
-        
+
         if (pushNotification.customProperties && Object.keys(pushNotification.customProperties).length > 0) {
             message += '\nCustom properties:\n' + JSON.stringify(pushNotification.customProperties);
         }

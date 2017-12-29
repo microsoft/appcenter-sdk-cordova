@@ -1,11 +1,11 @@
 {
-  "name": "io.cordova.hellocordova",
+  "name": "com.test.cordovaapp",
   "version": "0.0.1",
   "displayName": "HelloCordova",
   "cordova": {
     "platforms": [
-      "android",
-      "ios"
+      "ios",
+      "android"
     ],
     "plugins": {
       "cordova-plugin-whitelist": {},
@@ -19,7 +19,6 @@
   "dependencies": {
     "cordova-android": "^7.0.0",
     "cordova-ios": "^4.5.4",
-    "cordova-ourcodeworld-filebrowser": "git+https://github.com/ourcodeworld/cordova-ourcodeworld-filebrowser.git",
     "cordova-plugin-appcenter-analytics": "^0.1.3",
     "cordova-plugin-appcenter-crashes": "^0.1.3",
     "cordova-plugin-appcenter-push": "^0.1.3",

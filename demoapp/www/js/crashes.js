@@ -1,5 +1,4 @@
-﻿$(document).bind('pageinit', function () {
-
+$(document).bind('pageinit', function () {
     var listenerSet = false;
     var crashesEnabled = false;
     var DISABLED_LBL = "Enable Crashes";

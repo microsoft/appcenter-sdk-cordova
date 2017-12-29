@@ -1,5 +1,4 @@
 var attachmentsProvider = {
-
     BINARY_KEY: "binary",
     TEXT_KEY: "text",
 
