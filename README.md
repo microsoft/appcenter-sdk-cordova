@@ -12,7 +12,7 @@ The App Center SDK consists of a several plugins so you can use any or all of th
 
 ## Sample application
 
-You can get familiar with SDK quickly by cloning this repository and running sample app in `sample` directory. For further instructions please refer to [sample's README](sample/README.md)
+You can get familiar with SDK quickly by cloning this repository and running sample app in `sample` directory. For further instructions please refer to [sample's README](demoapp/README.md)
 
 ## 1. Installation
 
