@@ -7,7 +7,7 @@ var channels = {
 
 var Push = {
     isEnabled: function (success, error) {
-        exec(success, error, "AppCenterPush", "isEnabled");
+        exec(success, error, "AppCenterPush", "isEnabled", []);
     },
 
     setEnabled: function (shouldEnable, success, error) {
@@ -17,7 +17,7 @@ var Push = {
     addEventListener: function (eventname, f) {
         if (eventname in channels) {
             channels[eventname].subscribe(f);
-            exec(null, null, "AppCenterPush", "sendAndClearInitialNotification");
+            exec(null, null, "AppCenterPush", "sendAndClearInitialNotification", []);
         }
     },
 

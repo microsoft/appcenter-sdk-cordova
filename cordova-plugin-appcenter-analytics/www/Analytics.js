@@ -7,7 +7,7 @@ module.exports = {
     },
 
     isEnabled: function(success, error) {
-        exec(success, error, "AppCenterAnalytics", "isEnabled");
+        exec(success, error, "AppCenterAnalytics", "isEnabled", []);
     },
 
     setEnabled: function(enabled, success, error) {
