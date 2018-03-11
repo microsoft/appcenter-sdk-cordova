@@ -26,7 +26,7 @@ public class AppCenterPushPlugin extends CordovaPlugin {
         // For some reason Cordova reads SENDER_ID preference as double. 
         // Because of this Pushes does not work properly, 
         // as workaround SENDER_ID value should be wrapped by single quotes.
-        String senderId = webView.getPreferences().getString(SENDER_ID, null).replace("'", "");
+        String senderId = webView.getPreferences().getString(SENDER_ID, "").replace("'", "");
         Push.setSenderId(senderId);
 
         listener = new CordovaPushListener();
