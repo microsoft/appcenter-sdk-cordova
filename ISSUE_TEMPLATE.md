@@ -16,9 +16,11 @@ Please list the steps used to reproduce your issue.
     - e.g. 1.5.0
 2. Which OS version did you experience the issue on?
     - e.g. Android 8.1.0, iOS 11
-3. What version of Cordova, Cocoapods, and Ruby are you using?
+3. What version of Cordova, Cordova platforms, Cocoapods, and Ruby are you using?
     - e.g. Cordova version 8.0.0
 4. What device version did you see this error on?  Were you using an emulator or a physical device?
     - e.g. Google Pixel 2 emulator, Samsung Galaxy S8 physical device
-5. What third party libraries are you using?
-    
+5. What third party plugins are you using?
+    - e.g. cordova-plugin-device
+  
+  
