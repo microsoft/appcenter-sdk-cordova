@@ -21,6 +21,4 @@ Please list the steps used to reproduce your issue.
 4. What device version did you see this error on?  Were you using an emulator or a physical device?
     - e.g. Google Pixel 2 emulator, Samsung Galaxy S8 physical device
 5. What third party libraries are you using?
-    - example
-6. Please enable verbose logging for your app using `AppCenter.setLogLevel(Log.VERBOSE)` before your call to `AppCenter.start(...)` and include the logs here:
-
+    
