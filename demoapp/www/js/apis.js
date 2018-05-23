@@ -15,21 +15,21 @@ $(document).bind('pageinit', function () {
     }
 
     $("#apis_link").off('click').on('click', function (event, ui) {
-         AppCenter.isEnabled(function (isEnabled) {
-            appcenterEnabled = isEnabled;
-            updateToggleButton();
-        });
-        
-        AppCenter.getLogLevel(function (logLevelValue) {
-            alert(logLevelValue);
-            logLevel = logLevelValue;
-            updateLogLevel();
+        console.log("toggled2");
+         AppCenter.setAppSecret("123", function (error) {
+            console.log("toggled1");
+            $("#btn_toggle_appcenter").html("eeeeeee");
         });
     });
 
     $("#btn_toggle_appcenter").off('click').on('click', function (event, ui) {
-        appcenterEnabled = !appcenterEnabled;
-        AppCenter.setEnabled(appcenterEnabled, updateToggleButton, errorHandler);
+        console.log("toggled");
+        AppCenter.getInstallId(function (success) {
+            console.log(success);
+            $("#btn_toggle_appcenter").html(success);
+        }, function(error) {
+            console.log(error);
+        });
     });
 
 });  

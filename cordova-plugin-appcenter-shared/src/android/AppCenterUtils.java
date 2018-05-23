@@ -13,28 +13,35 @@ import java.util.Iterator;
 import java.util.Map;
 
 class AppCenterUtils {
-    public static void sendBooleanPluginResultFromFuture(
-            AppCenterFuture<Boolean> future,
+    public static void sendBooleanPluginResultFromFuture(AppCenterFuture<Boolean> future,
             final CallbackContext callbackContext) {
 
         future.thenAccept(new AppCenterConsumer<Boolean>() {
             @Override
             public void accept(Boolean futureResult) {
-                callbackContext.sendPluginResult(
-                        new PluginResult(PluginResult.Status.OK, futureResult));
+                callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, futureResult));
             }
         });
     }
 
-    public static void sendVoidPluginResultFromFuture(
-            AppCenterFuture<Void> future,
+    public static void sendStringPluginResultFromFuture(AppCenterFuture<String> future,
+            final CallbackContext callbackContext) {
+
+        future.thenAccept(new AppCenterConsumer<String>() {
+            @Override
+            public void accept(String futureResult) {
+                callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, futureResult));
+            }
+        });
+    }
+
+    public static void sendVoidPluginResultFromFuture(AppCenterFuture<Void> future,
             final CallbackContext callbackContext) {
 
         future.thenAccept(new AppCenterConsumer<Void>() {
             @Override
             public void accept(Void noResult) {
-                callbackContext.sendPluginResult(
-                        new PluginResult(PluginResult.Status.OK));
+                callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK));
             }
         });
     }

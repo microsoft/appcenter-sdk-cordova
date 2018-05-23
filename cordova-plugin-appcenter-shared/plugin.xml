@@ -25,10 +25,30 @@
 
         <source-file src="src/android/AppCenterUtils.java"
                      target-dir="src/com/microsoft/azure/mobile/cordova" />
+
+        <source-file src="src/android/AppCenterSharedPlugin.java"
+                target-dir="src/com/microsoft/azure/mobile/cordova" />
+
+         <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="AppCenterShared">
+                <param name="onload" value="true" />
+                <param name="android-package"
+                       value="com.microsoft.azure.mobile.cordova.AppCenterSharedPlugin"/>
+            </feature>
+        </config-file>
     </platform>
 
     <platform name="ios">
         <header-file src="src/ios/AppCenterShared.h" />
         <source-file src="src/ios/AppCenterShared.m" />
+          <config-file target="config.xml" parent="/*">
+            <feature name="AppCenterShared">
+                <param name="ios-package" value="AppCenterSharedPlugin" />
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/AppCenterSharedPlugin.h" />
+        <source-file src="src/ios/AppCenterSharedPlugin.m" />
     </platform>
 </plugin>
