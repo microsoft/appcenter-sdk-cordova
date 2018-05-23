@@ -1,5 +1,5 @@
 package com.microsoft.azure.mobile.cordova;
-
+import java.util.UUID;
 import com.microsoft.appcenter.utils.async.AppCenterConsumer;
 import com.microsoft.appcenter.utils.async.AppCenterFuture;
 
@@ -24,13 +24,13 @@ class AppCenterUtils {
         });
     }
 
-    public static void sendStringPluginResultFromFuture(AppCenterFuture<String> future,
+    public static void sendUUIDPluginResultFromFuture(AppCenterFuture<UUID> future,
             final CallbackContext callbackContext) {
 
-        future.thenAccept(new AppCenterConsumer<String>() {
+        future.thenAccept(new AppCenterConsumer<UUID>() {
             @Override
-            public void accept(String futureResult) {
-                callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, futureResult));
+            public void accept(UUID futureResult) {
+                callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, futureResult.toString()));
             }
         });
     }

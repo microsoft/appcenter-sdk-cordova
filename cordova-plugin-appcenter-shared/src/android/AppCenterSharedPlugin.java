@@ -11,10 +11,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.microsoft.appcenter.AppCenter;
-import com.microsoft.appcenter.crashes.model.ErrorReport;
 import com.microsoft.appcenter.utils.async.AppCenterConsumer;
 
 import java.util.List;
+import java.util.UUID;
 
 public class AppCenterSharedPlugin extends CordovaPlugin {
 
@@ -27,12 +27,12 @@ public class AppCenterSharedPlugin extends CordovaPlugin {
     public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) throws JSONException {
 
         if (action.equals("getInstallId")) {
-            AppCenterUtils.sendStringPluginResultFromFuture(AppCenter.getInstallId(), callbackContext);
+            AppCenterUtils.sendUUIDPluginResultFromFuture(AppCenter.getInstallId(), callbackContext);
             return true;
 
         } else if (action.equals("setAppSecret")) {
             String secret = args.getString(0);
-            AppCenterUtils.sendVoidPluginResultFromFuture(AppCenterShared.setAppSecret(secret), callbackContext);
+            AppCenterShared.setAppSecret(secret);
             return true;
         }
         return false;
