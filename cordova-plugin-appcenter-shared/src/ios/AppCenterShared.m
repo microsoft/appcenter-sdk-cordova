@@ -9,6 +9,7 @@ static MSWrapperSdk * wrapperSdk;
 + (void) setAppSecret: (NSString *)secret
 {
     appSecret = secret;
+    [MSAppCenter configureWithAppSecret:secret];
 }
 
 + (NSString *) getAppSecretWithSettings: (NSDictionary*) settings

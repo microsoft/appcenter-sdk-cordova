@@ -15,8 +15,10 @@ class AppCenterShared {
     private static final String APP_SECRET = "APP_SECRET";
     private static String appSecret;
     private static final WrapperSdk wrapperSdk = new WrapperSdk();
+    private static Application application;
 
     static void configureAppCenter(Application application, CordovaPreferences preferences) {
+        AppCenterShared.application = application;
         if (AppCenter.isConfigured()) {
             return;
         }
@@ -34,5 +36,10 @@ class AppCenterShared {
         }
 
         return AppCenterShared.appSecret;
+    }
+
+    public static void setAppSecret(String appSecret) {
+        AppCenterShared.appSecret = appSecret;
+        AppCenter.configure(application, appSecret);
     }
 }
