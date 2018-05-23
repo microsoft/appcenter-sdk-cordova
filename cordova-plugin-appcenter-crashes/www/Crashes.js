@@ -9,19 +9,19 @@ var channels = {
 
 var Crashes = {
     generateTestCrash: function (error) {
-        exec(null, error, "AppCenterCrashes", "generateTestCrash");
+        exec(null, error, "AppCenterCrashes", "generateTestCrash", []);
     },
 
     hasCrashedInLastSession: function (success, error) {
-        exec(success, error, "AppCenterCrashes", "hasCrashedInLastSession");
+        exec(success, error, "AppCenterCrashes", "hasCrashedInLastSession", []);
     },
 
     lastSessionCrashReport: function (success, error) {
-        exec(success, error, "AppCenterCrashes", "lastSessionCrashReport");
+        exec(success, error, "AppCenterCrashes", "lastSessionCrashReport", []);
     },
 
     isEnabled: function (success, error) {
-        exec(success, error, "AppCenterCrashes", "isEnabled");
+        exec(success, error, "AppCenterCrashes", "isEnabled", []);
     },
 
     setEnabled: function (shouldEnable, success, error) {
@@ -81,7 +81,7 @@ var Crashes = {
             });
         }
 
-        exec(processReports, failIfNotEnabled, "AppCenterCrashes", "getCrashReports");
+        exec(processReports, failIfNotEnabled, "AppCenterCrashes", "getCrashReports", []);
     },
 
     addEventListener: function (eventname, f) {
