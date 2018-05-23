@@ -15,20 +15,14 @@ $(document).bind('pageinit', function () {
     }
 
     $("#apis_link").off('click').on('click', function (event, ui) {
-        console.log("toggled2");
-         AppCenter.setAppSecret("123", function (error) {
-            console.log("toggled1");
-            $("#btn_toggle_appcenter").html("eeeeeee");
+        AppCenter.getInstallId(function (installId) {
+            $("#install_id").html("Install ID: " + installId);
         });
     });
 
-    $("#btn_toggle_appcenter").off('click').on('click', function (event, ui) {
-        console.log("toggled");
-        AppCenter.getInstallId(function (success) {
-            console.log(success);
-            $("#btn_toggle_appcenter").html(success);
-        }, function(error) {
-            console.log(error);
+    $("#btn_set_app_secret").off('click').on('click', function (event, ui) {
+        AppCenter.setAppSecret("123", function (success) {
+            alert("Secret set!");
         });
     });
 

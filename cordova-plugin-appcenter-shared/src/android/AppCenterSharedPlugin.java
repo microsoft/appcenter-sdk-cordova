@@ -1,20 +1,13 @@
 package com.microsoft.azure.mobile.cordova;
 
+import com.microsoft.appcenter.AppCenter;
+
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaInterface;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CordovaWebView;
-import org.apache.cordova.PluginResult;
-
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
-
-import com.microsoft.appcenter.AppCenter;
-import com.microsoft.appcenter.utils.async.AppCenterConsumer;
-
-import java.util.List;
-import java.util.UUID;
 
 public class AppCenterSharedPlugin extends CordovaPlugin {
 
@@ -32,7 +25,7 @@ public class AppCenterSharedPlugin extends CordovaPlugin {
 
         } else if (action.equals("setAppSecret")) {
             String secret = args.getString(0);
-            AppCenterShared.setAppSecret(secret);
+            AppCenterUtils.sendVoidPluginResultFromFuture(AppCenterShared.setAppSecret(secret), callbackContext);
             return true;
         }
         return false;

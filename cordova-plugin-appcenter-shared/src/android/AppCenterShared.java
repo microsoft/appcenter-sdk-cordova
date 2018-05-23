@@ -2,10 +2,12 @@ package com.microsoft.azure.mobile.cordova;
 
 import android.app.Application;
 
-import org.apache.cordova.CordovaPreferences;
-
 import com.microsoft.appcenter.AppCenter;
 import com.microsoft.appcenter.ingestion.models.WrapperSdk;
+import com.microsoft.appcenter.utils.async.AppCenterFuture;
+import com.microsoft.appcenter.utils.async.DefaultAppCenterFuture;
+
+import org.apache.cordova.CordovaPreferences;
 
 class AppCenterShared {
 
@@ -38,8 +40,12 @@ class AppCenterShared {
         return AppCenterShared.appSecret;
     }
 
-    public static void setAppSecret(String appSecret) {
+    public static AppCenterFuture<Void> setAppSecret(String appSecret) {
+        final DefaultAppCenterFuture<Void> future = new DefaultAppCenterFuture<>();
+
         AppCenterShared.appSecret = appSecret;
         AppCenter.configure(application, appSecret);
+        future.complete(null);
+        return future;
     }
 }

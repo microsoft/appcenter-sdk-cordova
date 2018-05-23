@@ -30,7 +30,7 @@ class AppCenterUtils {
         future.thenAccept(new AppCenterConsumer<UUID>() {
             @Override
             public void accept(UUID futureResult) {
-                callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, futureResult.toString()));
+                callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, futureResult == null ? null : futureResult.toString()));
             }
         });
     }
