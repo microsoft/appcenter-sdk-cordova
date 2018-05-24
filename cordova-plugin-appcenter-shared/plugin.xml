@@ -18,7 +18,8 @@
     <!-- Cordova 6.4.0 and iOS 4.3.0 are required for Cocoapods support -->
     <engine name="cordova" version=">=6.4.0" />
     <engine name="cordova-ios" version=">=4.3.0" />
-<js-module name="AppCenter" src="www/AppCenter.js">
+    
+    <js-module name="AppCenter" src="www/AppCenter.js">
         <clobbers target="AppCenter" />
     </js-module>
 
