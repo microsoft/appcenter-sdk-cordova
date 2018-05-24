@@ -1,7 +1,7 @@
 package com.microsoft.azure.mobile.cordova;
 
 import android.app.Application;
-
+import org.apache.cordova.CordovaPreferences;
 import com.microsoft.appcenter.AppCenter;
 import com.microsoft.appcenter.ingestion.models.WrapperSdk;
 
