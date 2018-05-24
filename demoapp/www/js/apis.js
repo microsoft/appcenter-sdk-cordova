@@ -19,5 +19,4 @@ $(document).bind('pageinit', function () {
             $("#install_id").html("Install ID: " + installId);
         });
     });
-
 });  
