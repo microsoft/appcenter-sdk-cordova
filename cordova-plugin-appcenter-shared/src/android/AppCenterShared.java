@@ -4,10 +4,6 @@ import android.app.Application;
 
 import com.microsoft.appcenter.AppCenter;
 import com.microsoft.appcenter.ingestion.models.WrapperSdk;
-import com.microsoft.appcenter.utils.async.AppCenterFuture;
-import com.microsoft.appcenter.utils.async.DefaultAppCenterFuture;
-
-import org.apache.cordova.CordovaPreferences;
 
 class AppCenterShared {
 
