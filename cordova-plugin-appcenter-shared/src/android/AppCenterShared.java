@@ -17,10 +17,8 @@ class AppCenterShared {
     private static final String APP_SECRET = "APP_SECRET";
     private static String appSecret;
     private static final WrapperSdk wrapperSdk = new WrapperSdk();
-    private static Application application;
 
     static void configureAppCenter(Application application, CordovaPreferences preferences) {
-        AppCenterShared.application = application;
         if (AppCenter.isConfigured()) {
             return;
         }
@@ -38,14 +36,5 @@ class AppCenterShared {
         }
 
         return AppCenterShared.appSecret;
-    }
-
-    public static AppCenterFuture<Void> setAppSecret(String appSecret) {
-        final DefaultAppCenterFuture<Void> future = new DefaultAppCenterFuture<>();
-
-        AppCenterShared.appSecret = appSecret;
-        AppCenter.configure(application, appSecret);
-        future.complete(null);
-        return future;
     }
 }

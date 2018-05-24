@@ -5,6 +5,5 @@
 
 - (void)pluginInitialize;
 - (void)getInstallId:(CDVInvokedUrlCommand *)command;
-- (void)setAppSecret:(CDVInvokedUrlCommand *)command;
 
 @end

@@ -23,10 +23,6 @@ public class AppCenterSharedPlugin extends CordovaPlugin {
             AppCenterUtils.sendUUIDPluginResultFromFuture(AppCenter.getInstallId(), callbackContext);
             return true;
 
-        } else if (action.equals("setAppSecret")) {
-            String secret = args.getString(0);
-            AppCenterUtils.sendVoidPluginResultFromFuture(AppCenterShared.setAppSecret(secret), callbackContext);
-            return true;
         }
         return false;
     }

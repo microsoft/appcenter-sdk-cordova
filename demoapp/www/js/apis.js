@@ -20,10 +20,4 @@ $(document).bind('pageinit', function () {
         });
     });
 
-    $("#btn_set_app_secret").off('click').on('click', function (event, ui) {
-        AppCenter.setAppSecret("123", function (success) {
-            alert("Secret set!");
-        });
-    });
-
 });  
