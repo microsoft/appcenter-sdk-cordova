@@ -15,21 +15,8 @@ $(document).bind('pageinit', function () {
     }
 
     $("#apis_link").off('click').on('click', function (event, ui) {
-         AppCenter.isEnabled(function (isEnabled) {
-            appcenterEnabled = isEnabled;
-            updateToggleButton();
-        });
-        
-        AppCenter.getLogLevel(function (logLevelValue) {
-            alert(logLevelValue);
-            logLevel = logLevelValue;
-            updateLogLevel();
+        AppCenter.getInstallId(function (installId) {
+            $("#install_id").html("Install ID: " + installId);
         });
     });
-
-    $("#btn_toggle_appcenter").off('click').on('click', function (event, ui) {
-        appcenterEnabled = !appcenterEnabled;
-        AppCenter.setEnabled(appcenterEnabled, updateToggleButton, errorHandler);
-    });
-
 });  
