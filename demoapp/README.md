@@ -28,6 +28,6 @@ To run application and test those capabilities please follow the instructions be
 
 5.  Run app on Android/iOS
 
-    In console type `npm run android` or `npm run ios` to launch application on either Android of iOS device or emulator. The command will run application on device if connected or start an emulator and launch app on emulator.
+    In console type `cordova run android` or `cordova run ios` to launch application on either Android of iOS device or emulator. The command will run application on device if connected or start an emulator and launch app on emulator.
 
     _Hint_: If you want to pass some additional arguments to underlying `cordova` command, add them after double dash `--`, for example to run application on iPhone 7 simulator use `npm run ios -- --target=iPhone-7`
