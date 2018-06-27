@@ -20,7 +20,7 @@
     <engine name="cordova" version=">=6.4.0" />
     <engine name="cordova-ios" version=">=4.3.0" />
 
-    <dependency id="cordova-plugin-appcenter-shared" version="0.1.3"/>
+    <dependency id="cordova-plugin-appcenter-shared" version="0.1.6"/>
 
     <js-module name="Push" src="www/Push.js">
         <clobbers target="AppCenter.Push" />
