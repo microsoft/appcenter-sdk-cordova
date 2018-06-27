@@ -4,7 +4,7 @@ This is a sample application that demonstrates some of capabilities of App Cente
 
 To run application and test those capabilities please follow the instructions below:
 
-1.  Configure Application Secrets for bot iOS and Android
+1.  Configure Application Secrets for both iOS and Android
 
     In `config.xml` find `APP_SECRET` preference for both iOS and Android platforms and set it's value to application secret as displayed in App Center portal
 

@@ -4,8 +4,8 @@
   "displayName": "HelloCordova",
   "cordova": {
     "platforms": [
-      "ios",
-      "android"
+      "android",
+      "ios"
     ],
     "plugins": {
       "cordova-plugin-whitelist": {},
@@ -13,15 +13,17 @@
       "cordova-plugin-camera": {},
       "cordova-plugin-appcenter-shared": {},
       "cordova-plugin-appcenter-analytics": {},
-      "cordova-plugin-appcenter-crashes": {}
+      "cordova-plugin-appcenter-crashes": {},
+      "cordova-plugin-appcenter-push": {}
     }
   },
   "dependencies": {
     "cordova-android": "^7.0.0",
     "cordova-ios": "^4.5.4",
-    "cordova-plugin-appcenter-analytics": "^0.1.5",
-    "cordova-plugin-appcenter-crashes": "^0.1.5",
-    "cordova-plugin-appcenter-shared": "^0.1.5",
+    "cordova-plugin-appcenter-analytics": "^0.1.6",
+    "cordova-plugin-appcenter-crashes": "^0.1.6",
+    "cordova-plugin-appcenter-push": "^0.1.6",
+    "cordova-plugin-appcenter-shared": "^0.1.6",
     "cordova-plugin-camera": "^3.0.0",
     "cordova-plugin-file": "^5.0.0",
     "cordova-plugin-whitelist": "^1.3.3"
