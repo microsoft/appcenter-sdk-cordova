@@ -25,7 +25,7 @@ public class AppCenterCrashesPlugin extends CordovaPlugin {
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
 
-        boolean sendAutomatically = webView.getPreferences().getBoolean(ALWAYS_SEND, false);
+        boolean sendAutomatically = webView.getPreferences().getBoolean(ALWAYS_SEND, true);
         crashListener = sendAutomatically ?
                 new CordovaCrashesListenerAlwaysSend():
                 new CordovaCrashesListenerAlwaysAsk();
