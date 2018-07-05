@@ -59,13 +59,29 @@ parser.parseString(demoappConfigContents, function (err, parsedXml) {
     for (const plugin of parsedXml.widget.plugin) {
         if (pluginNames.includes(plugin.$.name)) {
             console.log(`current version of ${plugin.$.name}: ${plugin.$.spec}`);
-            plugin.$.spec = "^" + semver.inc(plugin.$.spec.replace("^", ""), "patch");
+            plugin.$.spec = increasePatchVersion(plugin.$.spec);
             console.log(`new version of ${plugin.$.name}: ${plugin.$.spec}`);
         }
     }
 
     saveXml(parsedXml, demoappConfigPath);
 });
+
+demoappPackagePath = path.join(sourceDir, "demoapp", "package.json");
+console.log(`demo app package.json: ${demoappPackagePath}`);
+demoappPackage = JSON.parse(fs.readFileSync(demoappPackagePath));
+
+for (const pluginName of pluginNames) {
+    console.log(`current version of ${pluginName}: ${demoappPackage.dependencies[pluginName]}`);
+    demoappPackage.dependencies[pluginName] = increasePatchVersion(demoappPackage.dependencies[pluginName]);
+    console.log(`new version of ${pluginName}: ${demoappPackage.dependencies[pluginName]}`);
+}
+
+fs.writeFileSync(demoappPackagePath, JSON.stringify(demoappPackage, null, 2));
+
+function increasePatchVersion(value) {
+    return "^" + semver.inc(value.replace("^", ""), "patch");
+}
 
 function saveXml(xmlObj, filePath) {
     const builder = new xml2js.Builder({
