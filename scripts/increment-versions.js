@@ -27,16 +27,16 @@ for (const moduleName of moduleNames) {
             throw err;
         }
 
-        console.log("current version: " + parsedXml.plugin["$"].version);
-        parsedXml.plugin["$"].version = semver.inc(parsedXml.plugin["$"].version, "patch");
-        console.log("new version: " + parsedXml.plugin["$"].version);
+        console.log("current version: " + parsedXml.plugin.$.version);
+        parsedXml.plugin.$.version = semver.inc(parsedXml.plugin.$.version, "patch");
+        console.log("new version: " + parsedXml.plugin.$.version);
 
         if (parsedXml.plugin.dependency) {
             for (const dependency of parsedXml.plugin.dependency) {
-                if (dependency["$"].id === "cordova-plugin-appcenter-shared") {
-                    console.log("current version of cordova-plugin-appcenter-shared dependency: " + dependency["$"].version)
-                    dependency["$"].version = semver.inc(dependency["$"].version, "patch");
-                    console.log("new version of cordova-plugin-appcenter-shared dependency: " + dependency["$"].version)
+                if (dependency.$.id === "cordova-plugin-appcenter-shared") {
+                    console.log("current version of cordova-plugin-appcenter-shared dependency: " + dependency.$.version)
+                    dependency.$.version = semver.inc(dependency.$.version, "patch");
+                    console.log("new version of cordova-plugin-appcenter-shared dependency: " + dependency.$.version)
                 }
             }
         }
