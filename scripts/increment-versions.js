@@ -8,20 +8,20 @@ const semver = require('semver');
 const sourceDir = process.env["BUILD_SOURCESDIRECTORY"];
 console.log(`BUILD_SOURCESDIRECTORY: ${sourceDir}`);
 
-const moduleNames = [
+const pluginNames = [
+    "cordova-plugin-appcenter-shared",
     "cordova-plugin-appcenter-analytics",
     "cordova-plugin-appcenter-crashes",
-    "cordova-plugin-appcenter-push",
-    "cordova-plugin-appcenter-shared"
-];
+    "cordova-plugin-appcenter-push"
+]
 
-for (const moduleName of moduleNames) {
-    const pluginXmlPath = path.join(sourceDir, moduleName, "plugin.xml");
+for (const pluginName of pluginNames) {
+    const pluginXmlPath = path.join(sourceDir, pluginName, "plugin.xml");
     const parser = new xml2js.Parser({ includeWhiteChars: true });
     const pluginXmlContents = fs.readFileSync(pluginXmlPath);
 
     parser.parseString(pluginXmlContents, function (err, parsedXml) {
-        console.log(`${moduleName} plugin.xml: ${pluginXmlPath}`);
+        console.log(`${pluginName} plugin.xml: ${pluginXmlPath}`);
 
         if (err) {
             throw err;
@@ -41,11 +41,37 @@ for (const moduleName of moduleNames) {
             }
         }
 
-        const builder = new xml2js.Builder({
-            xmldec: { version: "1.0", encoding: "utf-8" },
-            renderOpts: { pretty: true, indent: "    " }
-        });
-        const xml = builder.buildObject(parsedXml).replace(/&#xD;/g, "");
-        fs.writeFileSync(pluginXmlPath, xml);
+        saveXml(parsedXml, pluginXmlPath);
     });
+}
+
+const demoappConfigPath = path.join(sourceDir, "demoapp", "config.xml");
+const demoappConfigContents = fs.readFileSync(demoappConfigPath);
+const parser = new xml2js.Parser({ includeWhiteChars: true });
+
+parser.parseString(demoappConfigContents, function (err, parsedXml) {
+    console.log(`demo app config.xml: ${demoappConfigPath}`);
+
+    if (err) {
+        throw err;
+    }
+
+    for (const plugin of parsedXml.widget.plugin) {
+        if (pluginNames.includes(plugin.$.name)) {
+            console.log(`current version of ${plugin.$.name}: ${plugin.$.spec}`);
+            plugin.$.spec = "^" + semver.inc(plugin.$.spec.replace("^", ""), "patch");
+            console.log(`new version of ${plugin.$.name}: ${plugin.$.spec}`);
+        }
+    }
+
+    saveXml(parsedXml, demoappConfigPath);
+});
+
+function saveXml(xmlObj, filePath) {
+    const builder = new xml2js.Builder({
+        xmldec: { version: "1.0", encoding: "utf-8" },
+        renderOpts: { pretty: true, indent: "    " }
+    });
+    const xml = builder.buildObject(xmlObj).replace(/&#xD;/g, "");
+    fs.writeFileSync(filePath, xml);
 }
