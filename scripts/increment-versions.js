@@ -3,10 +3,10 @@
 const fs = require('fs');
 const path = require('path');
 const xml2js = require('xml2js');
-const semver = require('semver')
+const semver = require('semver');
 
 const sourceDir = process.env["BUILD_SOURCESDIRECTORY"];
-console.log("BUILD_SOURCESDIRECTORY: " + sourceDir)
+console.log(`BUILD_SOURCESDIRECTORY: ${sourceDir}`);
 
 const moduleNames = [
     "cordova-plugin-appcenter-analytics",
@@ -21,22 +21,22 @@ for (const moduleName of moduleNames) {
     const pluginXmlContents = fs.readFileSync(pluginXmlPath);
 
     parser.parseString(pluginXmlContents, function (err, parsedXml) {
-        console.log(moduleName + " plugin.xml: " + pluginXmlPath);
+        console.log(`${moduleName} plugin.xml: ${pluginXmlPath}`);
 
         if (err) {
             throw err;
         }
 
-        console.log("current version: " + parsedXml.plugin.$.version);
+        console.log(`current version: ${parsedXml.plugin.$.version}`);
         parsedXml.plugin.$.version = semver.inc(parsedXml.plugin.$.version, "patch");
-        console.log("new version: " + parsedXml.plugin.$.version);
+        console.log(`new version: ${parsedXml.plugin.$.version}`);
 
         if (parsedXml.plugin.dependency) {
             for (const dependency of parsedXml.plugin.dependency) {
                 if (dependency.$.id === "cordova-plugin-appcenter-shared") {
-                    console.log("current version of cordova-plugin-appcenter-shared dependency: " + dependency.$.version)
+                    console.log(`current version of cordova-plugin-appcenter-shared dependency: ${dependency.$.version}`);
                     dependency.$.version = semver.inc(dependency.$.version, "patch");
-                    console.log("new version of cordova-plugin-appcenter-shared dependency: " + dependency.$.version)
+                    console.log(`new version of cordova-plugin-appcenter-shared dependency: ${dependency.$.version}`);
                 }
             }
         }
