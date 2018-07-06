@@ -20,6 +20,7 @@
     <preference name="APPCENTER_CRASHES_ALWAYS_SEND" value="false" />
     <platform name="android">
         <preference name="APP_SECRET" value="paste_android_app_secret_here" />
+        <resource-file src="google-services.json" target="app/google-services.json" />
         <allow-intent href="market:*" />
     </platform>
     <platform name="ios">
