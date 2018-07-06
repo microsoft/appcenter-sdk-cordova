@@ -20,7 +20,6 @@
     <preference name="APPCENTER_CRASHES_ALWAYS_SEND" value="false" />
     <platform name="android">
         <preference name="APP_SECRET" value="paste_android_app_secret_here" />
-        <preference name="FIREBASE_SENDER_ID" value="'paste_firebase_sender_id_here'" />
         <allow-intent href="market:*" />
     </platform>
     <platform name="ios">
