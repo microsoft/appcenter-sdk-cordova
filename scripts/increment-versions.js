@@ -7,6 +7,8 @@
     demoapp\package.json
 */
 
+// update plugin.xml files
+
 const fs = require('fs');
 const path = require('path');
 const xml2js = require('xml2js');
@@ -52,6 +54,8 @@ for (const pluginName of pluginNames) {
     });
 }
 
+// update demo app config.xml
+
 const demoappConfigPath = path.join(sourceDir, "demoapp", "config.xml");
 const demoappConfigContents = fs.readFileSync(demoappConfigPath);
 const parser = new xml2js.Parser({ includeWhiteChars: true });
@@ -74,9 +78,11 @@ parser.parseString(demoappConfigContents, function (err, parsedXml) {
     saveXml(parsedXml, demoappConfigPath);
 });
 
-demoappPackagePath = path.join(sourceDir, "demoapp", "package.json");
+// update demo app package.json
+
+const demoappPackagePath = path.join(sourceDir, "demoapp", "package.json");
 console.log(`demo app package.json: ${demoappPackagePath}`);
-demoappPackage = JSON.parse(fs.readFileSync(demoappPackagePath));
+const demoappPackage = JSON.parse(fs.readFileSync(demoappPackagePath));
 
 for (const pluginName of pluginNames) {
     console.log(`current version of ${pluginName}: ${demoappPackage.dependencies[pluginName]}`);
