@@ -1,4 +1,11 @@
-// Increment versions in plugin.xml files
+/* Increment versions in:
+    cordova-plugin-appcenter-shared\plugin.xml
+    cordova-plugin-appcenter-analytics\plugin.xml
+    cordova-plugin-appcenter-crashes\plugin.xml
+    cordova-plugin-appcenter-push\plugin.xml
+    demoapp\config.xml
+    demoapp\package.json
+*/
 
 const fs = require('fs');
 const path = require('path');
