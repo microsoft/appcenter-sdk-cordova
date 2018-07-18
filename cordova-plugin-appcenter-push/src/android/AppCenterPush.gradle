@@ -1,9 +1,15 @@
 buildscript {
     repositories {
+        google()
         jcenter()
         mavenLocal()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:+'
+        classpath 'com.google.gms:google-services:4.0.1'
     }
+}
+
+ext.postBuildExtras = {	
+    apply plugin: com.google.gms.googleservices.GoogleServicesPlugin
 }
