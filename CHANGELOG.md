@@ -1,5 +1,10 @@
 ___
 
+## Version 0.1.8
+
+- Updated App Center dependencies
+___
+
 ## Version 0.1.7
 
 - Updated App Center dependencies (AppCenterPush - firebase dependency reintroduced for Android)
