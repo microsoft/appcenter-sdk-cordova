@@ -12,7 +12,6 @@ import com.microsoft.appcenter.AppCenter;
 import com.microsoft.appcenter.push.Push;
 
 public class AppCenterPushPlugin extends CordovaPlugin {
-    private static final String SENDER_ID = "FIREBASE_SENDER_ID";
     private CordovaPushListener listener;
 
     @Override
@@ -22,12 +21,6 @@ public class AppCenterPushPlugin extends CordovaPlugin {
         AppCenterShared.configureAppCenter(
                 cordova.getActivity().getApplication(),
                 webView.getPreferences());
-
-        // For some reason Cordova reads SENDER_ID preference as double. 
-        // Because of this Pushes does not work properly, 
-        // as workaround SENDER_ID value should be wrapped by single quotes.
-        String senderId = webView.getPreferences().getString(SENDER_ID, "").replace("'", "");
-        Push.setSenderId(senderId);
 
         listener = new CordovaPushListener();
         Push.setListener(listener);
