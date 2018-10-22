@@ -1,3 +1,6 @@
+## Version 0.1.9
+
+- Updated App Center dependencies
 ___
 
 ## Version 0.1.8
