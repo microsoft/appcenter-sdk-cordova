@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-appcenter-shared",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Provides Microsoft Azure App Center shared functionality for Cordova",
   "license": "MIT",
   "author": "Microsoft Corporation",
