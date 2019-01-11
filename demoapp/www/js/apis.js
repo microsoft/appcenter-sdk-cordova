@@ -20,7 +20,7 @@ $(document).bind('pageinit', function () {
         });
     });
 
-    $('#user_id_input').change(function (userId) {
-        AppCenter.setUserId(userId);
+    $("#user_id_input").change(function () {
+        AppCenter.setUserId($("#user_id_input").val());
     });
 });  
