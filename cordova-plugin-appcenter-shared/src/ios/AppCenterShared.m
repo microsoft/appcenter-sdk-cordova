@@ -12,6 +12,11 @@ static MSWrapperSdk * wrapperSdk;
     [MSAppCenter configureWithAppSecret:secret];
 }
 
++ (void) setUserId: (NSString *)userId
+{
+    [MSAppCenter setUserId:userId];
+}
+
 + (NSString *) getAppSecretWithSettings: (NSDictionary*) settings
 {
     if (appSecret == nil) {

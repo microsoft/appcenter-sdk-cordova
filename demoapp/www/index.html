@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>AppCenter Cordova SDK Demo</title>
     <meta charset="utf-8">
@@ -16,6 +17,7 @@
     <script src="js/apis.js"></script>
     <script src="js/attachments.js"></script>
 </head>
+
 <body>
     <!--HOME-->
     <div data-role="page" id="pageone">
@@ -64,12 +66,15 @@
         </div>
 
         <div data-role="main" class="ui-content">
-            <p class="comment comment_red" style="display:none;" id="sending_status">Sending info about previous crash...</p>
+            <p class="comment comment_red" style="display:none;" id="sending_status">Sending info about previous
+                crash...</p>
             <button id="btn_toggle_crashes">Enable</button>
             <button id="btn_crash_js" class="ui-disabled">Crash Javascript (coming soon)</button>
             <button id="btn_crash_native">Crash native code</button>
-            <p class="comment">The app will crash and when you reopen it again and go to this screen, crash info will be sent.</p>
-            <a href="#text_attachment_popup" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-transition="pop">Set text attachment</a>
+            <p class="comment">The app will crash and when you reopen it again and go to this screen, crash info will
+                be sent.</p>
+            <a href="#text_attachment_popup" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline"
+                data-transition="pop">Set text attachment</a>
             <p class="comment" id="text_attachment_value">Current value: not set</p>
             <button id="btn_attachment_img">Set image as binary error attachment</button>
             <p class="comment" id="file_attachment_value">Current value: not set</p>
@@ -117,6 +122,8 @@
                 <span class="ui-disabled" id="lbl_log_level">Log level: 2</span>
                 <i class="fas fa-plus ui-disabled"></i>
             </h3>
+            <h3 id="user_id">User ID:</h3>
+            <input type="text" name="user_id_input" id="user_id_input" value="">
         </div>
 
         <div data-role="footer">
@@ -124,4 +131,5 @@
         </div>
     </div>
 </body>
+
 </html>

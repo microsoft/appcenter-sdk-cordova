@@ -19,4 +19,8 @@ $(document).bind('pageinit', function () {
             $("#install_id").html("Install ID: " + installId);
         });
     });
+
+    $('#user_id_input').change(function (userId) {
+        AppCenter.setUserId(userId);
+    });
 });  
