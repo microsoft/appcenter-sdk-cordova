@@ -22,6 +22,21 @@ public class AppCenterSharedPlugin extends CordovaPlugin {
             AppCenterUtils.sendUUIDPluginResultFromFuture(AppCenter.getInstallId(), callbackContext);
             return true;
         }
+        if (action.equals("setUserId")) {
+            String userId = args.getString(0);
+            AppCenterUtils.sendVoidPluginResultFromFuture(setUserId(userId), callbackContext);
+            return true;
+        }
         return false;
+    }
+
+    private synchronized AppCenterFuture<Void> setUserId(final String userId) {
+        final DefaultAppCenterFuture<Void> future = new DefaultAppCenterFuture<>();
+        final android.os.Handler handler = new android.os.Handler();
+        handler.post(() -> {
+            AppCenter.setUserId(userId);
+            future.complete(null);
+        });
+        return future;
     }
 }
