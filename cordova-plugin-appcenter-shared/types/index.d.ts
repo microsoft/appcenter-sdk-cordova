@@ -1,3 +1,6 @@
 declare namespace AppCenter {
-    export function getInstallId(success: (installId: string) => void, error: (err: any) => void): void;
+    export function getInstallId(
+        success: (installId: string) => void,
+        error: (error: any) => void
+    ): void;
 }
