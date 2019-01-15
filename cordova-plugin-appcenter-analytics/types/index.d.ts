@@ -1,16 +1,25 @@
+interface ErrorHandler {
+  (error: string): void;
+}
+interface SuccessHandler {
+  (): void;
+}
+
 declare namespace AppCenter {
   let Analytics: {
     trackEvent(
       eventName: string,
       properties: {},
-      success: () => void,
-      error: (error: string) => void
+      success: SuccessHandler,
+      error: ErrorHandler
     ): void;
-    isEnabled(success: () => void, error: (error: string) => void): void;
+
+    isEnabled(success: SuccessHandler, error: ErrorHandler): void;
+
     setEnabled(
       enabled: boolean,
-      success: () => void,
-      error: (error: string) => void
+      success: SuccessHandler,
+      error: ErrorHandler
     ): void;
   };
 }
