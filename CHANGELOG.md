@@ -1,3 +1,9 @@
+## Version 0.3.0
+
+- **[Feature]** Allow setting userId that applies to crashes, handled errors and push logs. This feature adds an API, but is not yet supported on the App Center backend.
+- **[Breaking change]** Drop iOS 8 support.
+___
+
 ## Version 0.2.2
 
 - Updated App Center dependencies

@@ -55,6 +55,6 @@
 
         <header-file src="src/ios/AppCenterSharedPlugin.h" />
         <source-file src="src/ios/AppCenterSharedPlugin.m" />
-         <framework src="AppCenter" type="podspec" spec="" />
+        <framework src="AppCenter" type="podspec" spec="~> 1.12.0" />
     </platform>
 </plugin>
