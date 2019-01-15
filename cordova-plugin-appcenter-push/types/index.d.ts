@@ -12,12 +12,12 @@ declare namespace AppCenter {
 
         addEventListener(
             eventname: string,
-            listener: (pushNotification: any) => void
+            listener: (pushNotification: { message: string, title: string, customProperties: {} }) => void
         ): void;
 
         removeEventListener(
             eventname: string,
-            listener: (pushNotification: any) => void
+            listener: (pushNotification: { message: string, title: string, customProperties: {} }) => void
         ): void;
     };
 }
