@@ -1,49 +1,39 @@
-interface ErrorHandler {
-  (error: string): void;
-}
-interface SuccessHandler {
-  (): void;
-}
-
-interface ReportHandler {
-  (report: {}): void;
-}
-
-interface CrashUserResponseHandler {
-  (response: any): void;
-}
-
 interface Attachments {
   addTextAttachment(title: string, filename: string);
   addBinaryAttachment(base64string: string, filename: string, mimeType: string);
 }
 
-interface ProcessorHandler {
-  (attachments: Attachments, success: CrashUserResponseHandler): void;
-}
-
 declare namespace AppCenter {
   let Crashes: {
-    generateTestCrash(error?: ErrorHandler);
+    generateTestCrash(error?: (error: string) => void);
 
     hasCrashedInLastSession(
-      success: SuccessHandler,
-      error: ErrorHandler
+      success: () => void,
+      error: (error: string) => void
     ): boolean;
 
-    lastSessionCrashReport(success: ReportHandler, error: ErrorHandler): void;
+    lastSessionCrashReport(
+      success: (report: {}) => void,
+      error: (error: string) => void
+    ): void;
 
-    isEnabled(success: (isEnabled: boolean) => void, error: ErrorHandler): void;
+    isEnabled(
+      success: (isEnabled: boolean) => void,
+      error: (error: string) => void
+    ): void;
 
     setEnabled(
       shouldEnable: boolean,
-      success: SuccessHandler,
-      error: ErrorHandler
+      success: () => void,
+      error: (error: string) => void
     );
 
     process(
-      processorFunction: ProcessorHandler,
-      errorCallback: ErrorHandler
+      processorFunction: (
+        attachments: Attachments,
+        success: (response: any) => void
+      ) => void,
+      errorCallback: (error: string) => void
     ): void;
   };
 }
