@@ -1,6 +1,6 @@
 ## Version 0.3.0
 
-- **[Feature]** Allow setting userId that applies to crashes, handled errors and push logs. This feature adds an API, but is not yet supported on the App Center backend.
+- **[Feature]** Allow setting userId that applies to crashes, handled errors and push logs.
 - **[iOS][Breaking change]** Drop iOS 8 support. If you encounter errors during a build or the plugin installation please ensure your generated Podfile has proper target (i.e. `platform :ios, '9.0'`)
 ___
 
