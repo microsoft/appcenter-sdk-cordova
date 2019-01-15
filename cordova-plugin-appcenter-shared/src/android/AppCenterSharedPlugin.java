@@ -40,9 +40,12 @@ public class AppCenterSharedPlugin extends CordovaPlugin {
         final DefaultAppCenterFuture<Void> future = new DefaultAppCenterFuture<>();
         final Handler handler = new Handler();
 
-        handler.post(() -> {
-            AppCenter.setUserId(userId);
-            future.complete(null);
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                AppCenter.setUserId(userId);
+                future.complete(null);
+            }
         });
 
         return future;
