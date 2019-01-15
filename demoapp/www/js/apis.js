@@ -25,7 +25,7 @@ $(document).bind('pageinit', function () {
         $("#lbl_log_level").html("Log level: " + logLevel);
     }
 
-    var updateUserId = function(){
+    var updateUserId = function() {
         var userId = $("#user_id_input").val();
         userIdProvider.put(userId);
         AppCenter.setUserId(userId);
