@@ -30,4 +30,14 @@
                                 callbackId:command.callbackId];
 }
 
+- (void)setLogUrl:(CDVInvokedUrlCommand *)command
+{
+    NSString* logUrl = [command argumentAtIndex:0 withDefault:nil andClass:[NSString class]];
+    [MSAppCenter setLogUrl:logUrl];
+    
+    CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+    [self.commandDelegate sendPluginResult:result
+                                callbackId:command.callbackId];
+}
+
 @end
