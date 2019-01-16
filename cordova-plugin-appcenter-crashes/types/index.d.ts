@@ -5,7 +5,7 @@ interface Attachments {
 
 declare namespace AppCenter {
     let Crashes: {
-        generateTestCrash(error?: (error: any) => void);
+        generateTestCrash(error: (error: any) => void);
 
         hasCrashedInLastSession(
             success: (result: boolean) => void,
@@ -26,7 +26,7 @@ declare namespace AppCenter {
             shouldEnable: boolean,
             success: () => void,
             error: (error: any) => void
-        );
+        ): void;
 
         process(
             processorFunction: (
