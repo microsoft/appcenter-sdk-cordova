@@ -31,7 +31,7 @@ declare namespace AppCenter {
         process(
             processorFunction: (
                 attachments: Attachments,
-                success: (response: any) => void
+                sendCallback: (response: any) => void
             ) => void,
             errorCallback: (error: any) => void
         ): void;
