@@ -5,27 +5,27 @@ interface Attachments {
 
 declare namespace AppCenter {
   let Crashes: {
-    generateTestCrash(error?: (error: string) => void);
+    generateTestCrash(error?: (error: any) => void);
 
     hasCrashedInLastSession(
       success: () => void,
-      error: (error: string) => void
+      error: (error: any) => void
     ): boolean;
 
     lastSessionCrashReport(
       success: (report: {}) => void,
-      error: (error: string) => void
+      error: (error: any) => void
     ): void;
 
     isEnabled(
       success: (isEnabled: boolean) => void,
-      error: (error: string) => void
+      error: (error: any) => void
     ): void;
 
     setEnabled(
       shouldEnable: boolean,
       success: () => void,
-      error: (error: string) => void
+      error: (error: any) => void
     );
 
     process(
@@ -33,7 +33,7 @@ declare namespace AppCenter {
         attachments: Attachments,
         success: (response: any) => void
       ) => void,
-      errorCallback: (error: string) => void
+      errorCallback: (error: any) => void
     ): void;
   };
 }

@@ -4,15 +4,15 @@ declare namespace AppCenter {
       eventName: string,
       properties: {},
       success: () => void,
-      error: (error: string) => void
+      error: (error: any) => void
     ): void;
 
-    isEnabled(success: () => void, error: (error: string) => void): void;
+    isEnabled(success: (isEnabled: boolean) => void, error: (error: any) => void): void;
 
     setEnabled(
       enabled: boolean,
       success: () => void,
-      error: (error: string) => void
+      error: (error: any) => void
     ): void;
   };
 }
