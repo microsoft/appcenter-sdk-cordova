@@ -33,6 +33,12 @@ public class AppCenterSharedPlugin extends CordovaPlugin {
             return true;
         }
 
+        if (action.equals("setLogUrl")) {
+            String logUrl = args.getString(0);
+            AppCenterUtils.sendVoidPluginResultFromFuture(setLogUrl(logUrl), callbackContext);
+            return true;
+        }
+
         return false;
     }
 
@@ -44,6 +50,21 @@ public class AppCenterSharedPlugin extends CordovaPlugin {
             @Override
             public void run() {
                 AppCenter.setUserId(userId);
+                future.complete(null);
+            }
+        });
+
+        return future;
+    }
+
+    private synchronized AppCenterFuture<Void> setLogUrl(final String logUrl) {
+        final DefaultAppCenterFuture<Void> future = new DefaultAppCenterFuture<>();
+        final Handler handler = new Handler();
+
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                AppCenter.setLogUrl(logUrl);
                 future.complete(null);
             }
         });
