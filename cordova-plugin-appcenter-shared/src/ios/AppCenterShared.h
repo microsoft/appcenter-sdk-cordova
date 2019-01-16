@@ -6,6 +6,8 @@
 
 + (void) setAppSecret: (NSString *)secret;
 
++ (void) setUserId: (NSString *)userId;
+
 + (NSString *) getAppSecretWithSettings: (NSDictionary*) settings;
 
 + (void) configureWithSettings: (NSDictionary* ) settings;

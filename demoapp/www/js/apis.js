@@ -1,3 +1,14 @@
+var USER_ID_KEY = "userid";
+var userIdProvider = {
+    put: function (value) {
+        localStorage.setItem(USER_ID_KEY, value);
+    },
+
+    get: function () {
+        return localStorage.getItem(USER_ID_KEY);
+    }
+}
+
 $(document).bind('pageinit', function () {
 
     //The code below wouldn't work for cordova yet.
@@ -14,9 +25,23 @@ $(document).bind('pageinit', function () {
         $("#lbl_log_level").html("Log level: " + logLevel);
     }
 
+    var updateUserId = function() {
+        var userId = $("#user_id_input").val();
+        userIdProvider.put(userId);
+        AppCenter.setUserId(userId);
+    }
+
     $("#apis_link").off('click').on('click', function (event, ui) {
+        var userId = userIdProvider.get();
+        $("#user_id_input").val(userId);
         AppCenter.getInstallId(function (installId) {
             $("#install_id").html("Install ID: " + installId);
         });
     });
+
+    $("#user_id_input")
+        .off("change")
+        .off("input")
+        .on("change", updateUserId)
+        .on("input", updateUserId);
 });  

@@ -33,4 +33,8 @@ class AppCenterShared {
 
         return AppCenterShared.appSecret;
     }
+
+    private static void setUserId(String userId) {
+        AppCenter.setUserId(userId);
+    }
 }
