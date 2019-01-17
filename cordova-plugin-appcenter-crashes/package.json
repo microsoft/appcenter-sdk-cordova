@@ -27,5 +27,6 @@
     "ecosystem:cordova",
     "cordova-android",
     "cordova-ios"
-  ]
+  ],
+  "types": "./types/index.d.ts"
 }
