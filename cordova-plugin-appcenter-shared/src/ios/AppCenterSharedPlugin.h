@@ -5,5 +5,6 @@
 
 - (void)pluginInitialize;
 - (void)getInstallId:(CDVInvokedUrlCommand *)command;
+- (void)setUserId:(CDVInvokedUrlCommand *)command;
 
 @end

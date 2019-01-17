@@ -24,6 +24,7 @@
         <allow-intent href="market:*" />
     </platform>
     <platform name="ios">
+        <preference name="deployment-target" value="9.0" />
         <preference name="APP_SECRET" value="paste_ios_app_secret_here" />
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
