@@ -4,6 +4,7 @@
 @implementation AppCenterShared
 
 static NSString *appSecret;
+static NSString *logUrl;
 static MSWrapperSdk * wrapperSdk;
 
 + (void) setAppSecret: (NSString *)secret
@@ -44,6 +45,11 @@ static MSWrapperSdk * wrapperSdk;
 
     [self setWrapperSdk:wrapperSdk];
     [MSAppCenter configureWithAppSecret:[AppCenterShared getAppSecretWithSettings: settings]];
+
+    logUrl = [settings cordovaSettingForKey:@"LOG_URL"];
+    if (logUrl != nil) {
+        [MSAppCenter setLogUrl:logUrl];
+    }
 }
 
 + (MSWrapperSdk *) getWrapperSdk

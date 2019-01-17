@@ -11,6 +11,7 @@ class AppCenterShared {
     private final static String VERSION_NAME = "0.0.1";
     private final static String SDK_NAME = "appcenter.cordova";
     private static final String APP_SECRET = "APP_SECRET";
+    private static final String LOG_URL = "LOG_URL";
     private static String appSecret;
     private static final WrapperSdk wrapperSdk = new WrapperSdk();
 
@@ -24,6 +25,11 @@ class AppCenterShared {
 
         AppCenter.setWrapperSdk(wrapperSdk);
         AppCenter.configure(application, AppCenterShared.getAppSecret(preferences));
+
+        final String logUrl = preferences.getString(LOG_URL, null);
+        if (logUrl != null && !logUrl.isEmpty()) {
+            AppCenter.setLogUrl(logUrl);
+        }
     }
 
     private static String getAppSecret(CordovaPreferences preferences) {
