@@ -2,6 +2,8 @@
 
 - **[Feature]** Allow setting userId that applies to crashes, handled errors and push logs.
 - **[iOS][Breaking change]** Drop iOS 8 support. If you encounter errors during a build or the plugin installation please ensure your generated Podfile has proper target (i.e. `platform :ios, '9.0'`)
+- Added declaration (d.ts) files
+- Bug fixes
 ___
 
 ## Version 0.2.2
