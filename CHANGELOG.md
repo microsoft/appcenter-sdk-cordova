@@ -1,3 +1,8 @@
+## Version 0.3.1
+
+- Updated App Center dependencies
+___
+
 ## Version 0.3.0
 
 - **[Feature]** Allow setting userId that applies to crashes, handled errors and push logs.
