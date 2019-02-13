@@ -85,6 +85,6 @@
         <header-file src="src/ios/PushUtils.h" />
         <source-file src="src/ios/PushUtils.m" />
 
-        <framework src="AppCenter/Push" type="podspec" spec="~> 1.12.0" />
+        <framework src="AppCenter/Push" type="podspec" spec="~> 1.13.1" />
     </platform>
 </plugin>

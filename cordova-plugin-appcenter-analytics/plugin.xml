@@ -60,6 +60,6 @@
         <header-file src="src/ios/AppCenterAnalyticsPlugin.h" />
         <source-file src="src/ios/AppCenterAnalyticsPlugin.m" />
 
-        <framework src="AppCenter" type="podspec" spec="~> 1.12.0" />
+        <framework src="AppCenter" type="podspec" spec="~> 1.13.1" />
     </platform>
 </plugin>
