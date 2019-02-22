@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <plugin id="cordova-plugin-appcenter-analytics"
-        version="0.3.1"
+        version="0.3.2"
         xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android">
 
@@ -19,7 +19,7 @@
     <engine name="cordova" version=">=6.4.0" />
     <engine name="cordova-ios" version=">=4.3.0" />
 
-    <dependency id="cordova-plugin-appcenter-shared" version="0.3.1"/>
+    <dependency id="cordova-plugin-appcenter-shared" version="0.3.2"/>
 
     <js-module name="Analytics" src="www/Analytics.js">
         <clobbers target="AppCenter.Analytics" />
@@ -60,6 +60,6 @@
         <header-file src="src/ios/AppCenterAnalyticsPlugin.h" />
         <source-file src="src/ios/AppCenterAnalyticsPlugin.m" />
 
-        <framework src="AppCenter" type="podspec" spec="~> 1.13.1" />
+        <framework src="AppCenter" type="podspec" spec="~> 1.13.2" />
     </platform>
 </plugin>

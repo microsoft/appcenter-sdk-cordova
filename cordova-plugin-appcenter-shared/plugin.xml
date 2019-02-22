@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <plugin id="cordova-plugin-appcenter-shared"
-        version="0.3.1"
+        version="0.3.2"
         xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android">
 
@@ -55,6 +55,6 @@
 
         <header-file src="src/ios/AppCenterSharedPlugin.h" />
         <source-file src="src/ios/AppCenterSharedPlugin.m" />
-        <framework src="AppCenter" type="podspec" spec="~> 1.13.1" />
+        <framework src="AppCenter" type="podspec" spec="~> 1.13.2" />
     </platform>
 </plugin>
