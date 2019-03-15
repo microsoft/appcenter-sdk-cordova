@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <plugin id="cordova-plugin-appcenter-push"
-        version="0.3.2"
+        version="0.3.3"
         xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android">
 
@@ -20,7 +20,7 @@
     <engine name="cordova" version=">=6.4.0" />
     <engine name="cordova-ios" version=">=4.3.0" />
 
-    <dependency id="cordova-plugin-appcenter-shared" version="0.3.2"/>
+    <dependency id="cordova-plugin-appcenter-shared" version="0.3.3"/>
 
     <js-module name="Push" src="www/Push.js">
         <clobbers target="AppCenter.Push" />
@@ -40,7 +40,7 @@
             <uses-permission android:name="android.permission.INTERNET" />
         </config-file>
 
-        <framework src="com.microsoft.appcenter:appcenter-push:1.11.3" />
+        <framework src="com.microsoft.appcenter:appcenter-push:1.11.4" />
         <framework src="src/android/AppCenterPush.gradle"
                    custom="true" type="gradleReference" />
 
@@ -85,6 +85,6 @@
         <header-file src="src/ios/PushUtils.h" />
         <source-file src="src/ios/PushUtils.m" />
 
-        <framework src="AppCenter/Push" type="podspec" spec="~> 1.13.2" />
+        <framework src="AppCenter/Push" type="podspec" spec="~> 1.14.0" />
     </platform>
 </plugin>
