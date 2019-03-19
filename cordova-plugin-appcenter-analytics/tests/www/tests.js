@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 /*jshint jasmine: true */
 
 module.exports.defineAutoTests = function () {

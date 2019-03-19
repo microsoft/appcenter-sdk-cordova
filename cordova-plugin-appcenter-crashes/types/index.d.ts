@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 interface Attachments {
     addTextAttachment(title: string, filename: string);
     addBinaryAttachment(base64string: string, filename: string, mimeType: string);

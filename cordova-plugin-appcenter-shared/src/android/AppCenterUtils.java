@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 package com.microsoft.azure.mobile.cordova;
 import java.util.UUID;
 import com.microsoft.appcenter.utils.async.AppCenterConsumer;
