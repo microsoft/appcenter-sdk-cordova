@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 var USER_ID_KEY = "userid";
 var userIdProvider = {
     put: function (value) {

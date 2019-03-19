@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 /* Increment versions in:
     cordova-plugin-appcenter-shared\plugin.xml
     cordova-plugin-appcenter-analytics\plugin.xml

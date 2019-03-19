@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 $(document).bind('pageinit', function () {
     var analyticsEnabled = false;
     var DISABLED_LBL = "Enable Analytics";

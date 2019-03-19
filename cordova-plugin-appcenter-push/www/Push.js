@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 var channel = require('cordova/channel');
 var exec = require('cordova/exec');
 
