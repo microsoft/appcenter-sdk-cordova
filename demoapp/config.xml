@@ -37,5 +37,5 @@
     <plugin name="cordova-plugin-appcenter-push" spec="^0.3.3" />
     <plugin name="cordova-plugin-appcenter-shared" spec="^0.3.3" />
     <engine name="android" spec="^7.0.0" />
-    <engine name="ios" spec="~4.5.4" />
+    <engine name="ios" spec="^5.0.0" />
 </widget>
