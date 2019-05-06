@@ -1,3 +1,8 @@
+## Version 0.3.4
+
+- Updated App Center dependencies
+___
+
 ## Version 0.3.3
 
 - Updated App Center dependencies
