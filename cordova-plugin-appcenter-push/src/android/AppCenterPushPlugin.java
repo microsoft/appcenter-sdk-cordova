@@ -3,6 +3,8 @@
 
 package com.microsoft.azure.mobile.cordova;
 
+import android.content.Intent;
+
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaInterface;
 import org.apache.cordova.CordovaPlugin;
@@ -16,11 +18,12 @@ import com.microsoft.appcenter.push.Push;
 
 public class AppCenterPushPlugin extends CordovaPlugin {
     private CordovaPushListener listener;
+    private CordovaInterface mCordova;
 
     @Override
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
-
+        mCordova = cordova;
         AppCenterShared.configureAppCenter(
                 cordova.getActivity().getApplication(),
                 webView.getPreferences());
@@ -29,6 +32,11 @@ public class AppCenterPushPlugin extends CordovaPlugin {
         Push.setListener(listener);
         
         AppCenter.start(Push.class);
+    }
+
+    @Override
+    public void onNewIntent(Intent intent) {
+        Push.checkLaunchedFromNotification(mCordova.getActivity(), intent);
     }
 
     @Override
