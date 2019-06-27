@@ -1,3 +1,8 @@
+## Version 0.3.5
+
+- **[Bugfix]**: Fixed PushListener not being called from background
+___
+
 ## Version 0.3.4
 
 - Updated App Center dependencies

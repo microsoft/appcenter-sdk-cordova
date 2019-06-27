@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <plugin id="cordova-plugin-appcenter-shared"
-        version="0.3.4"
+        version="0.3.5"
         xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android">
 
@@ -40,7 +40,7 @@
                        value="com.microsoft.azure.mobile.cordova.AppCenterSharedPlugin"/>
             </feature>
         </config-file>
-        <framework src="com.microsoft.appcenter:appcenter:2.0.0" />
+        <framework src="com.microsoft.appcenter:appcenter:2.1.0" />
     </platform>
 
     <platform name="ios">
@@ -55,6 +55,6 @@
 
         <header-file src="src/ios/AppCenterSharedPlugin.h" />
         <source-file src="src/ios/AppCenterSharedPlugin.m" />
-        <framework src="AppCenter" type="podspec" spec="~> 2.0.1" />
+        <framework src="AppCenter" type="podspec" spec="~> 2.1.0" />
     </platform>
 </plugin>
