@@ -1,14 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<<<<<<< Updated upstream
 <plugin id="cordova-plugin-appcenter-shared"
         version="0.3.5"
         xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android">
-=======
-<plugin id="cordova-plugin-appcenter-shared" version="0.3.4" 
-    xmlns="http://apache.org/cordova/ns/plugins/1.0" 
-    xmlns:android="http://schemas.android.com/apk/res/android">
->>>>>>> Stashed changes
 
     <name>App Center shared code for Cordova</name>
     <description>
