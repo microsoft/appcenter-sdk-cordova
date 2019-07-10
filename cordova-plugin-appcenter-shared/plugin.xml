@@ -18,22 +18,26 @@
     <!-- Cordova 6.4.0 and iOS 4.3.0 are required for Cocoapods support -->
     <engine name="cordova" version=">=6.4.0" />
     <engine name="cordova-ios" version=">=4.3.0" />
-
+    
     <js-module name="AppCenter" src="www/AppCenter.js">
         <clobbers target="AppCenter" />
     </js-module>
 
     <platform name="android">
-        <source-file src="src/android/AppCenterShared.java" target-dir="src/com/microsoft/azure/mobile/cordova" />
+        <source-file src="src/android/AppCenterShared.java"
+                     target-dir="src/com/microsoft/azure/mobile/cordova" />
 
-        <source-file src="src/android/AppCenterUtils.java" target-dir="src/com/microsoft/azure/mobile/cordova" />
+        <source-file src="src/android/AppCenterUtils.java"
+                     target-dir="src/com/microsoft/azure/mobile/cordova" />
 
-        <source-file src="src/android/AppCenterSharedPlugin.java" target-dir="src/com/microsoft/azure/mobile/cordova" />
+        <source-file src="src/android/AppCenterSharedPlugin.java"
+                target-dir="src/com/microsoft/azure/mobile/cordova" />
 
-        <config-file target="res/xml/config.xml" parent="/*">
+         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="AppCenterShared">
                 <param name="onload" value="true" />
-                <param name="android-package" value="com.microsoft.azure.mobile.cordova.AppCenterSharedPlugin"/>
+                <param name="android-package"
+                       value="com.microsoft.azure.mobile.cordova.AppCenterSharedPlugin"/>
             </feature>
         </config-file>
         <framework src="com.microsoft.appcenter:appcenter:2.1.0" />
@@ -42,7 +46,7 @@
     <platform name="ios">
         <header-file src="src/ios/AppCenterShared.h" />
         <source-file src="src/ios/AppCenterShared.m" />
-        <config-file target="config.xml" parent="/*">
+          <config-file target="config.xml" parent="/*">
             <feature name="AppCenterShared">
                 <param name="ios-package" value="AppCenterSharedPlugin" />
                 <param name="onload" value="true" />
@@ -59,7 +63,6 @@
                 <pod name="AppCenter" spec="~> 2.1.0" />
             </pods>
         </podspec>
-
         <framework src="AppCenter" type="podspec" spec="~> 2.1.0" />
     </platform>
 </plugin>
