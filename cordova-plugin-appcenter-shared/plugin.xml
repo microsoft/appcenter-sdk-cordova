@@ -55,6 +55,15 @@
 
         <header-file src="src/ios/AppCenterSharedPlugin.h" />
         <source-file src="src/ios/AppCenterSharedPlugin.m" />
+        <podspec>
+            <config>
+                <source url="https://github.com/CocoaPods/Specs.git"/>
+            </config>
+            <pods use-frameworks="true">
+                <pod name="AppCenter" spec="~> 2.1.0" />
+            </pods>
+        </podspec>
         <framework src="AppCenter" type="podspec" spec="~> 2.1.0" />
     </platform>
 </plugin>
+
