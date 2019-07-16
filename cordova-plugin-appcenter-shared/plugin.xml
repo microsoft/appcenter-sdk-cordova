@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <plugin id="cordova-plugin-appcenter-shared"
-        version="0.3.5"
+        version="0.3.6"
         xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android">
 
@@ -40,7 +40,7 @@
                        value="com.microsoft.azure.mobile.cordova.AppCenterSharedPlugin"/>
             </feature>
         </config-file>
-        <framework src="com.microsoft.appcenter:appcenter:2.1.0" />
+        <framework src="com.microsoft.appcenter:appcenter:2.2.0" />
     </platform>
 
     <platform name="ios">
@@ -60,10 +60,10 @@
                 <source url="https://github.com/CocoaPods/Specs.git"/>
             </config>
             <pods use-frameworks="true">
-                <pod name="AppCenter" spec="~> 2.1.0" />
+                <pod name="AppCenter" spec="~> 2.2.0" />
             </pods>
         </podspec>
-        <framework src="AppCenter" type="podspec" spec="~> 2.1.0" />
+        <framework src="AppCenter" type="podspec" spec="~> 2.2.0" />
     </platform>
 </plugin>
 
