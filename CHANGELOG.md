@@ -1,3 +1,9 @@
+## Version 0.3.6
+
+- Updated App Center dependencies
+- **[Bugfix]**: Removed deprecated framework tags
+___
+
 ## Version 0.3.5
 
 - **[Bugfix]**: Fixed PushListener not being called from background
