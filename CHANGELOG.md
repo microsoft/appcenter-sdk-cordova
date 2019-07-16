@@ -1,3 +1,13 @@
+## Version 0.3.6
+
+Changes:
+- **[Bugfix]**: Removed deprecated framework tags
+
+Updated native SDK versions:
+- Android from `2.1.0` to [2.2.0](https://github.com/Microsoft/AppCenter-SDK-Android/releases/tag/2.2.0)
+- iOS from `2.1.0` to [2.2.0](https://github.com/Microsoft/AppCenter-SDK-Apple/releases/tag/2.2.0)
+___
+
 ## Version 0.3.5
 
 - **[Bugfix]**: Fixed PushListener not being called from background
