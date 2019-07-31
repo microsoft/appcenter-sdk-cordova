@@ -13,6 +13,7 @@
 
 - (void) lastSessionCrashReport: (CDVInvokedUrlCommand *)command;
 - (void) hasCrashedInLastSession: (CDVInvokedUrlCommand *)command;
+- (void) hasReceivedMemoryWarningInLastSession: (CDVInvokedUrlCommand *)command;
 - (void) getCrashReports: (CDVInvokedUrlCommand *) command;
 - (void)isEnabled:(CDVInvokedUrlCommand *)command;
 - (void)setEnabled:(CDVInvokedUrlCommand *)command;
