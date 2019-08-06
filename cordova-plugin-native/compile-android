@@ -1,0 +1,4 @@
+cd src/android
+rm -Rf libs/ obj/
+ndk-build
+cd ../..
