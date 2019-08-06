@@ -18,9 +18,10 @@ public class CCodePlugin extends CordovaPlugin {
         boolean result = true;
         try {
             if (action.equals("generateLowMemory")) {
-                String jniOutput = CCodeJni.generateLowMemory();
-                String output = jniOutput;
-                callbackContext.success(output);
+                Log.d(TAG, "generateLowMemory");
+                CCodeJni.generateLowMemory();
+                Log.d(TAG, "generateLowMemory 2");
+                return true;
             }
             else {
                 handleError("Invalid action");

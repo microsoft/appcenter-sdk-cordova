@@ -55,42 +55,42 @@
     <source-file src="src/common/ccode.h" target-dir="app/src/main/java/c/common/"/>
     <source-file src="src/common/ccode.c" target-dir="app/src/main/java/c/common/"/>
 
-    <source-file src="src/common/mylib/mylib.h" target-dir="app/src/main/java/c/common/mylib"/>
+    <!-- <source-file src="src/common/mylib/mylib.h" target-dir="app/src/main/java/c/common/mylib"/>
     <source-file src="src/common/mylib/mylib.c" target-dir="app/src/main/java/c/common/mylib"/>
     <source-file src="src/common/mylib/mycomponent.h" target-dir="app/src/main/java/c/common/mylib"/>
     <source-file src="src/common/mylib/mycomponent.c" target-dir="app/src/main/java/c/common/mylib"/>
     <source-file src="src/common/mylib/parts/mypart.h" target-dir="app/src/main/java/c/common/mylib/parts"/>
-    <source-file src="src/common/mylib/parts/mypart.c" target-dir="app/src/main/java/c/common/mylib/parts"/>
+    <source-file src="src/common/mylib/parts/mypart.c" target-dir="app/src/main/java/c/common/mylib/parts"/> -->
     <!-- END DEBUG -->
 
   </platform>
 
-  <platform name="ios">
+<!-- <platform name="ios"> -->
 
-    <config-file target="config.xml" parent="/widget">
-      <feature name="CCodePlugin">
-        <param name="ios-package" value="CCodePlugin" />
-      </feature>
-    </config-file>
+    <!-- <config-file target="config.xml" parent="/widget"> -->
+      <!-- <feature name="CCodePlugin"> -->
+        <!-- <param name="ios-package" value="CCodePlugin" /> -->
+      <!-- </feature> -->
+    <!-- </config-file> -->
 
     <!-- Objective-C plugin API -->
-    <header-file src="src/ios/CCodePlugin.h" target-dir="CCodePlugin"/>
-    <source-file src="src/ios/CCodePlugin.m" target-dir="CCodePlugin"/>
+    <!-- <header-file src="src/ios/CCodePlugin.h" target-dir="CCodePlugin"/> -->
+    <!-- <source-file src="src/ios/CCodePlugin.m" target-dir="CCodePlugin"/> -->
 
     <!-- C source files -->
-    <header-file src="src/ios/c_getArch.h" target-dir="CCodePlugin"/>
-    <source-file src="src/ios/c_getArch.c" target-dir="CCodePlugin"/>
+    <!-- <header-file src="src/ios/c_getArch.h" target-dir="CCodePlugin"/> -->
+    <!-- <source-file src="src/ios/c_getArch.c" target-dir="CCodePlugin"/> -->
 
-    <header-file src="src/common/ccode.h" target-dir="CCodePlugin"/>
-    <source-file src="src/common/ccode.c" target-dir="CCodePlugin"/>
+    <!-- <header-file src="src/common/ccode.h" target-dir="CCodePlugin"/> -->
+    <!-- <source-file src="src/common/ccode.c" target-dir="CCodePlugin"/> -->
 
     <!-- PRODUCTION - comment out source files below for debugging -->
     <!-- Compiled C libraries -->
-    <source-file src="src/ios/libs/libmylib.a" framework="true" />
+    <!-- <source-file src="src/ios/libs/libmylib.a" framework="true" /> -->
     <!-- C header files -->
-    <header-file src="src/ios/libs/headers/mylib.h" target-dir="CCodePlugin"/>
-    <header-file src="src/ios/libs/headers/mycomponent.h" target-dir="CCodePlugin"/>
-    <header-file src="src/ios/libs/headers/mypart.h" target-dir="CCodePlugin"/>
+    <!-- <header-file src="src/ios/libs/headers/mylib.h" target-dir="CCodePlugin"/> -->
+    <!-- <header-file src="src/ios/libs/headers/mycomponent.h" target-dir="CCodePlugin"/> -->
+    <!-- <header-file src="src/ios/libs/headers/mypart.h" target-dir="CCodePlugin"/> -->
     <!-- END PRODUCTION -->
 
     <!-- DEBUG - these files are not needed for production - comment in for debugging -->
@@ -104,5 +104,5 @@
     <!-- END DEBUG -->
 
 
-  </platform>
+  <!-- </platform> -->
 </plugin>
