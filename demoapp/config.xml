@@ -36,6 +36,6 @@
     <plugin name="cordova-plugin-appcenter-crashes" spec="^0.3.6" />
     <plugin name="cordova-plugin-appcenter-push" spec="^0.3.6" />
     <plugin name="cordova-plugin-appcenter-shared" spec="^0.3.6" />
-    <plugin name="cordova-native-plugin" spec="../cordova-plugin-native" />
+    <plugin name="com.example.plugin" spec="../cordova-plugin-generate-low-memory" />
     <engine name="android" spec="^7.1.4" />
 </widget>

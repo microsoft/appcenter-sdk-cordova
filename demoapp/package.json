@@ -15,20 +15,16 @@
       "cordova-plugin-appcenter-crashes": {},
       "cordova-plugin-appcenter-push": {},
       "cordova-plugin-generate-low-memory": {},
-      "com.example.plugin": {},
-      "cordova-native-plugin": {},
-      "cordova-plugin-c-code": {}
+      "com.example.plugin": {}
     }
   },
   "dependencies": {
     "com.example.plugin": "../cordova-plugin-generate-low-memory",
     "cordova-android": "^7.1.4",
-    "cordova-native-plugin": "../cordova-plugin-native",
     "cordova-plugin-appcenter-analytics": "^0.3.6",
     "cordova-plugin-appcenter-crashes": "^0.3.6",
     "cordova-plugin-appcenter-push": "^0.3.6",
     "cordova-plugin-appcenter-shared": "^0.3.6",
-    "cordova-plugin-c-code": "file:../cordova-plugin-native",
     "cordova-plugin-camera": "^3.0.0",
     "cordova-plugin-file": "^5.0.0",
     "cordova-plugin-generate-low-memory": "file:../cordova-plugin-generate-low-memory",

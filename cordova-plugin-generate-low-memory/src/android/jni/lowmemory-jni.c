@@ -3,7 +3,6 @@
 #include <jni.h>
 
 void
-Java_com_example_plugin_LowMemoryJni_generateLowMemory
 Java_com_example_plugin_LowMemoryJni_generateLowMemory(JNIEnv* env,
                                                   jobject thiz)
 {
