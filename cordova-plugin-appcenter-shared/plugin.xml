@@ -40,7 +40,7 @@
                        value="com.microsoft.azure.mobile.cordova.AppCenterSharedPlugin"/>
             </feature>
         </config-file>
-        <framework src="com.microsoft.appcenter:appcenter:2.2.0" />
+        <framework src="com.microsoft.appcenter:appcenter:2.2.1-5+3fb00f02c" />
     </platform>
 
     <platform name="ios">

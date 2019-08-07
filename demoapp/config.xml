@@ -32,10 +32,10 @@
     <plugin name="cordova-plugin-whitelist" spec="^1.3.3" />
     <plugin name="cordova-plugin-file" spec="^4.0.0" />
     <plugin name="cordova-plugin-camera" spec="^3.0.0" />
-    <plugin name="cordova-plugin-appcenter-analytics" spec="^0.3.6" />
-    <plugin name="cordova-plugin-appcenter-crashes" spec="^0.3.6" />
-    <plugin name="cordova-plugin-appcenter-push" spec="^0.3.6" />
-    <plugin name="cordova-plugin-appcenter-shared" spec="^0.3.6" />
     <plugin name="com.example.plugin" spec="../cordova-plugin-generate-low-memory" />
+    <plugin name="cordova-plugin-appcenter-shared" spec="../cordova-plugin-appcenter-shared" />
+    <plugin name="cordova-plugin-appcenter-analytics" spec="../cordova-plugin-appcenter-analytics" />
+    <plugin name="cordova-plugin-appcenter-crashes" spec="../cordova-plugin-appcenter-crashes" />
+    <plugin name="cordova-plugin-appcenter-push" spec="../cordova-plugin-appcenter-push" />
     <engine name="android" spec="^7.1.4" />
 </widget>
