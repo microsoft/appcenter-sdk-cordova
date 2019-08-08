@@ -37,12 +37,12 @@
 
     <config-file target="config.xml" parent="/*">
             <feature name="LowMemory">
-                <param name="ios-package" value="LowMemoryPlugin" />
+                <param name="ios-package" value="LowMemory" />
             </feature>
         </config-file>
 
-    <header-file src="src/ios/LowMemory.h" />
-    <source-file src="src/ios/LowMemory.m" />
+    <header-file src="src/ios/LowMemory.h" target-dir="LowMemory"/>
+    <source-file src="src/ios/LowMemory.m" target-dir="LowMemory"/>
 
   </platform>
 </plugin>

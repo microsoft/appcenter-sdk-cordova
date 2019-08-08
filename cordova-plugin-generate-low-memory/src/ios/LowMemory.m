@@ -24,7 +24,7 @@ static int const blockSize = 256 * 1024 * 1024;
   return self;
 }
 
-- (void) generateLowMemory
+- (void) generateLowMemory :(CDVInvokedUrlCommand *) command
 {
   const size_t blockSize = 128 * 1024 * 1024;
   dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 100 * NSEC_PER_MSEC), dispatch_get_main_queue(), ^{
@@ -35,6 +35,8 @@ static int const blockSize = 256 * 1024 * 1024;
     NSLog(@"Allocated %zu MB", self.allocated / (1024 * 1024));
     [self generateLowMemory];
   });
+  [self.commandDelegate sendPluginResult:[CDVPluginResult resultWithStatus:CDVCommandStatus_OK]
+                                callbackId:command.callbackId];
 }
 
 + (BOOL)requiresMainQueueSetup
