@@ -16,7 +16,7 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
-    <preference name="APPCENTER_ANALYTICS_ENABLE_IN_JS" value="true" />
+    <preference name="APPCENTER_ANALYTICS_ENABLE_IN_JS" value="false" />
     <preference name="APPCENTER_CRASHES_ALWAYS_SEND" value="false" />
     <platform name="android">
         <preference name="APP_SECRET" value="adabe47b-4deb-4be2-803b-d8db7eab3530" />
