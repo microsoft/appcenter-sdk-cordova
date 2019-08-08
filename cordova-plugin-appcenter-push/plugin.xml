@@ -91,10 +91,10 @@
 
             </config>
             <pods use-frameworks="true">
-                <pod name="AppCenter/Push" spec="~> 2.2.1-5" />
+                <pod name="AppCenter/Push" spec="2.2.1-5" />
             </pods>
         </podspec>
 
-        <framework src="AppCenter/Push" type="podspec" spec="~> 2.2.1-5" />
+        <framework src="AppCenter/Push" type="podspec" spec="2.2.1-5" />
     </platform>
 </plugin>

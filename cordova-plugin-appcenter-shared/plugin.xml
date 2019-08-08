@@ -60,10 +60,10 @@
                 <source url="https://msmobilecenter.visualstudio.com/SDK/_git/AppCenterSDK-Specs-Private"/>
             </config>
             <pods use-frameworks="true">
-                <pod name="AppCenter" spec="~> 2.2.1-5" />
+                <pod name="AppCenter" spec="2.2.1-5" />
             </pods>
         </podspec>
-        <framework src="AppCenter" type="podspec" spec="~> 2.2.1-5" />
+        <framework src="AppCenter" type="podspec" spec="2.2.1-5" />
     </platform>
 </plugin>
 
