@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 package com.microsoft.appcenter.cordova.demo;
 
 import org.apache.cordova.*;
@@ -9,6 +12,7 @@ import android.os.Handler;
 import android.os.Looper;
 import java.util.concurrent.atomic.AtomicInteger;
 import android.util.Log;
+
 public class LowMemory extends CordovaPlugin {
 
     @Override
