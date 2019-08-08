@@ -21,7 +21,7 @@ extern "C"
 static std::vector<void*> data;
 
 void
-Java_com_example_plugin_LowMemoryJni_generateLowMemory(JNIEnv* env,
+Java_com_microsoft_appcenter_cordova_demo_LowMemoryJni_generateLowMemory(JNIEnv* env,
                                                   jobject thiz) {
     size_t size = 32 * 1024 * 1024;
     void *buffer = malloc(size);

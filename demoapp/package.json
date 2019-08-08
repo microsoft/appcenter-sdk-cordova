@@ -14,12 +14,10 @@
       "cordova-plugin-appcenter-analytics": {},
       "cordova-plugin-appcenter-crashes": {},
       "cordova-plugin-appcenter-push": {},
-      "cordova-plugin-generate-low-memory": {},
-      "com.example.plugin": {}
+      "cordova-plugin-generate-low-memory": {}
     }
   },
   "dependencies": {
-    "com.example.plugin": "../cordova-plugin-generate-low-memory",
     "cordova-android": "^7.1.4",
     "cordova-plugin-appcenter-analytics": "file:../cordova-plugin-appcenter-analytics",
     "cordova-plugin-appcenter-crashes": "file:../cordova-plugin-appcenter-crashes",

@@ -1,4 +1,4 @@
-package com.example.plugin;
+package com.microsoft.appcenter.cordova.demo;
 
 import org.apache.cordova.*;
 import org.json.JSONArray;

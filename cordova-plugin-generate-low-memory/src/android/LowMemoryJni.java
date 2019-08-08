@@ -1,4 +1,4 @@
-package com.example.plugin;
+package com.microsoft.appcenter.cordova.demo;
 
 import android.app.Activity;
 import android.widget.TextView;
