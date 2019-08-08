@@ -35,7 +35,14 @@
 
   <platform name="ios">
 
-    <config-file target="config.xml" parent="/widget">
-    </config-file>
+    <config-file target="config.xml" parent="/*">
+            <feature name="LowMemory">
+                <param name="ios-package" value="LowMemoryPlugin" />
+            </feature>
+        </config-file>
+
+    <header-file src="src/ios/LowMemory.h" />
+    <source-file src="src/ios/LowMemory.m" />
+
   </platform>
 </plugin>
