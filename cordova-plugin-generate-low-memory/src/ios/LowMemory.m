@@ -2,8 +2,6 @@
 // Licensed under the MIT License.
 
 #import "LowMemory.h"
-#include <stdio.h>
-#include <vector>
 
 @interface LowMemory ()
 

@@ -6,6 +6,6 @@
 
 @interface LowMemory : CDVPlugin
 
-- (void) generateLowMemory();
+- (void) generateLowMemory;
 
 @end
