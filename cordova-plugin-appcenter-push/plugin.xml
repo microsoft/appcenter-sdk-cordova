@@ -87,13 +87,14 @@
 
         <podspec>
             <config>
-                <source url="https://github.com/CocoaPods/Specs.git"/>
+                <source url="https://msmobilecenter.visualstudio.com/SDK/_git/AppCenterSDK-Specs-Private"/>
+
             </config>
             <pods use-frameworks="true">
-                <pod name="AppCenter/Push" spec="~> 2.2.0" />
+                <pod name="AppCenter/Push" spec="~> 2.2.1-5" />
             </pods>
         </podspec>
 
-        <framework src="AppCenter/Push" type="podspec" spec="~> 2.2.0" />
+        <framework src="AppCenter/Push" type="podspec" spec="~> 2.2.1-5" />
     </platform>
 </plugin>
