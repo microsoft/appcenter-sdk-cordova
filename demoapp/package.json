@@ -4,8 +4,8 @@
   "displayName": "HelloCordova",
   "cordova": {
     "platforms": [
-      "android",
-      "ios"
+      "ios",
+      "android"
     ],
     "plugins": {
       "cordova-plugin-whitelist": {},
@@ -14,18 +14,20 @@
       "cordova-plugin-appcenter-shared": {},
       "cordova-plugin-appcenter-analytics": {},
       "cordova-plugin-appcenter-crashes": {},
-      "cordova-plugin-appcenter-push": {}
+      "cordova-plugin-appcenter-push": {},
+      "cordova-plugin-generate-low-memory": {}
     }
   },
   "dependencies": {
-    "cordova-android": "^7.0.0",
-    "cordova-ios": "5.0.0",
-    "cordova-plugin-appcenter-analytics": "^0.3.5",
-    "cordova-plugin-appcenter-crashes": "^0.3.5",
-    "cordova-plugin-appcenter-push": "^0.3.5",
-    "cordova-plugin-appcenter-shared": "^0.3.5",
+    "cordova-android": "^8.0.0",
+    "cordova-ios": "^5.0.1",
+    "cordova-plugin-appcenter-analytics": "file:../cordova-plugin-appcenter-analytics",
+    "cordova-plugin-appcenter-crashes": "file:../cordova-plugin-appcenter-crashes",
+    "cordova-plugin-appcenter-push": "file:../cordova-plugin-appcenter-push",
+    "cordova-plugin-appcenter-shared": "file:../cordova-plugin-appcenter-shared",
     "cordova-plugin-camera": "^3.0.0",
     "cordova-plugin-file": "^5.0.0",
-    "cordova-plugin-whitelist": "^1.3.3"
+    "cordova-plugin-generate-low-memory": "file:../cordova-plugin-generate-low-memory",
+    "cordova-plugin-whitelist": "^1.3.4"
   }
 }

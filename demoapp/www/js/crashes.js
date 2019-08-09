@@ -116,10 +116,7 @@ $(document).bind('pageinit', function () {
     });
 
     $("#btn_memory_warning").off('click').on('click', function (event, ui) {
-        var array = [];
-        while(true) {
-            array.push(new Array(1024 * 1024 * 128));
-        }
+        LowMemory.generateLowMemory();
     });
 
     var updateAttachment = function () {

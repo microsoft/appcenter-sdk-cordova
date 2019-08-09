@@ -1,0 +1,22 @@
+{
+  "name": "cordova-plugin-generate-low-memory",
+  "version": "0.0.1",
+  "description": "Description",
+  "license": "MIT",
+  "author": "Microsoft Corporation",
+  "cordova": {
+    "id": "cordova-plugin-generate-low-memory",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "keywords": [
+    "microsoft",
+    "azure",
+    "app center",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ]
+}
