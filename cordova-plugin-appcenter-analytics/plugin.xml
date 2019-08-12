@@ -62,12 +62,12 @@
 
         <podspec>
             <config>
-                <source url="https://msmobilecenter.visualstudio.com/SDK/_git/AppCenterSDK-Specs-Private"/>
+                <source url="https://github.com/CocoaPods/Specs.git"/>
             </config>
             <pods use-frameworks="true">
-                <pod name="AppCenter/Analytics" spec="2.2.1-5" />
+                <pod name="AppCenter/Analytics" spec="~> 2.2.0" />
             </pods>
         </podspec>
-        <framework src="AppCenter" type="podspec" spec="2.2.1-5" />
+        <framework src="AppCenter" type="podspec" spec="~> 2.2.0" />
     </platform>
 </plugin>
