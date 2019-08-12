@@ -20,7 +20,8 @@ function onNotificationReceived(pushNotification) {
 }
 
 function updateNotificationListener(isEnabled) {
-    //This is how you can add listener for notifications.
+
+    // This is how you can add listener for notifications.
     if (isEnabled) {
         AppCenter.Push.addEventListener('notificationReceived', onNotificationReceived); 
     } else {
@@ -43,7 +44,7 @@ $(document).bind('pageinit', function () {
     var updatePush = function() {
         $("#btn_toggle_push").html(pushEnabled ? ENABLED_LBL : DISABLED_LBL);
 
-        //This is how you can add listener for notifications.
+         // This is how you can add listener for notifications.
         updateNotificationListener(pushEnabled);
     }
 
@@ -51,7 +52,7 @@ $(document).bind('pageinit', function () {
         alert("Something went wrong! " + err);
     }
 
-    //This is how you can check whether push is enabled.
+     // This is how you can check whether push is enabled.
     $("#push_link").off('click').on('click', function (event, ui) {
         AppCenter.Push.isEnabled(function (isEnabled) {
             pushEnabled = isEnabled;
