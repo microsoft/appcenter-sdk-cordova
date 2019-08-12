@@ -25,7 +25,7 @@ public class LowMemory extends CordovaPlugin {
                 @Override
                 public void run() {
                     LowMemoryJni.generateLowMemory();
-                    Log.d("Tag", "Memory allocated: " + i.addAndGet(128) + "MB");
+                    Log.d("Low memory plugin", "Memory allocated: " + i.addAndGet(128) + "MB");
                     handler.post(this);
                 }
             }, 500);
