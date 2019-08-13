@@ -35,6 +35,7 @@ function onDeviceReady() {
 
     // This is how you can check whether push is enabled.
     AppCenter.Push.isEnabled(function (isEnabled) {
+        pushEnabled = isEnabled;
         updateNotificationListener(isEnabled);
     });
 }
