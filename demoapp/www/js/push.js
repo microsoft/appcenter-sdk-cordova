@@ -1,6 +1,8 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
+var pushEnabled = false;
+
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onNotificationReceived(pushNotification) {
@@ -30,21 +32,20 @@ function updateNotificationListener(isEnabled) {
 }
 
 function onDeviceReady() {
+
+    // This is how you can check whether push is enabled.
     AppCenter.Push.isEnabled(function (isEnabled) {
         updateNotificationListener(isEnabled);
     });
 }
 
 $(document).bind('pageinit', function () {
-    var pushEnabled = false;
-
+    
     var DISABLED_LBL = "Enable Push";
     var ENABLED_LBL = "Disable Push";
 
     var updatePush = function() {
         $("#btn_toggle_push").html(pushEnabled ? ENABLED_LBL : DISABLED_LBL);
-
-         // This is how you can add listener for notifications.
         updateNotificationListener(pushEnabled);
     }
 
@@ -52,17 +53,14 @@ $(document).bind('pageinit', function () {
         alert("Something went wrong! " + err);
     }
 
-    // This is how you can check whether push is enabled.
     $("#push_link").off('click').on('click', function (event, ui) {
-        AppCenter.Push.isEnabled(function (isEnabled) {
-            pushEnabled = isEnabled;
-            updatePush();
-        });
+        updatePush();
     });
 
-    //This is how you can enable/disable push.
     $("#btn_toggle_push").off('click').on('click', function (event, ui) {
         pushEnabled = !pushEnabled;
+
+        //This is how you can enable/disable push.
         AppCenter.Push.setEnabled(pushEnabled, updatePush, errorHandler);
     }); 
 });  
