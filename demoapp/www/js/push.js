@@ -52,7 +52,7 @@ $(document).bind('pageinit', function () {
         alert("Something went wrong! " + err);
     }
 
-     // This is how you can check whether push is enabled.
+    // This is how you can check whether push is enabled.
     $("#push_link").off('click').on('click', function (event, ui) {
         AppCenter.Push.isEnabled(function (isEnabled) {
             pushEnabled = isEnabled;
