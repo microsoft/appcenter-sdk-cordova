@@ -6,6 +6,6 @@
 
 @interface LowMemory : CDVPlugin
 
-- (void) generateLowMemory: (CDVInvokedUrlCommand *)command;
+- (void)generateLowMemory:(CDVInvokedUrlCommand *)command;
 
 @end

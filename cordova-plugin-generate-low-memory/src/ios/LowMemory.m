@@ -15,7 +15,7 @@
 
 static size_t const blockSize = 128 * 1024 * 1024;
 
-- (instancetype) init {
+- (instancetype)init {
   self = [super init];
   if (self) {
     _buffers = [NSMutableArray new];
@@ -24,14 +24,14 @@ static size_t const blockSize = 128 * 1024 * 1024;
   return self;
 }
 
-- (void) generateLowMemory :(CDVInvokedUrlCommand *) command
+- (void)generateLowMemory:(CDVInvokedUrlCommand *)command
 {
   [self.commandDelegate sendPluginResult:[CDVPluginResult resultWithStatus:CDVCommandStatus_OK]
                               callbackId:command.callbackId];
   [self produceLowMemory];
 }
 
-- (void) produceLowMemory {
+- (void)produceLowMemory {
   dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 100 * NSEC_PER_MSEC), dispatch_get_main_queue(), ^{
     void *buffer = malloc(blockSize);
     memset(buffer, 42, blockSize);
@@ -42,8 +42,7 @@ static size_t const blockSize = 128 * 1024 * 1024;
   });
 }
 
-+ (BOOL)requiresMainQueueSetup
-{
++ (BOOL)requiresMainQueueSetup {
   return YES;
 }
 
