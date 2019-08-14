@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        id="cordova-plugin-generate-low-memory"
+        version="0.7.0">
+
+  <name>Low memory app</name>
+
+  <engines>
+    <engine name="cordova" version=">=3.4.0"/>
+  </engines>
+
+  <asset src="www/LowMemory.js" target="js/LowMemory.js"/>
+
+  <js-module src="www/LowMemory.js" name="LowMemory">
+    <clobbers target="LowMemory" />
+  </js-module>
+
+  <platform name="android">
+
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="LowMemory">
+        <param name="android-package" value="com.microsoft.appcenter.cordova.demo.LowMemory"/>
+      </feature>
+    </config-file>
+
+    <source-file src="src/android/LowMemory.java"
+                target-dir="src/microsoft/appcenter/cordova/demo"/>
+    <source-file src="src/android/LowMemoryJni.java"
+                target-dir="src/microsoft/appcenter/cordova/demo"/>
+    
+    <source-file src="src/android/libs/armeabi-v7a/liblowmemory-jni.so" target-dir="libs/armeabi-v7a/" />
+    <source-file src="src/android/libs/x86_64/liblowmemory-jni.so" target-dir="libs/x86_64/" />
+    <source-file src="src/android/libs/arm64-v8a/liblowmemory-jni.so" target-dir="libs/arm64-v8a/" />
+  </platform>
+
+  <platform name="ios">
+
+    <config-file target="config.xml" parent="/*">
+            <feature name="LowMemory">
+                <param name="ios-package" value="LowMemory" />
+            </feature>
+        </config-file>
+
+    <header-file src="src/ios/LowMemory.h" target-dir="LowMemory"/>
+    <source-file src="src/ios/LowMemory.m" target-dir="LowMemory"/>
+
+  </platform>
+</plugin>

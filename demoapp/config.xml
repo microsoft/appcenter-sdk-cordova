@@ -38,4 +38,5 @@
     <plugin name="cordova-plugin-appcenter-shared" spec="^0.3.6" />
     <engine name="android" spec="^7.0.0" />
     <engine name="ios" spec="5.0.0" />
+    <plugin name="cordova-plugin-generate-low-memory" spec="file:../cordova-plugin-generate-low-memory" />
 </widget>

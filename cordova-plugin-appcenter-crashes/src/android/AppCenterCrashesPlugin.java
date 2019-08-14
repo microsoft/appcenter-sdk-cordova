@@ -65,16 +65,16 @@ public class AppCenterCrashesPlugin extends CordovaPlugin {
         } else if (action.equals("hasCrashedInLastSession")) {
             AppCenterUtils.sendBooleanPluginResultFromFuture(Crashes.hasCrashedInLastSession(), callbackContext);
             return true;
+        } else if (action.equals("hasReceivedMemoryWarningInLastSession")) {
+            AppCenterUtils.sendBooleanPluginResultFromFuture(Crashes.hasReceivedMemoryWarningInLastSession(), callbackContext);
+            return true;
         } else if (action.equals("getCrashReports")) {
             List<ErrorReport> pendingReports = crashListener.getAndClearReports();
             callbackContext.success(CrashesUtils.jsonArrayFromReportsOrEmpty(pendingReports));
-
             return true;
-
         } else if (action.equals("isEnabled")) {
             AppCenterUtils.sendBooleanPluginResultFromFuture(Crashes.isEnabled(), callbackContext);
             return true;
-
         } else if (action.equals("setEnabled")) {
             Boolean enabled = args.getBoolean(0);
             AppCenterUtils.sendVoidPluginResultFromFuture(Crashes.setEnabled(enabled), callbackContext);

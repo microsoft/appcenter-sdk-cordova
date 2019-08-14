@@ -66,6 +66,14 @@ static BOOL crashProcessingDelayFinished = NO;
     });
 }
 
+- (void) hasReceivedMemoryWarningInLastSession: (CDVInvokedUrlCommand *)command
+{
+    CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK
+                                                  messageAsBool:[MSCrashes hasReceivedMemoryWarningInLastSession]];
+
+    [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+}
+
 - (void) getCrashReports: (CDVInvokedUrlCommand *) command
 {
     void (^fetchCrashReports)() = ^void() {

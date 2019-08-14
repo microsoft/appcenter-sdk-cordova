@@ -26,6 +26,10 @@ $(document).bind('pageinit', function () {
     var updateCrashReport = function () {
         $("#crash_report").html("Crashed: " +  "<small><pre>" + JSON.stringify(crashReport, null, 2) + "</pre></small>");
     }
+
+    var updateLowMemoryLabel = function (crashed) {
+        $("#memory_warning_lbl").html(`Received low memory warning in last session: <b>${crashed ? "YES" : "NO"}</b>`);
+    }
     
     var hideStatus = function () {
         setTimeout(function () {
@@ -46,7 +50,9 @@ $(document).bind('pageinit', function () {
         text = attachmentsProvider.getString("text");
         attachment = attachmentsProvider.getString("binary");
         updateAttachment();
-
+        AppCenter.Crashes.hasReceivedMemoryWarningInLastSession(function (crashed) {
+            updateLowMemoryLabel(crashed);
+        });
         //This is how you can check whether there was a crash in last session.
         AppCenter.Crashes.hasCrashedInLastSession(function (crashed) {
             if (crashed) {
@@ -107,6 +113,10 @@ $(document).bind('pageinit', function () {
     $("#btn_toggle_crashes").off('click').on('click', function (event, ui) {
         crashesEnabled = !crashesEnabled;
         AppCenter.Crashes.setEnabled(crashesEnabled, updateToggleButton, errorHandler);
+    });
+
+    $("#btn_memory_warning").off('click').on('click', function (event, ui) {
+        LowMemory.generateLowMemory();
     });
 
     var updateAttachment = function () {

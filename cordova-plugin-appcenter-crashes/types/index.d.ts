@@ -15,6 +15,11 @@ declare namespace AppCenter {
             error: (error: any) => void
         ): void;
 
+        hasReceivedMemoryWarningInLastSession(
+            success: (result: boolean) => void,
+            error: (error: any) => void
+        ): void;
+
         lastSessionCrashReport(
             success: (report: {}) => void,
             error: (error: any) => void

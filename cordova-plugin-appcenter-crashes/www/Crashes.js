@@ -19,6 +19,10 @@ var Crashes = {
         exec(success, error, "AppCenterCrashes", "hasCrashedInLastSession", []);
     },
 
+    hasReceivedMemoryWarningInLastSession: function (success, error) {
+        exec(success, error, "AppCenterCrashes", "hasReceivedMemoryWarningInLastSession", []);
+    },
+
     lastSessionCrashReport: function (success, error) {
         exec(success, error, "AppCenterCrashes", "lastSessionCrashReport", []);
     },
