@@ -1,4 +1,4 @@
-## Version 0.4.0 (Under development)
+## Version 0.4.0
 
 * **[Feature]** Catch "low memory warning" and provide the API to check if it has happened in last session:  `Crashes.hasReceivedMemoryWarningInLastSession()`.
 
