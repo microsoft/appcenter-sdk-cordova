@@ -1,6 +1,12 @@
-## Version 0.4.0 (Under development)
+## Version 0.4.0
 
-* **[Feature]** Catch "low memory warning" and provide the API to check if it has happened in last session:  `Crashes.hasReceivedMemoryWarningInLastSession()`.
+Changes:
+- **[Feature]** Catch "low memory warning" and provide the API to check if it has happened in last session:  `Crashes.hasReceivedMemoryWarningInLastSession()`.
+
+Updated native SDK versions:
+- Android from `2.2.0` to [2.3.0](https://github.com/microsoft/appcenter-sdk-android/releases/tag/2.3.0)
+- iOS from `2.2.0` to [2.3.0](https://github.com/microsoft/appcenter-sdk-apple/releases/tag/2.3.0)
+___
 
 ## Version 0.3.6
 
