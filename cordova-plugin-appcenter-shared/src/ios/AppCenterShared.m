@@ -55,7 +55,7 @@ static MSWrapperSdk * wrapperSdk;
     if (logLevelValue > 1 && logLevelValue < 8) {
         [MSAppCenter setLogLevel: logLevelValue];
     } else if (logLevelValue != 0) {
-        MSLogError(@"AppCenter", @"The provided value of the log level is invalid. Log level should be between 2 and 8.");
+        MSLogError(@"AppCenter", @"The provided value of the log level is invalid. Log level should be between 2 and 7.");
     }
 
     logUrl = [settings cordovaSettingForKey:@"LOG_URL"];

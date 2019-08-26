@@ -35,7 +35,7 @@ class AppCenterShared {
         if (logLevel > 1 && logLevel < 8) {
             AppCenter.setLogLevel(logLevel);
         } else if (logLevel != Integer.MIN_VALUE){
-            AppCenterLog.error(AppCenterLog.LOG_TAG, "The provided value of the log level is invalid. Log level should be between 2 and 8.");
+            AppCenterLog.error(AppCenterLog.LOG_TAG, "The provided value of the log level is invalid. Log level should be between 2 and 7.");
         }
 
         final String logUrl = preferences.getString(LOG_URL, null);
