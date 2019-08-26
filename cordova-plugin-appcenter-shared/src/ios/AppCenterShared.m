@@ -8,6 +8,7 @@
 
 static NSString *appSecret;
 static NSString *logUrl;
+
 static MSWrapperSdk * wrapperSdk;
 
 + (void) setAppSecret: (NSString *)secret
@@ -49,13 +50,12 @@ static MSWrapperSdk * wrapperSdk;
     [self setWrapperSdk:wrapperSdk];
     [MSAppCenter configureWithAppSecret:[AppCenterShared getAppSecretWithSettings: settings]];
 
-
-    CGFloat logLevel = [settings cordovaFloatSettingForKey:@"LOG_LEVEL" defaultValue: CGFLOAT_MIN];
-    if (logLevel > 1 && logLevel < 8) {
-        [MSAppCenter setLogLevel: floor(logLevel)];
-        MSLogError([MSAppCenter logTag], @"We log %d", floor(logLevel));
-    } else if (logLevel != CGFLOAT_MIN) {
-        MSLogError([MSAppCenter logTag], @"The provided value of the log level is invalid. Log level should be between 2 and 8.");
+    NSString *logLevel = [settings cordovaSettingForKey:@"LOG_LEVEL"];
+    int logLevelValue = [logLevel intValue];
+    if (logLevelValue > 1 && logLevelValue < 8) {
+        [MSAppCenter setLogLevel: logLevelValue];
+    } else if (logLevelValue != 0) {
+        MSLogError(@"AppCenter", @"The provided value of the log level is invalid. Log level should be between 2 and 8.");
     }
 
     logUrl = [settings cordovaSettingForKey:@"LOG_URL"];

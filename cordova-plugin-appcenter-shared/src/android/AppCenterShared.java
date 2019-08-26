@@ -6,6 +6,7 @@ package com.microsoft.azure.mobile.cordova;
 import android.app.Application;
 import org.apache.cordova.CordovaPreferences;
 import com.microsoft.appcenter.AppCenter;
+import com.microsoft.appcenter.utils.AppCenterLog;
 import com.microsoft.appcenter.ingestion.models.WrapperSdk;
 
 class AppCenterShared {
@@ -14,7 +15,8 @@ class AppCenterShared {
     private final static String VERSION_NAME = "0.4.0";
     private final static String SDK_NAME = "appcenter.cordova";
     private static final String APP_SECRET = "APP_SECRET";
-    private static final String LOG_URL = "LOG_URL";
+    private static final String LOG_URL = "LOG_URL_KEY";
+    private static final String LOG_LEVEL_KEY = "LOG_LEVEL";
     private static String appSecret;
     private static final WrapperSdk wrapperSdk = new WrapperSdk();
 
