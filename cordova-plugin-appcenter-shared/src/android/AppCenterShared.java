@@ -31,11 +31,9 @@ class AppCenterShared {
         AppCenter.setWrapperSdk(wrapperSdk);
         AppCenter.configure(application, AppCenterShared.getAppSecret(preferences));
 
-        final int logLevel = preferences.getInteger(LOG_LEVEL_KEY, Integer.MIN_VALUE);
+        final int logLevel = preferences.getInteger(LOG_LEVEL_KEY, 2);
         if (logLevel > 1 && logLevel < 8) {
             AppCenter.setLogLevel(logLevel);
-        } else if (logLevel != Integer.MIN_VALUE){
-            AppCenterLog.error(AppCenterLog.LOG_TAG, "The provided value of the log level is invalid. Log level should be between 2 and 7.");
         }
 
         final String logUrl = preferences.getString(LOG_URL, null);
