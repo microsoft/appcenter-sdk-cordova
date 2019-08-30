@@ -4,6 +4,7 @@
 package com.microsoft.azure.mobile.cordova;
 
 import android.app.Application;
+import android.util.Log;
 import org.apache.cordova.CordovaPreferences;
 import com.microsoft.appcenter.AppCenter;
 import com.microsoft.appcenter.utils.AppCenterLog;
@@ -31,10 +32,9 @@ class AppCenterShared {
         AppCenter.setWrapperSdk(wrapperSdk);
         AppCenter.configure(application, AppCenterShared.getAppSecret(preferences));
 
-        final int logLevel = preferences.getInteger(LOG_LEVEL_KEY, 2);
-        if (logLevel > 1 && logLevel < 8) {
-            AppCenter.setLogLevel(logLevel);
-        }
+        final int logLevel = preferences.getInteger(LOG_LEVEL_KEY, Log.VERBOSE);
+        AppCenter.setLogLevel(logLevel);
+        
 
         final String logUrl = preferences.getString(LOG_URL, null);
         if (logUrl != null && !logUrl.isEmpty()) {
