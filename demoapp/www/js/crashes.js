@@ -120,7 +120,7 @@ $(document).bind('pageinit', function () {
     });
 
     var updateAttachmentUI = function () {
-        $('#text_attachment_value').html("Current value: " + textAttachment);
+        $('#text_attachment_value').text("Current value: " + textAttachment);
         $('#file_attachment_value').html("Current value: " + binaryAttachment);
     };
 
@@ -158,7 +158,6 @@ $(document).bind('pageinit', function () {
             binaryAttachment = null;
             attachmentsProvider.putString(attachmentsProvider.BINARY_KEY, binaryAttachment);
             updateAttachmentUI();
-
         }, options);
     });
 });  
