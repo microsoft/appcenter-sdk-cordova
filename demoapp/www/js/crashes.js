@@ -8,8 +8,8 @@ $(document).bind('pageinit', function () {
     var ENABLED_LBL = "Disable Crashes";
     var crashReport = "no data";
 
-    var text = "";
-    var attachment = "";
+    var textAttachment = null;
+    var binaryAttachment = null;
 
     var updateToggleButton = function () {
         $("#btn_toggle_crashes").html(crashesEnabled ? ENABLED_LBL : DISABLED_LBL);
@@ -47,9 +47,9 @@ $(document).bind('pageinit', function () {
             crashesEnabled = isEnabled;
             updateToggleButton();
         });
-        text = attachmentsProvider.getString("text");
-        attachment = attachmentsProvider.getString("binary");
-        updateAttachment();
+        textAttachment = attachmentsProvider.getString(attachmentsProvider.TEXT_KEY);
+        binaryAttachment = attachmentsProvider.getString(attachmentsProvider.BINARY_KEY);
+        updateAttachmentUI();
         AppCenter.Crashes.hasReceivedMemoryWarningInLastSession(function (crashed) {
             updateLowMemoryLabel(crashed);
         });
@@ -73,24 +73,24 @@ $(document).bind('pageinit', function () {
                 alert(error);
             };
 
-            var processFunction = function (attachments, sendCallback) {
-                if (attachments.length > 0) {
+            var processFunction = function (errorReports, sendCallback) {
+                if (errorReports.length > 0) {
                     showStatus();
                 }
                 var textSavedValue = attachmentsProvider.getString(attachmentsProvider.TEXT_KEY);
                 if (textSavedValue != null && textSavedValue.length > 0) {
-                    for (var i = 0; i < attachments.length; i++) {
+                    for (var i = 0; i < errorReports.length; i++) {
                         //This is how you can send a text value along with the crash.
-                        attachments[i].addTextAttachment(textSavedValue, "hello.txt");
+                        errorReports[i].addTextAttachment(textSavedValue, "hello.txt");
                     }
                 }
 
                 var attachmentSavedValue = attachmentsProvider.getString(attachmentsProvider.BINARY_KEY);
                 if (attachmentSavedValue != null && attachmentSavedValue.length > 0) {
                     attachmentsProvider.getFileContentAsBase64(attachmentSavedValue, function (base64Content) {
-                        for (var i = 0; i < attachments.length; i++) {
+                        for (var i = 0; i < errorReports.length; i++) {
                             //This is how you can send an image (f. e.) along with the crash.
-                            attachments[i].addBinaryAttachment(base64Content, attachmentSavedValue, 'image/png');
+                            errorReports[i].addBinaryAttachment(base64Content, attachmentSavedValue, 'image/png');
                         }
                         sendCallback(true);
                         hideStatus();
@@ -119,15 +119,15 @@ $(document).bind('pageinit', function () {
         LowMemory.generateLowMemory();
     });
 
-    var updateAttachment = function () {
-        $('#text_attachment_value').html("Current value: " + text);
-        $('#file_attachment_value').html("Current value: " + attachment);
+    var updateAttachmentUI = function () {
+        $('#text_attachment_value').html("Current value: " + textAttachment);
+        $('#file_attachment_value').html("Current value: " + binaryAttachment);
     };
 
     $("#text_attachment").off('input').on('input', function (event, ui) {
-        text = $("#text_attachment").val();
-        attachmentsProvider.putString(attachmentsProvider.TEXT_KEY, $("#text_attachment").val());
-        updateAttachment();
+        textAttachment = $("#text_attachment").val();
+        attachmentsProvider.putString(attachmentsProvider.TEXT_KEY, textAttachment);
+        updateAttachmentUI();
     });
 
     //This is the code that generates test crash in a native code.
@@ -151,15 +151,14 @@ $(document).bind('pageinit', function () {
         var srcType = Camera.PictureSourceType.SAVEDPHOTOALBUM;
         var options = setOptions(srcType);
         navigator.camera.getPicture(function cameraSuccess(imageUri) {
-            if (!imageUri.length) {
-                return;
-            }
-            var index = imageUri.lastIndexOf("?");
-            attachment = imageUri.substr(0, index);
-            attachmentsProvider.putString(attachmentsProvider.BINARY_KEY, attachment);
-            updateAttachment();
-        }, function cameraError(error) {
-            alert("Unable to obtain picture: " + error);
+            binaryAttachment = imageUri;
+            attachmentsProvider.putString(attachmentsProvider.BINARY_KEY, binaryAttachment);
+            updateAttachmentUI();
+        }, function cameraError() {
+            binaryAttachment = null;
+            attachmentsProvider.putString(attachmentsProvider.BINARY_KEY, binaryAttachment);
+            updateAttachmentUI();
+
         }, options);
     });
 });  
