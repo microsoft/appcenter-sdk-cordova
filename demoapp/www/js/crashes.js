@@ -8,11 +8,12 @@ $(document).bind('pageinit', function () {
     var ENABLED_LBL = "Disable Crashes";
     var crashReport = "no data";
 
-    var textAttachment = null;
-    var binaryAttachment = null;
+    // This can be reexucuted and overwrite the data so make sure to look at the current value.
+    var textAttachment = attachmentsProvider.getString(attachmentsProvider.TEXT_KEY);
+    var binaryAttachment = attachmentsProvider.getString(attachmentsProvider.BINARY_KEY);
 
     var updateToggleButton = function () {
-        $("#btn_toggle_crashes").html(crashesEnabled ? ENABLED_LBL : DISABLED_LBL);
+        $("#btn_toggle_crashes").text(crashesEnabled ? ENABLED_LBL : DISABLED_LBL);
     }
 
     var errorHandler = function (err) {
@@ -20,7 +21,7 @@ $(document).bind('pageinit', function () {
     }
 
     var updateToggleButton = function () {
-        $("#btn_toggle_crashes").html(crashesEnabled ? ENABLED_LBL : DISABLED_LBL);
+        $("#btn_toggle_crashes").text(crashesEnabled ? ENABLED_LBL : DISABLED_LBL);
     }
 
     var updateCrashReport = function () {
@@ -87,22 +88,14 @@ $(document).bind('pageinit', function () {
 
                 var attachmentSavedValue = attachmentsProvider.getString(attachmentsProvider.BINARY_KEY);
                 if (attachmentSavedValue != null && attachmentSavedValue.length > 0) {
-                    attachmentsProvider.getFileContentAsBase64(attachmentSavedValue, function (base64Content) {
-                        for (var i = 0; i < errorReports.length; i++) {
-                            //This is how you can send an image (f. e.) along with the crash.
-                            errorReports[i].addBinaryAttachment(base64Content, attachmentSavedValue, 'image/png');
-                        }
-                        sendCallback(true);
-                        hideStatus();
-                    }, function (e) {
-                        sendCallback(true);
-                        hideStatus();
-                        alert(e + "Something went wrong and attachments not set.");
-                    });
-                } else {
-                    sendCallback(true);
-                    hideStatus();
+                    for (var i = 0; i < errorReports.length; i++) {
+                        //This is how you can send an image (f. e.) along with the crash.
+                        errorReports[i].addBinaryAttachment(attachmentSavedValue, "image.png", 'image/png');
+                    }
                 }
+                
+                sendCallback(true);
+                hideStatus();
             };
 
             AppCenter.Crashes.process(processFunction, errorCallback);
@@ -121,7 +114,11 @@ $(document).bind('pageinit', function () {
 
     var updateAttachmentUI = function () {
         $('#text_attachment_value').text("Current value: " + textAttachment);
-        $('#file_attachment_value').html("Current value: " + binaryAttachment);
+        var imageDesc = null;
+        if (typeof(binaryAttachment) === "string") {
+            imageDesc = "Image";
+        }
+        $('#file_attachment_value').text("Current value: " + imageDesc);
     };
 
     $("#text_attachment").off('input').on('input', function (event, ui) {
@@ -139,7 +136,7 @@ $(document).bind('pageinit', function () {
         var setOptions = function (srcType) {
             var options = {
                 quality: 50,
-                destinationType: Camera.DestinationType.FILE_URI,
+                destinationType: Camera.DestinationType.DATA_URL,
                 sourceType: srcType,
                 encodingType: Camera.EncodingType.PNG,
                 mediaType: Camera.MediaType.PICTURE,
