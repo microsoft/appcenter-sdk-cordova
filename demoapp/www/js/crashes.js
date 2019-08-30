@@ -25,20 +25,20 @@ $(document).bind('pageinit', function () {
     }
 
     var updateCrashReport = function () {
-        $("#crash_report").html("Crashed: " +  "<small><pre>" + JSON.stringify(crashReport, null, 2) + "</pre></small>");
+        $("#crash_report").html("Crashed: " + "<small><pre>" + JSON.stringify(crashReport, null, 2) + "</pre></small>");
     }
 
     var updateLowMemoryLabel = function (crashed) {
         $("#memory_warning_lbl").html(`Received low memory warning in last session: <b>${crashed ? "YES" : "NO"}</b>`);
     }
-    
+
     var hideStatus = function () {
         setTimeout(function () {
             $("#sending_status").hide();
-        }, 1000); 
+        }, 1000);
     }
 
-    var showStatus = function() {
+    var showStatus = function () {
         $("#sending_status").show();
     }
 
@@ -93,7 +93,7 @@ $(document).bind('pageinit', function () {
                         errorReports[i].addBinaryAttachment(attachmentSavedValue, "image.png", 'image/png');
                     }
                 }
-                
+
                 sendCallback(true);
                 hideStatus();
             };
@@ -115,7 +115,7 @@ $(document).bind('pageinit', function () {
     var updateAttachmentUI = function () {
         $('#text_attachment_value').text("Current value: " + textAttachment);
         var imageDesc = null;
-        if (typeof(binaryAttachment) === "string") {
+        if (typeof (binaryAttachment) === "string") {
             imageDesc = "Image";
         }
         $('#file_attachment_value').text("Current value: " + imageDesc);
