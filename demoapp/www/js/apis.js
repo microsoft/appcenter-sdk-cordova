@@ -2,6 +2,9 @@
 // Licensed under the MIT License.
 
 var USER_ID_KEY = "userid";
+
+document.addEventListener("deviceready", onDeviceReady, false);
+
 var userIdProvider = {
     put: function (value) {
         localStorage.setItem(USER_ID_KEY, value);
@@ -9,6 +12,13 @@ var userIdProvider = {
 
     get: function () {
         return localStorage.getItem(USER_ID_KEY);
+    }
+}
+
+function onDeviceReady() {
+    var userId = userIdProvider.get();
+    if (userId && userId.length > 0) {
+        AppCenter.setUserId(userId);
     }
 }
 
