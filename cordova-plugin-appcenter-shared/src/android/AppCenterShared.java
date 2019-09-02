@@ -35,7 +35,6 @@ class AppCenterShared {
         final int logLevel = preferences.getInteger(LOG_LEVEL_KEY, Log.VERBOSE);
         AppCenter.setLogLevel(logLevel);
         
-
         final String logUrl = preferences.getString(LOG_URL, null);
         if (logUrl != null && !logUrl.isEmpty()) {
             AppCenter.setLogUrl(logUrl);
