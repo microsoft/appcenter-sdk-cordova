@@ -8,11 +8,12 @@ $(document).bind('pageinit', function () {
     var ENABLED_LBL = "Disable Crashes";
     var crashReport = "no data";
 
-    var text = "";
-    var attachment = "";
+    // This can be reexucuted and overwrite the data so make sure to look at the current value.
+    var textAttachment = attachmentsProvider.getString(attachmentsProvider.TEXT_KEY);
+    var binaryAttachment = attachmentsProvider.getString(attachmentsProvider.BINARY_KEY);
 
     var updateToggleButton = function () {
-        $("#btn_toggle_crashes").html(crashesEnabled ? ENABLED_LBL : DISABLED_LBL);
+        $("#btn_toggle_crashes").text(crashesEnabled ? ENABLED_LBL : DISABLED_LBL);
     }
 
     var errorHandler = function (err) {
@@ -20,24 +21,24 @@ $(document).bind('pageinit', function () {
     }
 
     var updateToggleButton = function () {
-        $("#btn_toggle_crashes").html(crashesEnabled ? ENABLED_LBL : DISABLED_LBL);
+        $("#btn_toggle_crashes").text(crashesEnabled ? ENABLED_LBL : DISABLED_LBL);
     }
 
     var updateCrashReport = function () {
-        $("#crash_report").html("Crashed: " +  "<small><pre>" + JSON.stringify(crashReport, null, 2) + "</pre></small>");
+        $("#crash_report").html("Crashed: " + "<small><pre>" + JSON.stringify(crashReport, null, 2) + "</pre></small>");
     }
 
     var updateLowMemoryLabel = function (crashed) {
         $("#memory_warning_lbl").html(`Received low memory warning in last session: <b>${crashed ? "YES" : "NO"}</b>`);
     }
-    
+
     var hideStatus = function () {
         setTimeout(function () {
             $("#sending_status").hide();
-        }, 1000); 
+        }, 1000);
     }
 
-    var showStatus = function() {
+    var showStatus = function () {
         $("#sending_status").show();
     }
 
@@ -47,9 +48,9 @@ $(document).bind('pageinit', function () {
             crashesEnabled = isEnabled;
             updateToggleButton();
         });
-        text = attachmentsProvider.getString("text");
-        attachment = attachmentsProvider.getString("binary");
-        updateAttachment();
+        textAttachment = attachmentsProvider.getString(attachmentsProvider.TEXT_KEY);
+        binaryAttachment = attachmentsProvider.getString(attachmentsProvider.BINARY_KEY);
+        updateAttachmentUI();
         AppCenter.Crashes.hasReceivedMemoryWarningInLastSession(function (crashed) {
             updateLowMemoryLabel(crashed);
         });
@@ -73,36 +74,28 @@ $(document).bind('pageinit', function () {
                 alert(error);
             };
 
-            var processFunction = function (attachments, sendCallback) {
-                if (attachments.length > 0) {
+            var processFunction = function (errorReports, sendCallback) {
+                if (errorReports.length > 0) {
                     showStatus();
                 }
                 var textSavedValue = attachmentsProvider.getString(attachmentsProvider.TEXT_KEY);
                 if (textSavedValue != null && textSavedValue.length > 0) {
-                    for (var i = 0; i < attachments.length; i++) {
+                    for (var i = 0; i < errorReports.length; i++) {
                         //This is how you can send a text value along with the crash.
-                        attachments[i].addTextAttachment(textSavedValue, "hello.txt");
+                        errorReports[i].addTextAttachment(textSavedValue, "hello.txt");
                     }
                 }
 
                 var attachmentSavedValue = attachmentsProvider.getString(attachmentsProvider.BINARY_KEY);
                 if (attachmentSavedValue != null && attachmentSavedValue.length > 0) {
-                    attachmentsProvider.getFileContentAsBase64(attachmentSavedValue, function (base64Content) {
-                        for (var i = 0; i < attachments.length; i++) {
-                            //This is how you can send an image (f. e.) along with the crash.
-                            attachments[i].addBinaryAttachment(base64Content, attachmentSavedValue, 'image/png');
-                        }
-                        sendCallback(true);
-                        hideStatus();
-                    }, function (e) {
-                        sendCallback(true);
-                        hideStatus();
-                        alert(e + "Something went wrong and attachments not set.");
-                    });
-                } else {
-                    sendCallback(true);
-                    hideStatus();
+                    for (var i = 0; i < errorReports.length; i++) {
+                        //This is how you can send an image (f. e.) along with the crash.
+                        errorReports[i].addBinaryAttachment(attachmentSavedValue, "image.png", 'image/png');
+                    }
                 }
+
+                sendCallback(true);
+                hideStatus();
             };
 
             AppCenter.Crashes.process(processFunction, errorCallback);
@@ -119,15 +112,19 @@ $(document).bind('pageinit', function () {
         LowMemory.generateLowMemory();
     });
 
-    var updateAttachment = function () {
-        $('#text_attachment_value').html("Current value: " + text);
-        $('#file_attachment_value').html("Current value: " + attachment);
+    var updateAttachmentUI = function () {
+        $('#text_attachment_value').text("Current value: " + textAttachment);
+        var imageDesc = null;
+        if (typeof (binaryAttachment) === "string") {
+            imageDesc = "Image";
+        }
+        $('#file_attachment_value').text("Current value: " + imageDesc);
     };
 
     $("#text_attachment").off('input').on('input', function (event, ui) {
-        text = $("#text_attachment").val();
-        attachmentsProvider.putString(attachmentsProvider.TEXT_KEY, $("#text_attachment").val());
-        updateAttachment();
+        textAttachment = $("#text_attachment").val();
+        attachmentsProvider.putString(attachmentsProvider.TEXT_KEY, textAttachment);
+        updateAttachmentUI();
     });
 
     //This is the code that generates test crash in a native code.
@@ -139,7 +136,7 @@ $(document).bind('pageinit', function () {
         var setOptions = function (srcType) {
             var options = {
                 quality: 50,
-                destinationType: Camera.DestinationType.FILE_URI,
+                destinationType: Camera.DestinationType.DATA_URL,
                 sourceType: srcType,
                 encodingType: Camera.EncodingType.PNG,
                 mediaType: Camera.MediaType.PICTURE,
@@ -151,15 +148,13 @@ $(document).bind('pageinit', function () {
         var srcType = Camera.PictureSourceType.SAVEDPHOTOALBUM;
         var options = setOptions(srcType);
         navigator.camera.getPicture(function cameraSuccess(imageUri) {
-            if (!imageUri.length) {
-                return;
-            }
-            var index = imageUri.lastIndexOf("?");
-            attachment = imageUri.substr(0, index);
-            attachmentsProvider.putString(attachmentsProvider.BINARY_KEY, attachment);
-            updateAttachment();
-        }, function cameraError(error) {
-            alert("Unable to obtain picture: " + error);
+            binaryAttachment = imageUri;
+            attachmentsProvider.putString(attachmentsProvider.BINARY_KEY, binaryAttachment);
+            updateAttachmentUI();
+        }, function cameraError() {
+            binaryAttachment = null;
+            attachmentsProvider.putString(attachmentsProvider.BINARY_KEY, binaryAttachment);
+            updateAttachmentUI();
         }, options);
     });
 });  
