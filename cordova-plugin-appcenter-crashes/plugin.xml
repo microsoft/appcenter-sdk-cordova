@@ -20,7 +20,7 @@
     <engine name="cordova" version=">=6.4.0" />
     <engine name="cordova-ios" version=">=4.3.0" />
 
-    <dependency id="cordova-plugin-appcenter-shared" version="0.4.0"/>
+    <dependency id="cordova-plugin-appcenter-shared" version="0.4.1"/>
 
     <js-module name="Crashes" src="www/Crashes.js">
         <clobbers target="AppCenter.Crashes" />
