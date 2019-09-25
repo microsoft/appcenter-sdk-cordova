@@ -1,3 +1,9 @@
+## Version 0.4.1
+
+Updated native SDK versions:
+- iOS from `2.3.0` to [2.4.0](https://github.com/microsoft/appcenter-sdk-apple/releases/tag/2.4.0)
+___
+
 ## Version 0.4.0
 
 Changes:
