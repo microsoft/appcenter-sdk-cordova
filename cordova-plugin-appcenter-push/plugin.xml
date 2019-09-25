@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <plugin id="cordova-plugin-appcenter-push"
-        version="0.4.0"
+        version="0.4.1"
         xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android">
 
@@ -20,7 +20,7 @@
     <engine name="cordova" version=">=6.4.0" />
     <engine name="cordova-ios" version=">=4.3.0" />
 
-    <dependency id="cordova-plugin-appcenter-shared" version="0.4.0"/>
+    <dependency id="cordova-plugin-appcenter-shared" version="0.4.1"/>
 
     <js-module name="Push" src="www/Push.js">
         <clobbers target="AppCenter.Push" />
@@ -90,10 +90,10 @@
                 <source url="https://github.com/CocoaPods/Specs.git"/>
             </config>
             <pods use-frameworks="true">
-                <pod name="AppCenter/Push" spec="~> 2.3.0" />
+                <pod name="AppCenter/Push" spec="~> 2.4.0" />
             </pods>
         </podspec>
 
-        <framework src="AppCenter/Push" type="podspec" spec="~> 2.3.0" />
+        <framework src="AppCenter/Push" type="podspec" spec="~> 2.4.0" />
     </platform>
 </plugin>
