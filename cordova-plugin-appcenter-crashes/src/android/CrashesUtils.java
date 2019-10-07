@@ -44,7 +44,9 @@ class CrashesUtils {
         jsonReport.put("threadName", errorReport.getThreadName());
         jsonReport.put("appErrorTime", "" + errorReport.getAppErrorTime().getTime());
         jsonReport.put("appStartTime", "" + errorReport.getAppStartTime().getTime());
-        jsonReport.put("exception", errorReport.getStackTrace());
+        jsonReport.put("exception", Log.getStackTraceString(errorReport.getThrowable()));
+        //noinspection ThrowableResultOfMethodCallIgnored
+        jsonReport.put("exceptionReason", errorReport.getThrowable().getMessage());
 
         Device deviceInfo = errorReport.getDevice();
         JSONStringer jsonStringer = new JSONStringer();
