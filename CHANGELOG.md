@@ -4,7 +4,7 @@
 
 #### Android
 
-- **[Bug Fix]** Fixes a securituy issue in the way native Android crashes are processed. The exception message will now be `null` and the exception stack trace might look slightly different.
+- **[Bug Fix]** Fixes a security issue in the way native Android crashes are processed. The exception message will now be `null` and the exception stack trace might look slightly different.
 
 
 ## Version 0.4.1
