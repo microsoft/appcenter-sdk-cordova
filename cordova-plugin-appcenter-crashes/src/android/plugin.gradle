@@ -1,0 +1,9 @@
+repositories {
+    maven {
+            url  "https://dl.bintray.com/vsappcenter/appcenter-snapshot"
+    }
+}
+
+dependencies {
+    implementation 'com.microsoft.appcenter:appcenter-crashes:2.4.0-3+08074e47b'
+}
