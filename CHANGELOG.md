@@ -4,8 +4,9 @@
 
 #### Android
 
-- **[Bug Fix]** Fixes a security issue in the way native Android crashes are processed. The exception message will now be `null` and the exception stack trace might look slightly different.
+- **[Behavior change]** Fix a security issue in the way native Android crashes are processed. As a result, the exception stack trace for crashes that occurred in Java code is the raw Java stack trace and the associated exception message is now `null`.
 
+_
 
 ## Version 0.4.1
 
