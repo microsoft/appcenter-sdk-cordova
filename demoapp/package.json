@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "cordova-android": "^7.1.4",
+    "cordova-ios": "^5.0.0",
     "cordova-plugin-appcenter-analytics": "file:../cordova-plugin-appcenter-analytics",
     "cordova-plugin-appcenter-crashes": "file:../cordova-plugin-appcenter-crashes",
     "cordova-plugin-appcenter-push": "file:../cordova-plugin-appcenter-push",
