@@ -1,3 +1,13 @@
+## Version 0.5.0 (Under development)
+
+### App Center Crashes
+
+#### Android
+
+- **[Behavior change]** Fix a security issue in the way native Android crashes are processed. As a result, the exception stack trace for crashes that occurred in Java code is now the raw Java stack trace and the associated exception message is now `null`.
+
+_
+
 ## Version 0.4.1
 
 Updated native SDK versions:
