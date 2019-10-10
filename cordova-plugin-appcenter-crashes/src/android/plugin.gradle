@@ -1,6 +1,6 @@
 repositories {
     maven {
-            url  "https://dl.bintray.com/vsappcenter/appcenter-snapshot"
+        url  "https://dl.bintray.com/vsappcenter/appcenter-snapshot"
     }
 }
 
