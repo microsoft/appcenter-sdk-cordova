@@ -4,7 +4,7 @@
 
 #### Android
 
-- **[Behavior change]** Fix a security issue in the way native Android crashes are processed. As a result, the exception stack trace for crashes that occurred in Java code is the raw Java stack trace and the associated exception message is now `null`.
+- **[Behavior change]** Fix a security issue in the way native Android crashes are processed. As a result, the exception stack trace for crashes that occurred in Java code is now the raw Java stack trace and the associated exception message is now `null`.
 
 _
 
