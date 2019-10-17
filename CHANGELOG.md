@@ -1,11 +1,11 @@
-## Version 0.5.0 (Under development)
+## Version 0.5.0
 
-### App Center Crashes
-
-#### Android
-
+Changes:
 - **[Behavior change]** Fix a security issue in the way native Android crashes are processed. As a result, the exception stack trace for crashes that occurred in Java code is now the raw Java stack trace and the associated exception message is now `null`.
 
+Updated native SDK versions:
+- Android from `2.3.0` to [2.4.0](https://github.com/microsoft/appcenter-sdk-android/releases/tag/2.4.0)
+- iOS from `2.4.0` to [2.5.0](https://github.com/microsoft/appcenter-sdk-apple/releases/tag/2.5.0)
 _
 
 ## Version 0.4.1
