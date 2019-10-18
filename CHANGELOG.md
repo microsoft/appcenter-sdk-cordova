@@ -6,7 +6,7 @@ Changes:
 Updated native SDK versions:
 - Android from `2.3.0` to [2.4.0](https://github.com/microsoft/appcenter-sdk-android/releases/tag/2.4.0)
 - iOS from `2.4.0` to [2.5.0](https://github.com/microsoft/appcenter-sdk-apple/releases/tag/2.5.0)
-_
+___
 
 ## Version 0.4.1
 
