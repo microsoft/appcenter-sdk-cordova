@@ -1,3 +1,7 @@
+## Version 0.6.0 (under development)
+
+- **[Fix]** Freeze the gradle version to avoid issues introduced by it.
+
 ## Version 0.5.0
 
 Changes:
