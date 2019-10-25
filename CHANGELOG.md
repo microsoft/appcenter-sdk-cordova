@@ -1,6 +1,6 @@
 ## Version 0.6.0 (under development)
 
-- **[Fix]** Freeze the gradle version to avoid issues introduced by it.
+- **[Fix]** Use exact version of the build gradle plugin in the Push module to avoid issues with unstable latest versions.
 
 ## Version 0.5.0
 
