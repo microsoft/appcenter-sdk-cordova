@@ -1,4 +1,4 @@
-## Version 0.6.0 (under development)
+## Version 0.5.1 (under development)
 
 - **[Fix]** Use exact version of the build gradle plugin in the Push module to avoid issues with unstable latest versions.
 
