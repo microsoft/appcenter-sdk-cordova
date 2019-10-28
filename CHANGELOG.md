@@ -1,6 +1,11 @@
-## Version 0.5.1 (under development)
+## Version 0.5.1
 
+Changes:
 - **[Fix]** Use exact version of the build gradle plugin in the Push module to avoid issues with unstable latest versions.
+
+Updated native SDK versions:
+- Android from `2.4.0` to [2.4.1](https://github.com/microsoft/appcenter-sdk-android/releases/tag/2.4.1)
+___
 
 ## Version 0.5.0
 
