@@ -13,7 +13,7 @@ import com.microsoft.appcenter.ingestion.models.WrapperSdk;
 class AppCenterShared {
 
     // TODO: Refine constants
-    private final static String VERSION_NAME = "0.5.0";
+    private final static String VERSION_NAME = "0.5.1";
     private final static String SDK_NAME = "appcenter.cordova";
     private static final String APP_SECRET = "APP_SECRET";
     private static final String LOG_URL = "LOG_URL_KEY";
