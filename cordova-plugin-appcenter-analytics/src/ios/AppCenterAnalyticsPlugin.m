@@ -42,7 +42,9 @@
 
 - (void)setEnabled:(CDVInvokedUrlCommand *)command
 {
-    BOOL shouldEnable = [[command argumentAtIndex:0] boolValue];
+    NSString* secret = [command argumentAtIndex:0 withDefault:nil andClass:[NSString class]];
+    [AppCenterShared setAppSecret:secret];
+    BOOL shouldEnable = [[command argumentAtIndex:1] boolValue];
     [MSAnalytics setEnabled:shouldEnable];
 
     CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
