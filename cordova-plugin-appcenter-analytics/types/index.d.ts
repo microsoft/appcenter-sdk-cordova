@@ -16,6 +16,7 @@ declare namespace AppCenter {
         ): void;
 
         setEnabled(
+            secret: string,
             enabled: boolean,
             success: () => void,
             error: (error: any) => void
