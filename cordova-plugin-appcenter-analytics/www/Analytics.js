@@ -13,8 +13,8 @@ module.exports = {
         exec(success, error, "AppCenterAnalytics", "isEnabled", []);
     },
 
-    setEnabled: function(enabled, success, error) {
-        exec(success, error, "AppCenterAnalytics", "setEnabled", [enabled]);
+    setEnabled: function(secret, enabled, success, error) {
+        exec(success, error, "AppCenterAnalytics", "setEnabled", [secret], [enabled]);
     },
 
     /*
