@@ -66,11 +66,10 @@ App Center Push plugin doesn't have it's own configuration preferences. Instead 
 1. Download `google-services.json` from Firebase portal to your app directory
 2. Add the following snippet to Android platform section in your app's `config.xml`
 
-    ```xml
-    <resource-file src="google-services.json" target="google-services.json" />
-    ```
-
-    This will instruct Cordova to copy this file to platform directory at build time for further processing by Google Services plugin for Gradle
+  ```xml
+  <resource-file src="google-services.json" target="google-services.json" />
+  ```
+  This will instruct Cordova to copy this file to platform directory at build time for further processing by Google Services plugin for Gradle
 
 That's all - you've done configuring App Center Push in your app. For iOS there is no additional configuration is required.
 
