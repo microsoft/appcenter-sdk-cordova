@@ -1,3 +1,6 @@
+# Cordova support is retired in App Center
+Check our [blog post](https://devblogs.microsoft.com/appcenter/announcing-apache-cordova-retirement/) for more information.
+
 # App Center SDK for Apache Cordova
 
 App Center is mission control for mobile apps. Get faster release cycles, higher-quality apps, and the insights to build what users want.
